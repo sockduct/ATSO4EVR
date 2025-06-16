@@ -24,3 +24,9 @@
 
 * Run the program:
   `python sim1.py`
+
+## Traffic Grid
+
+* Current traffic grid layout used in sim1.py:
+
+  ![Traffic Grid Layout](./Traffic%20Grid.png)

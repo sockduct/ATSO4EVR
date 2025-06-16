@@ -118,12 +118,12 @@ class Vehicle:
     def run(self):
         self.entry_time = self.env.now
         print(f'{self.entry_time:05.1f}s: {self.name} arrives from {self.origin[0]} '
-              f'at {self.origin[1]}')
+              f'at {self.origin[1]} heading to {self.destination}')
 
         while True:
             # Check if current node is intersection with traffic light:
             if light := self.traffic_grid.nodes[self.current_node].get('tl'):
-                if get_direction(self.current_node, self.next_node) != light.allowed:
+                if get_direction(self.previous_node, self.current_node) != light.allowed:
                     red_arrival = self.env.now
                     print(f'{self.env.now:05.1f}s: {self.name} waits at red')
 
@@ -142,6 +142,7 @@ class Vehicle:
 
             yield self.env.timeout(duration)
 
+            self.previous_node = self.current_node
             self.current_node = self.next_node
             print(f'{self.env.now:05.1f}s: {self.name} reaches {self.current_node}')
 
@@ -247,7 +248,7 @@ if __name__ == '__main__':
     env = simpy.Environment()
     traffic_grid = setup_grid(env)
     sim_start = env.now
-    env.process(vehicle_generator(env, traffic_grid, arrival_interval=30))
+    env.process(vehicle_generator(env, traffic_grid, arrival_interval=120))
 
     # Run simulation for 10 minutes:
     env.run(until=600)
