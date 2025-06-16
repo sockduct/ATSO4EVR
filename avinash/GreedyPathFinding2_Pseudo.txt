@@ -1,0 +1,108 @@
+Pseudo-code for Simulation and Greedy Algorithm
+1. Road Network Simulation Setup
+
+1.1. Network Definition:
+
+Create a graph G using networkx.
+Define 4 "central intersection" nodes (e.g., 'C1', 'C2', 'C3', 'C4').
+Define 8 "entry/exit" nodes (e.g., 'E1' through 'E8').
+Add all nodes to G.
+Connect the 4 central intersections to form a connected structure (e.g., a square with diagonals). Assign random travel times (weights) to these edges.
+Connect each of the 8 entry/exit nodes to specific central intersections (e.g., 'E1', 'E2' to 'C1'; 'E3', 'E4' to 'C2', etc.). Assign random travel times (weights) to these edges.
+
+1.2. Emergency Vehicle (EV) Process:
+
+Class: EmergencyVehicle
+Attributes:
+env: SimPy environment.
+graph: The road network graph.
+start_node: The EV's origin (an entry/exit node).
+destination_node: The EV's target (a central intersection).
+ev_id: Unique identifier for the EV.
+run() Method (SimPy Process):
+Log EV spawning at start_node.
+Call GREEDY_SHORTEST_PATH function to calculate the optimal path from start_node to destination_node and its total travel time.
+If no path is found, log an error and terminate.
+Iterate through the calculated path:
+For each segment (edge) in the path:
+Get the travel_time (weight) for that segment from G.
+yield env.timeout(travel_time) (simulates travel time).
+Log EV arrival at the next node.
+Log EV arrival at the final destination_node and its total calculated travel time.
+
+1.3. Emergency Vehicle Source:
+
+Function: source_emergency_vehicles(env, graph, num_vehicles)
+Logic:
+For a predefined num_vehicles:
+Randomly select a start_node from ENTRY_EXIT_NODES.
+Randomly select a destination_node from CENTRAL_NODES.
+Generate a random inter_arrival_time.
+yield env.timeout(inter_arrival_time) (wait before spawning next EV).
+Start a new EmergencyVehicle process: env.process(EmergencyVehicle(...).run()).
+
+1.4. Main Simulation Loop:
+
+Initialize random seed for reproducibility.
+Create the road_network_graph.
+Initialize SimPy.Environment().
+Start the source_emergency_vehicles process.
+Run the simulation env.run(until=SIM_DURATION).
+Log simulation start and end.
+
+
+2. Greedy Algorithm (Dijkstra's Shortest Path)
+Function: GREEDY_SHORTEST_PATH(Graph G, StartNode S, DestinationNode D)
+
+Inputs:
+
+G: The network graph.
+S: The starting node.
+D: The destination node.
+Outputs:
+
+path: A list of nodes representing the shortest path.
+total_time: The cumulative weight (travel time) of the shortest path.
+Logic:
+
+Initialization:
+
+Create distances dictionary: distances[node] = infinity for all nodes, distances[S] = 0.
+Create previous_nodes dictionary: previous_nodes[node] = None for all nodes.
+Initialize priority_queue as a min-heap. Add (0, S) to it (distance, node).
+Main Loop:
+
+While priority_queue is not empty:
+Extract current_distance, current_node with the smallest current_distance from priority_queue.
+If current_distance is greater than distances[current_node], continue (already found a shorter path to this node).
+If current_node is D, break (destination reached).
+For each neighbor of current_node:
+edge_weight = G.get_edge_data(current_node, neighbor)['weight'].
+new_distance = current_distance + edge_weight.
+If new_distance < distances[neighbor]:
+distances[neighbor] = new_distance.
+previous_nodes[neighbor] = current_node.
+Add (new_distance, neighbor) to priority_queue.
+Path Reconstruction:
+
+If distances[D] is still infinity, return None, infinity (no path).
+Otherwise, reconstruct the path by backtracking from D using previous_nodes until S is reached.
+Return the path and distances[D].
+Full Implementation
+Emergency Vehicle Network Simulation and Greedy Pathfinding
+Jun 16, 1:29 AM
+
+Try again without Canvas
+Conclusion and Suggestions
+The provided code defines a road network using networkx, featuring four central intersections and eight entry/exit points. It then simulates emergency vehicle movement through this network using SimPy. The core of the vehicle's routing is handled by a greedy algorithm, specifically Dijkstra's algorithm, which calculates the shortest path based on pre-assigned travel times (edge weights).
+
+Each emergency vehicle, upon spawning, uses this greedy algorithm to determine its entire optimal route before beginning its journey. The simulation then proceeds by simulating the time taken for the vehicle to traverse each segment of its determined path.
+
+To further enhance this simulation and algorithm, you could consider:
+
+Dynamic Traffic/Obstacles: Introduce variability in edge weights (travel times) to simulate real-time traffic, accidents, or road closures. This would require the greedy algorithm to potentially re-calculate the path en-route or consider real-time data.
+Multiple Emergency Incidents: Simulate multiple simultaneous incidents at different central nodes, requiring multiple emergency vehicles to be dispatched concurrently.
+Vehicle Resources/Availability: Incorporate a pool of available emergency vehicles, and have a dispatching logic that assigns the closest or most available vehicle using the greedy algorithm.
+Priority-Based Routing: Implement different priority levels for emergency calls, where high-priority calls might get faster routing or override lower-priority vehicle paths if a road is shared.
+Visualization: Add a graphical visualization (e.g., using matplotlib or a simple web interface) to see the vehicles moving on the network in real-time.
+Advanced Pathfinding: For more complex scenarios, consider A* search (which is also greedy but informed by a heuristic) or algorithms for dynamic shortest paths.

@@ -1,0 +1,69 @@
+// Data Structures
+Intersection: Represents a crossroad with multiple lanes and traffic lights.
+    - Lanes: List of incoming lanes (e.g., 'Northbound_Straight', 'Eastbound_Left').
+    - TrafficLights: Dictionary mapping each lane/direction to its current light state (RED, YELLOW, GREEN).
+EmergencyVehicle: Represents an EV with attributes like current_location, destination, speed, and approaching_lane.
+
+// Algorithm: GreedyEmergencySignalPrioritization
+
+Function MainTrafficControlLoop():
+    Initialize all TrafficLights at all Intersections to default/normal operation.
+
+    While True: // Continuous operation loop for traffic control system
+        For each Intersection in the TrafficNetwork:
+            If EmergencyVehicleApproaching(Intersection):
+                EV = GetApproachingEmergencyVehicle(Intersection)
+                EV_Approaching_Lane = EV.approaching_lane_at_intersection
+                EV_Direction_of_Travel = EV.direction_through_intersection
+
+                // Step 1: Greedy Choice - Prioritize EV's path
+                SetSignalGreen(Intersection, EV_Approaching_Lane)
+                SetConflictingSignalsRed(Intersection, EV_Approaching_Lane)
+
+                // Optional: Monitor EV passage and revert
+                While EV_Has_Not_Passed(Intersection):
+                    // Maintain green for EV, red for others
+                    Wait(short_interval) 
+                
+                // Step 2: Revert/Normalize Signals
+                // Once EV has passed, revert signals to a normal state or
+                // a state optimized for general traffic (e.g., based on queue lengths)
+                RevertSignalsToNormalOrLocalOptimize(Intersection)
+            Else:
+                // No EV detected, run normal traffic signal logic
+                RunDefaultTrafficSignalLogic(Intersection) 
+        
+        Sleep(simulation_time_step) // Simulate time passing
+
+Function EmergencyVehicleApproaching(Intersection):
+    // Checks if any emergency vehicle is within a predefined proximity
+    // and is heading towards this Intersection.
+    Return True if an EV is detected, False otherwise.
+
+Function GetApproachingEmergencyVehicle(Intersection):
+    // Returns the EV object that is closest and approaching this Intersection.
+
+Function SetSignalGreen(Intersection, lane):
+    // Sets the traffic light for the specified lane at the Intersection to GREEN.
+    Intersection.TrafficLights[lane] = GREEN
+
+Function SetConflictingSignalsRed(Intersection, prioritized_lane):
+    // Sets all traffic lights for lanes that conflict with the 'prioritized_lane' to RED.
+    // This includes cross-traffic and turning lanes that would interfere.
+    For each other_lane in Intersection.Lanes:
+        If other_lane conflicts with prioritized_lane:
+            Intersection.TrafficLights[other_lane] = RED
+
+Function EV_Has_Not_Passed(Intersection):
+    // Checks if the EV has successfully cleared the intersection.
+    Return True if EV is still in or before the intersection, False otherwise.
+
+Function RevertSignalsToNormalOrLocalOptimize(Intersection):
+    // Resets signals to a default pattern or applies a local, simple optimization
+    // (e.g., cycle through phases, or give green to the lane with the longest queue).
+    // This is a placeholder for non-EV-priority logic.
+
+Function RunDefaultTrafficSignalLogic(Intersection):
+    // Placeholder for how the intersection behaves when no EV is present.
+    // Could be fixed timing, or a simple sensor-based logic.
+    Pass // For this greedy example, we assume a basic default.
