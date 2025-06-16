@@ -20,11 +20,12 @@ import random
 import statistics
 
 # Third-Party:
+import networkx
 import simpy
 
 
 # Global Constants:
-LIGHT_LENGTH = 30
+LIGHT_LENGTH = 60
 # Global lists to track times
 VEHICLE_WAIT_TIMES = []
 VEHICLE_TOTAL_TIMES = []
@@ -48,11 +49,13 @@ class TrafficLight:
 
     Note:  Omitting yellow state for now
     '''
-    def __init__(self, env: simpy.Environment, debug: bool=False) -> None:
+    def __init__(self, env: simpy.Environment, vertex, debug: bool=False) -> None:
         self.env = env
+        self.vertex = vertex
         self.debug = debug
         self.ns_state = TLCState.GREEN
         self.ew_state = TLCState.RED
+        self.allowed = 'NS'
         self.start = self.env.now
         self.init = True
         self.change_event = env.event()
@@ -61,8 +64,8 @@ class TrafficLight:
     def run(self):
         while True:
             if self.init and self.debug:
-                print(f'{self.env.now:05.1f}s: Traffic Light Initialized ({self.ns_state=}, '
-                      f'{self.ew_state=})')
+                print(f'{self.env.now:05.1f}s: Traffic Light {self.vertex} Initialized '
+                      f'({self.ns_state=}, {self.ew_state=}, {self.allowed=})')
                 self.init = False
             yield self.env.timeout(1)
 
@@ -72,18 +75,20 @@ class TrafficLight:
                 self.change_event = self.env.event()
                 self.ns_state = TLCState.RED
                 self.ew_state = TLCState.GREEN
+                self.allowed = 'EW'
                 self.start = self.env.now
                 if self.debug:
-                    print(f'{self.env.now:05.1f}s: Traffic Light Transition ({self.ns_state=}, '
-                          f'{self.ew_state=})')
+                    print(f'{self.env.now:05.1f}s: Traffic Light {self.vertex} Transition '
+                          f'({self.ns_state=}, {self.ew_state=}, {self.allowed=})')
             elif (self.ns_state == TLCState.RED and self.ew_state == TLCState.GREEN
                     and self.env.now - self.start >= LIGHT_LENGTH):
                 self.ns_state = TLCState.GREEN
                 self.ew_state = TLCState.RED
+                self.allowed = 'NS'
                 self.start = self.env.now
                 if self.debug:
-                    print(f'{self.env.now:05.1f}s: Traffic Light Transition ({self.ns_state=}, '
-                          f'{self.ew_state=})')
+                    print(f'{self.env.now:05.1f}s: Traffic Light {self.vertex} Transition '
+                          f'({self.ns_state=}, {self.ew_state=}, {self.allowed=})')
 
 
 class Vehicle:
@@ -91,14 +96,17 @@ class Vehicle:
     Track vehicle location in grid, speed, direction, entry and exit times
     * For simplicity, start with Vehicles going only in one direction
     '''
-    def __init__(self, env: simpy.Environment, name: str, origin: str, intersection,
-                 road_length: int, speed: int=30) -> None:
+    def __init__(self, env: simpy.Environment, name: str, origin: tuple[str, tuple[int, int]],
+                 destination: tuple[int, int], traffic_grid, speed: int=30) -> None:
         self.env = env
         self.name = name
         self.origin = origin
-        self.direction = opposite_direction(origin)
-        self.intersection = intersection
-        self.road_length = road_length
+        self.destination = destination
+        self.path = networkx.shortest_path(traffic_grid, origin[1], destination)
+        self.current_node = origin[1]
+        self.next_index = 1
+        self.next_node = self.path[self.next_index]
+        self.traffic_grid = traffic_grid
         self.speed = speed
         self.wait_time = 0
         # When Vehicle enters grid (e.g., self.env.now)
@@ -109,22 +117,42 @@ class Vehicle:
 
     def run(self):
         self.entry_time = self.env.now
-        print(f'{self.entry_time:05.1f}s: {self.name} arrives from {self.origin}')
+        print(f'{self.entry_time:05.1f}s: {self.name} arrives from {self.origin[0]} '
+              f'at {self.origin[1]}')
 
-        if (
-            (self.direction in ('N', 'S') and self.intersection.light.ns_state == TLCState.RED) or
-            (self.direction in ('E', 'W') and self.intersection.light.ew_state == TLCState.RED)
-        ):
-            red_arrival = self.env.now
-            print(f'{self.env.now:05.1f}s: {self.name} waits at red')
-            yield self.intersection.light.change_event
-            self.wait_time = self.env.now - red_arrival
-            print(f'{self.env.now:05.1f}s: {self.name} waited {self.wait_time:.1f}s')
+        while True:
+            # Check if current node is intersection with traffic light:
+            if light := self.traffic_grid.nodes[self.current_node].get('tl'):
+                if get_direction(self.current_node, self.next_node) != light.allowed:
+                    red_arrival = self.env.now
+                    print(f'{self.env.now:05.1f}s: {self.name} waits at red')
+
+                    yield light.change_event
+
+                    self.wait_time = self.env.now - red_arrival
+                    print(f'{self.env.now:05.1f}s: {self.name} waited {self.wait_time:.1f}s')
+
+                print(f'{self.env.now:05.1f}s: {self.name} crosses intersection with traffic light')
+
+            # Travel time to next node in path:
+            duration = (
+                (self.traffic_grid.edges[self.current_node, self.next_node]['length'] / self.speed)
+                * 3600
+            )
+
+            yield self.env.timeout(duration)
+
+            self.current_node = self.next_node
+            print(f'{self.env.now:05.1f}s: {self.name} reaches {self.current_node}')
+
+            # Check if exit node:
+            if self.current_node == self.destination:
+                break
+
+            self.next_index += 1
+            self.next_node = self.path[self.next_index]
 
         VEHICLE_WAIT_TIMES.append(self.wait_time)
-
-        print(f'{self.env.now:05.1f}s: {self.name} crosses intersection')
-        yield self.env.timeout(self.road_length)
 
         self.exit_time = self.env.now
         total_time = self.exit_time - self.entry_time
@@ -132,20 +160,26 @@ class Vehicle:
         print(f'{self.exit_time:05.1f}s: {self.name} exits simulation after {total_time:.1f}s')
 
 
-class Intersection:
-    def __init__(self, env, road_length, debug: bool=False) -> None:
-        self.env = env
-        self.light = TrafficLight(env, debug)
-        self.road_length = road_length
-
-
-def vehicle_generator(env, intersection, arrival_interval):
+def vehicle_generator(env, traffic_grid, arrival_interval):
     count = 0
-    roads = ['N', 'S', 'E', 'W']
+    roads = [
+        ('N', (1, 2)), ('N', (1, 3)),
+        ('W', (2, 1)), ('W', (3, 1)),
+        ('E', (2, 4)), ('E', (3, 4)),
+        ('S', (4, 2)), ('S', (4, 3)),
+    ]
+    destinations = {
+        (1, 2), (1, 3),
+        (2, 1), (3, 1),
+        (2, 4), (3, 4),
+        (4, 2), (4, 3)
+    }
+
     while True:
-        yield env.timeout(random.randint(1, arrival_interval))
-        origin = random.choice(roads)
-        Vehicle(env, f'Car{count}', origin, intersection, intersection.road_length)
+        yield env.timeout(RNG.randint(1, arrival_interval))
+        origin = RNG.choice(roads)
+        destination = RNG.choice(list(destinations - {origin[1]}))
+        Vehicle(env, f'Car{count}', origin, destination, traffic_grid)
         count += 1
 
 
@@ -160,6 +194,10 @@ def report_results():
     print(f"Average Total Time: {statistics.mean(VEHICLE_TOTAL_TIMES):.2f}s")
     print(f"Max Total Time: {max(VEHICLE_TOTAL_TIMES):.2f}s")
     print(f"Min Total Time: {min(VEHICLE_TOTAL_TIMES):.2f}s")
+
+
+def get_direction(current_node, next_node):
+    return 'NS' if current_node[1] == next_node[1] else 'EW'
 
 
 def opposite_direction(direction: str) -> str:
@@ -179,13 +217,38 @@ def get_ellapsed_time(env: simpy.Environment) -> str:
     return f'{minutes:.1f} {minutestr}, {seconds:.1f} {secondstr}'
 
 
+def setup_grid(env: simpy.Environment) -> networkx.Graph:
+    G = networkx.Graph()
+    G.add_nodes_from([
+                 (1, 2), (1, 3),
+         (2, 1), (2, 2), (2, 3), (2, 4),
+         (3, 1), (3, 2), (3, 3), (3, 4),
+                 (4, 2), (4, 3),
+    ])
+    # Note:  Using weight as distance in miles:
+    G.add_edges_from([
+                ((1, 2), (2, 2)), ((1, 3), (2, 3)),
+        ((2, 1), (2, 2)), ((2, 2), (2, 3)), ((2, 3), (2, 4)),
+                ((2, 2), (3, 2)), ((2, 3), (3, 3)),
+        ((3, 1), (3, 2)), ((3, 2), (3, 3)), ((3, 3), (3, 4)),
+                ((3, 2), (4, 2)), ((3, 3), (4, 3)),
+    ])
+    for edge in G.edges:
+        G.edges[edge]['length'] = 1  # Length in miles
+        G.edges[edge]['weight'] = 1  # For future use...
+    for vertex in ((2, 2), (2, 3), (3, 2), (3, 3)):
+        G.nodes[vertex]['tl'] = TrafficLight(env, vertex=vertex, debug=True)
+
+    return G
+
+
 if __name__ == '__main__':
-    rng = random.SystemRandom()
+    RNG = random.SystemRandom()
     env = simpy.Environment()
+    traffic_grid = setup_grid(env)
     sim_start = env.now
-    intersection = Intersection(env, road_length=20, debug=True)
-    env.process(vehicle_generator(env, intersection, arrival_interval=10))
+    env.process(vehicle_generator(env, traffic_grid, arrival_interval=30))
 
     # Run simulation for 10 minutes:
-    env.run(until=100)
+    env.run(until=600)
     report_results()
