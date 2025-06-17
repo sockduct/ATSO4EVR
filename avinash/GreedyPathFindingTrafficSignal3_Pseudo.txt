@@ -1,127 +1,79 @@
+Pseudo-code for Simulation and Greedy Algorithms (Ambulance Delay Focus)
 1. Road Network Simulation Setup
-
 1.1. Network Definition:
 
 Create a graph G using networkx.
 Define 4 "central intersection" nodes (e.g., 'C1', 'C2', 'C3', 'C4'). These nodes will have adaptive traffic signals.
 Define 8 "entry/exit" nodes (e.g., 'E1' through 'E8').
 Add all nodes to G.
-Connect the 4 central intersections to form a connected structure (e.g., a square with diagonals). Assign random travel times (weights) to these edges.
-Connect each of the 8 entry/exit nodes to specific central intersections (e.g., 'E1', 'E2' to 'C1'; 'E3', 'E4' to 'C2', etc.). Assign random travel times (weights) to these edges.
+Connect the 4 central intersections and the 8 entry/exit nodes as before. Assign random travel times (weights) to all edges.
 Add: A global dictionary GLOBAL_TRAFFIC_SIGNALS to store TrafficSignal objects, keyed by their CENTRAL_NODE ID.
 
-1.2. TrafficSignal Class:
+1.2. TrafficSignal Class (Enhanced for Directional Optimization):
+Purpose: Represents an adaptive traffic signal that greedily optimizes for emergency vehicles (EVs) by minimizing their delay at the intersection.
 
 Attributes:
 env: SimPy environment.
+graph: The road network graph (needed to understand node relationships).
 node_id: The ID of the intersection this signal controls.
-switch_time: The time (in minutes) it takes for the signal to change phases to accommodate an EV.
-signal_resource: A SimPy Resource with capacity 1 to ensure that only one emergency vehicle (or signal operation) can control the signal at a time.
-Method: request_clear_path(self, ev_id):
-Log that EV {ev_id} at self.node_id is requesting a clear path.
+switch_time: The time (in minutes) it takes for the signal to change phases.
+signal_resource: A SimPy Resource with capacity 1 to ensure exclusive control of the signal for an EV.
+_current_active_route: tuple (from_node, to_node) or None. This represents the specific road segment (e.g., 'C1' to 'C2') that currently has a green light. This implicitly covers "all four directions" by allowing any valid (incoming, outgoing) pair.
+Method: request_clear_path(self, ev_id, incoming_node, outgoing_node):
+
+Log that EV {ev_id} at self.node_id is requesting a clear path from incoming_node to outgoing_node.
 request = self.signal_resource.request() (Request exclusive control of the signal).
 yield request (Wait until control of the signal is acquired).
 Greedy Signal Optimization Algorithm (Embedded):
-Log that the signal at self.node_id is adapting for EV {ev_id} (including the switch_time delay).
-yield self.env.timeout(self.switch_time) (Simulate the time taken for the signal to switch to the EV's favor).
-Log that the signal at self.node_id is now clear for EV {ev_id}.
+Determine the required_route = (incoming_node, outgoing_node).
+Create a canonical representation for comparison (e.g., tuple(sorted(route)) for undirected graphs, so (A,B) is same as (B,A)).
+Check if the _current_active_route (or its canonical equivalent) matches the required_route.
+If not aligned:
+Log signal adaptation details (e.g., from old route to new, including switch_time delay).
+yield self.env.timeout(self.switch_time) (Simulate the time taken for the signal to switch).
+Update self._current_active_route = required_route.
+Else (aligned):
+Log that the signal is already aligned, no delay incurred.
 self.signal_resource.release(request) (Release control of the signal).
 
-1.3. Emergency Vehicle (EV) Process:
-
+1.3. Emergency Vehicle (EV) Process (Updated for Directional Signal Interaction):
 Class: EmergencyVehicle
 Attributes:
 env: SimPy environment.
 graph: The road network graph.
-start_node: The EV's origin (an entry/exit node).
-destination_node: The EV's target (a central intersection).
-ev_id: Unique identifier for the EV.
+start_node: The EV's origin.
+destination_node: The EV's target.
+ev_id: Unique identifier.
 path: The path calculated by the greedy shortest path algorithm.
-total_travel_time: The cumulative travel time along the path (excluding signal delays initially).
 run() Method (SimPy Process):
-Log EV spawning at start_node.
-Call GREEDY_SHORTEST_PATH function to calculate the optimal path (topology-based, not yet signal-aware) and its total travel time.
-If no path is found, log an error and terminate.
-Iterate through the calculated path node by node:
-For each segment from current_node to next_node in the path:
-If current_node is a CENTRAL_NODE (an intersection with a signal):
-Get the corresponding signal_controller from GLOBAL_TRAFFIC_SIGNALS.
-yield env.process(signal_controller.request_clear_path(self.ev_id)) (This will incorporate the signal waiting/switching time based on the greedy signal algorithm).
-Get the travel_time (weight) for the edge (current_node, next_node) from G.
-yield env.timeout(travel_time) (Simulates travel time along the road segment).
-Log EV arrival at next_node.
-Log EV arrival at the final destination_node and its total calculated travel time (which now includes signal delays).
+Log EV spawning.
+Call GREEDY_SHORTEST_PATH to calculate the topology-based shortest path.
+If no path, terminate.
+Iterate through the calculated path segment by segment:
+segment_start_node = self.path[i]
+segment_end_node = self.path[i + 1]
+Simulate road travel time (yield env.timeout(travel_time)).
+Log arrival at segment_end_node.
+If segment_end_node is a CENTRAL_NODE (an intersection) AND it's not the final destination:
+This means the EV has arrived at the intersection and needs to proceed through it.
+Identify incoming_node_for_signal = segment_start_node.
+Identify outgoing_node_for_signal = self.path[i + 2] (the next node after the intersection in the path).
+Get the signal_controller for segment_end_node.
+yield env.process(signal_controller.request_clear_path(self.ev_id, incoming_node_for_signal, outgoing_node_for_signal)) (This call handles the potential signal delay based on its greedy optimization).
+Log EV arrival at its final destination_node.
 
-1.4. Emergency Vehicle Source:
-
-Function: source_emergency_vehicles(env, graph, num_vehicles)
-Logic:
-For a predefined num_vehicles:
-Randomly select a start_node from ENTRY_EXIT_NODES.
-Randomly select a destination_node from CENTRAL_NODES.
-Generate a random inter_arrival_time.
-yield env.timeout(inter_arrival_time) (Wait before spawning next EV).
-Start a new EmergencyVehicle process: env.process(EmergencyVehicle(...).run()).
-
-1.5. Main Simulation Loop:
-
-Initialize random seed for reproducibility.
-Create the road_network_graph.
-Initialize SimPy.Environment().
-Add: Initialize TrafficSignal objects for each CENTRAL_NODE and populate the GLOBAL_TRAFFIC_SIGNALS dictionary. Define SIGNAL_SWITCH_TIME constant.
-Start the source_emergency_vehicles process.
+1.4. Emergency Vehicle Source and Main Simulation Loop: (Remains largely the same)
+Initialization of random seed, SimPy.Environment().
+Crucially, when initializing TrafficSignal objects: Pass the road_network_graph to their constructor.
+Start source_emergency_vehicles process.
 Run the simulation env.run(until=SIM_DURATION).
 Log simulation start and end.
 
 2. Greedy Algorithm for Shortest Path (Dijkstra's)
-
 Function: GREEDY_SHORTEST_PATH(Graph G, StartNode S, DestinationNode D)
-Inputs:
-G: The network graph.
-S: The starting node.
-D: The destination node.
-Outputs:
-path: A list of nodes representing the shortest path based purely on edge weights (travel times).
-total_time: The cumulative weight (travel time) of the shortest path.
-Logic:
 
-Initialization:
-Create distances dictionary: distances[node] = infinity for all nodes, distances[S] = 0.
-Create previous_nodes dictionary: previous_nodes[node] = None for all nodes.
-Initialize priority_queue as a min-heap. Add (0, S) to it (distance, node).
-Main Loop:
-While priority_queue is not empty:
-Extract current_distance, current_node with the smallest current_distance from priority_queue.
-If current_distance is greater than distances[current_node], continue.
-If current_node is D, break.
-For each neighbor of current_node:
-edge_weight = G.get_edge_data(current_node, neighbor)['weight'].
-new_distance = current_distance + edge_weight.
-If new_distance < distances[neighbor]:
-distances[neighbor] = new_distance.
-previous_nodes[neighbor] = current_node.
-Add (new_distance, neighbor) to priority_queue.
-Path Reconstruction:
-If distances[D] is still infinity, return None, infinity (no path).
-Otherwise, reconstruct the path by backtracking from D using previous_nodes until S is reached.
-Return the path and distances[D].
-Full Implementation (Updated emergency_vehicle_simulation)
-Conclusion and Suggestions
-The updated simulation now incorporates adaptive traffic signal optimization.
+Inputs: G, S, D.
+Outputs: path, total_time.
 
-Key Changes:
-
-TrafficSignal Class: A new TrafficSignal class has been introduced. Each central intersection (e.g., 'C1', 'C2') now hosts an instance of this class.
-Greedy Signal Optimization: The TrafficSignal's request_clear_path method embodies the greedy algorithm for signal optimization. When an emergency vehicle (EV) arrives at a signalized intersection, it immediately requests the signal to clear its path. The signal then dedicates itself to the EV's passage, simulating a SIGNAL_SWITCH_TIME delay. This is "greedy" because it prioritizes the EV exclusively and instantly, without considering other traffic or complex phase optimization, aiming for the minimal delay for the EV at that moment.
-EV-Signal Interaction: The EmergencyVehicle.run() method has been modified. As an EV traverses its path, when it arrives at a CENTRAL_NODE (an intersection with a signal), its SimPy process yields to the signal's request_clear_path method. This pause in the EV's movement simulates the time taken for the signal to adapt to its presence.
-Global Signal Access: A GLOBAL_TRAFFIC_SIGNALS dictionary is used to make TrafficSignal instances accessible to all EmergencyVehicle processes.
-Dijkstra's Algorithm (Unchanged): The greedy_shortest_path (Dijkstra's) algorithm remains the same. It calculates the shortest path based purely on the static road travel times. The dynamic delays introduced by traffic signals are then applied during the simulation's execution, after the initial path is determined.
-This enhanced simulation provides a more realistic model by accounting for the delays introduced by traffic signals, which adapt in a greedy manner to expedite emergency vehicle travel.
-
-Further Enhancements:
-
-Dynamic Signal States: Instead of a fixed SIGNAL_SWITCH_TIME always being applied, you could introduce actual signal phases (e.g., North-South green, East-West green) and only apply the switch_time if the current phase is not aligned with the EV's required direction. This would require defining directional paths for each signal.
-Contention at Signals: If multiple EVs arrive at the same signal at roughly the same time, the signal_resource ensures they queue. You could add logic to prioritize one EV over another (e.g., based on mission urgency).
-Non-EV Traffic: Introduce simulated "regular" traffic that also interacts with signals, making the signal optimization problem more complex and impactful. This would allow for evaluating the trade-off between EV speed and general traffic flow.
-Visual Representation: Integrate with a visualization library (e.g., matplotlib, pygame, or a web-based framework) to visually demonstrate the vehicles moving and signals changing.
-Performance Metrics: Collect more detailed statistics, such as total travel time for each EV (including signal delays), average signal delay per EV, or signal utilization.
+Logic: (Remains unchanged from previous version)
+This algorithm finds the shortest path based only on the static travel times (edge weights). The dynamic delays introduced by traffic signals are handled during the simulation traversal by the EmergencyVehicle process interacting with the TrafficSignal objects.
