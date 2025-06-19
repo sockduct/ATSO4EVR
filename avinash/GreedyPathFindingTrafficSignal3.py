@@ -51,8 +51,10 @@ def create_road_network():
     G.add_edge('C2', 'C3', weight=random.uniform(5, 15)) # Edge between C2 and C3
     G.add_edge('C3', 'C4', weight=random.uniform(5, 15)) # Edge between C3 and C4
     G.add_edge('C4', 'C1', weight=random.uniform(5, 15)) # Edge between C4 and C1
-    G.add_edge('C1', 'C3', weight=random.uniform(7, 20)) # Diagonal edge C1-C3
-    G.add_edge('C2', 'C4', weight=random.uniform(7, 20)) # Diagonal edge C2-C4
+    G.add_edge('E1', 'E8', weight=random.uniform(5, 20)) # Edge between E1-E8
+    G.add_edge('E2', 'E3', weight=random.uniform(5, 20)) # Edge between E2-E3
+    G.add_edge('E4', 'E5', weight=random.uniform(5, 20)) # Edge between E4-E5
+    G.add_edge('E6', 'E7', weight=random.uniform(5, 20)) # Edge between E6-E7
 
     # Add edges connecting entry/exit nodes to their respective central intersections.
     # Each central node is connected to two distinct entry/exit nodes.
@@ -311,8 +313,20 @@ def source_emergency_vehicles(env, graph, num_vehicles):
     for i in range(1, num_vehicles + 1):
         # Randomly choose a starting point from the entry/exit nodes
         start_node = random.choice(ENTRY_EXIT_NODES)
-        # Randomly choose a central intersection as the destination
-        destination_node = random.choice(CENTRAL_NODES)
+
+                # Create list of valid destination nodes
+        valid_destinations = [
+            node for node in ENTRY_EXIT_NODES 
+            if node != start_node  # Not the same as start
+            and not graph.has_edge(start_node, node)  # Not adjacent
+            and node not in NODE_CONNECTIONS[next(  # Not connected to same central node
+                central for central, entries in NODE_CONNECTIONS.items() 
+                if start_node in entries
+            )]
+        ]
+
+        # Randomly choose a destnmation from the valid options.
+        destination_node = random.choice(valid_destinations)
 
         # Simulate a random inter-arrival time for vehicles (e.g., exponential distribution)
         # This makes vehicle arrivals more realistic and less simultaneous.
