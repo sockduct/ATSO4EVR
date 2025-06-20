@@ -194,7 +194,7 @@ class Vehicle:
             if light := self.traffic_grid.nodes[next_node].get('tl'):
                 direction = get_direction(current_node, next_node)
 
-                def preempt_and_restore(light=light, arrival_time=arrival_time,
+                def preempt(light=light, arrival_time=arrival_time,
                                         direction=direction, env=self.env):
                     preempt_buffer = 5  # seconds before arrival to preempt
                     restore_buffer = 2  # seconds after passing to restore
@@ -208,15 +208,10 @@ class Vehicle:
                     print(f'{self.env.now:05.1f}s: TL preemption for {light.vertex} awoke '
                           f'for Ambulance for {direction=}')
 
-                    # Save original state:
-                    original_allowed = light.allowed
-                    light_original_end = None
-
                     light_future_state = self.get_light_state(light, direction)
 
                     # Light will change - extend:
                     if light_future_state == TLCState.YELLOW:
-                        light_original_end = light.start + light.light_length
                         light.start += preempt_buffer + restore_buffer
                         print(f'{env.now:05.1f}s: ⚠️ Extended TL at {light.vertex} for '
                               f'Ambulance for {direction=}')
@@ -231,40 +226,7 @@ class Vehicle:
                         print(f'{env.now:05.1f}s: ⚠️ Preempted TL at {light.vertex} for '
                               f'Ambulance for {direction=}')
 
-                    # Wait until just after EV passes the light
-                    # yield env.timeout(travel_time_seconds + restore_buffer)
-                    yield env.timeout(preempt_buffer + restore_buffer)
-
-                    print(f'{self.env.now:05.1f}s: TL restoration check for {light.vertex} awoke '
-                          f'after Ambulance passed through for {direction=}')
-
-                    # Restore original state if it changed
-                    if (
-                        (light_future_state == TLCState.YELLOW and
-                         light.allowed == original_allowed) or
-                        light_future_state == TLCState.RED
-                    ):
-                        light.ns_state = (
-                            TLCState.GREEN if light.ns_state == TLCState.RED else TLCState.RED
-                        )
-                        light.ew_state = (
-                            TLCState.GREEN if light.ew_state == TLCState.RED else TLCState.RED
-                        )
-                        light.allowed = 'NS' if light.allowed == 'EW' else 'EW'
-                        light.start = env.now
-                        light.change_event.succeed()
-                        light.change_event = env.event()
-                        print(f'{env.now:05.1f}s: ✅ Restored TL at {light.vertex} to '
-                                f'{light.allowed=} after Ambulance passed through for '
-                                f'{direction=}')
-
-                        light.start -= light_original_end
-                    elif light_future_state == TLCState.YELLOW:
-                        light.start -= light_original_end
-                        print(f'{env.now:05.1f}s: ✅ Restored TL at {light.vertex} timing '
-                                f'after Ambulance passed through for {direction=}')
-
-                env.process(preempt_and_restore())
+                env.process(preempt())
 
     def get_light_state(self, light, direction):
         '''
