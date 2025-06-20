@@ -163,6 +163,11 @@ class Vehicle:
             # Complexity of Floyd-Warshall is O(V^3) where V is the number of vertices (intersections).
             self.path4 = floyd_warshall_only_start_end_node(traffic_grid, origin[1], destination)
             print(f"DEBUG: Emergency vehicle {name} using floyd_warshall_only_start_end_node dynamic programmming algorithm path: {self.path4}")
+
+            # New function based on DynamicProgramming.py's logic
+            # This will compute a shortest path using a grid-based DP approach
+            self.path5 = grid_based_dp_path_finder(traffic_grid, origin[1], destination)
+            print(f"DEBUG: Emergency vehicle {name} using Grid-based DP path: {self.path5}")
   
         if self.emergency and floyd_paths:
             # Use pre-computed Floyd-Warshall path for emergency vehicles
@@ -181,6 +186,11 @@ class Vehicle:
             # Complexity of Dijkstra's algorithm is O((V + E) log V) where V is the number of vertices and E is the number of edges
             self.path2 = dijkstra_greedy_dynamic_shortest_path(traffic_grid, origin[1], destination)
             print(f"DEBUG: Regular vehicle {name} using Dijkstra's greedy and dynamic path: {self.path2}")
+
+            # New function based on DynamicProgramming.py's logic
+            # This will compute a shortest path using a grid-based DP approach
+            self.path5 = grid_based_dp_path_finder(traffic_grid, origin[1], destination)
+            print(f"DEBUG: Regular vehicle {name} using Grid-based DP path : {self.path5}")
 
 
         self.previous_node = None # Initialize the previous node to None
@@ -452,6 +462,99 @@ def bellman_ford_dynamic_shortest_path(graph: networkx.Graph, start_node, end_no
     while current is not None:
         path.insert(0, current)
         current = predecessors[current]
+
+    return path
+
+def grid_based_dp_path_finder(graph: networkx.Graph, start_node, end_node):
+    """
+    Finds the shortest path from start_node to end_node in a grid-like graph
+    using a dynamic programming approach similar to the adaptive_traffic_signal_dp_with_path
+    function, adapted for NetworkX graphs and edge weights.
+
+    This function attempts to propagate costs in a systematic grid-like iteration.
+    For arbitrary edge weights or complex graph structures, Dijkstra's or Bellman-Ford
+    are more universally robust. This method's optimality depends on the grid's topology
+    and the nature of costs.
+
+    Args:
+        graph: A NetworkX graph representing the traffic grid.
+        start_node: The starting node (tuple of coordinates, e.g., (1,2)).
+        end_node: The destination node (tuple of coordinates).
+
+    Returns:
+        A list of nodes representing the shortest path, or None if no path exists.
+    """
+    # Initialize distances and predecessors
+    distances = {node: float('inf') for node in graph.nodes}
+    predecessors = {node: None for node in graph.nodes}
+    distances[start_node] = 0
+
+    # Get all nodes, sorted by their grid coordinates to ensure a consistent processing order
+    # This mimics the (i, j) iteration of the original DynamicProgramming.py file.
+    # Sorting ensures a consistent 'forward' propagation.
+    sorted_nodes = sorted(graph.nodes) 
+    
+    # We need multiple passes to ensure costs propagate correctly across the grid,
+    # similar to Bellman-Ford. A single pass (as in DynamicProgramming.py) is
+    # only guaranteed to be optimal for DAGs or specific cost structures.
+    # In a general grid where paths can go up/left/down/right,
+    # a node's true shortest path might depend on a node that comes "later"
+    # in a simple (i,j) iteration. Max V-1 passes are needed for optimality.
+    
+    num_nodes = len(graph.nodes)
+    
+    # Bellman-Ford inspired multiple passes over all nodes to relax edges
+    # This ensures that costs propagate correctly across the grid.
+    for _ in range(num_nodes - 1): # V-1 passes
+        # This nested loop structure mimics iterating over all cells and their neighbors
+        # in a way that allows costs to propagate. It's essentially performing
+        # relaxation on all edges repeatedly.
+        
+        # Iterate over all nodes in a consistent order (mimicking grid cells)
+        for u in sorted_nodes: 
+            if distances[u] == float('inf'):
+                continue # Skip if node is unreachable so far
+
+            # Relax edges emanating from u
+            for v in graph.neighbors(u):
+                # Using 'length' as weight, as per your graph setup
+                edge_weight = graph.edges[u, v].get('length', 1) 
+                
+                # Check for additional costs at the neighbor node (like traffic light penalty)
+                # For this adaptation, let's consider a traffic light at a node 'v'
+                # adds an 'entry cost' to 'v' if it's a traffic light node.
+                # In sim4.py, traffic light waiting is dynamic; for pre-computation,
+                # we can either ignore it (cost 0), or assign a fixed penalty.
+                # Let's add a small fixed penalty for *entering* an intersection with a traffic light.
+                # This is a simplification to mimic the 'signal_cost' concept.
+                node_penalty = 0
+                if 'tl' in graph.nodes[v]: # If node v has a traffic light
+                    node_penalty = 0.1 # Small penalty for passing through an intersection (example value)
+                                       # This is conceptual; the actual simulation handles waiting.
+
+                new_dist = distances[u] + edge_weight + node_penalty
+
+                if new_dist < distances[v]:
+                    distances[v] = new_dist
+                    predecessors[v] = u
+
+    # Reconstruct the path
+    path = []
+    current = end_node
+    # Check if destination is reachable
+    if distances[end_node] == float('inf'):
+        return None # No path found
+
+    while current is not None:
+        path.insert(0, current)
+        current = predecessors[current]
+        # Safety break to prevent infinite loops if predecessors chain is broken (e.g., unreachable start)
+        if len(path) > num_nodes: 
+            return None 
+
+    # If start_node is not reachable, path will start with None or be incomplete
+    if path[0] != start_node:
+        return None # Path reconstruction failed to reach start_node
 
     return path
 
