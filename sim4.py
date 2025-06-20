@@ -160,6 +160,10 @@ class Vehicle:
             # Lets Use the Bellman Ford Dynamic programming algorithm for emergency vehicles
             self.path3 = bellman_ford_dynamic_shortest_path(traffic_grid, origin[1], destination)
             print(f"DEBUG: Emergency vehicle {name} using Bellman-Ford dynamic programmming algorithm path: {self.path3}")
+            # Complexity of Floyd-Warshall is O(V^3) where V is the number of vertices (intersections).
+            self.path4 = floyd_warshall_only_start_end_node(traffic_grid, origin[1], destination)
+            print(f"DEBUG: Emergency vehicle {name} using floyd_warshall_only_start_end_node dynamic programmming algorithm path: {self.path4}")
+  
         if self.emergency and floyd_paths:
             # Use pre-computed Floyd-Warshall path for emergency vehicles
             self.path = reconstruct_path_floyd(
@@ -500,6 +504,58 @@ def dijkstra_greedy_dynamic_shortest_path(graph: networkx.Graph, start_node, end
         current = predecessors[current]
 
     return path
+
+def floyd_warshall_only_start_end_node(graph: networkx.Graph, start_node, end_node):
+    """
+    Computes the shortest path from start_node to end_node using the Floyd-Warshall algorithm.
+    This version computes the shortest path between two specific nodes, rather than all pairs.
+
+    Args:
+        graph: A NetworkX graph where edges have a 'length' attribute.
+        start_node: The starting node of the path.
+        end_node: The ending node of the path.
+
+    Returns:
+        A list of nodes representing the shortest path, or None if no path exists.
+    """
+
+    # Initialize distances and next_hops dictionaries
+    nodes = list(graph.nodes)
+    distances = {node: {v: float('inf') for v in nodes} for node in nodes}
+    next_hops = {node: {v: None for v in nodes} for node in nodes}
+
+    # Set initial distances based on direct edges
+    for node in nodes:
+        distances[node][node] = 0  # Distance to itself is 0
+
+    for u, v, data in graph.edges(data=True):
+        weight = data.get('length', 1)  # Default to 1 if 'length' not present
+        distances[u][v] = weight
+        next_hops[u][v] = v
+        distances[v][u] = weight
+        next_hops[v][u] = u
+
+    # Floyd-Warshall algorithm
+    for k in nodes:
+        for i in nodes:
+            for j in nodes:
+                if distances[i][j] > distances[i][k] + distances[k][j]:
+                    distances[i][j] = distances[i][k] + distances[k][j]
+                    next_hops[i][j] = next_hops[i][k]
+
+    # Reconstruct path
+    path = []
+    if next_hops[start_node][end_node] is not None:
+        current = start_node
+        while current != end_node:
+            path.append(current)
+            current = next_hops[current][end_node]
+            if current is None:
+                return None  # No path exists
+        path.append(end_node)
+        return path
+    else:
+        return None  # No path exists
 
 def floyd_warshall_dynamic_shortest_paths(graph: networkx.Graph):
     """
