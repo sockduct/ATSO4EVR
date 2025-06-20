@@ -133,7 +133,8 @@ class Intersection:
         self.traffic_lights[f"{Direction.WEST.value}bound_Straight"].set_state(LightState.RED)
         print("Default: North-South Green, East-West Red")
 
-
+    # Prioritize Emergency Vehicle - This method implements a greedy algorithm to prioritize emergency vehicles at the intersection.
+    # The greedy choice is to set the lane of the emergency vehicle to GREEN and all conflicting lanes to RED.
     def prioritize_emergency_vehicle(self, ev_lane: str):
         """
         Implements greedy algorithm for emergency vehicle priority. 
