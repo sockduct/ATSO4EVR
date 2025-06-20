@@ -17,12 +17,14 @@ Traffic Grid Simulation:
 # Standard Library:
 from enum import Enum
 from itertools import pairwise
+from math import inf, sqrt
 import random
 import statistics
 import sys
 
 # Third-Party:
 import networkx
+import numpy as np
 import simpy
 
 
@@ -112,6 +114,8 @@ class Vehicle:
         self.origin = origin
         self.destination = destination
         self.path = networkx.shortest_path(traffic_grid, origin[1], destination)
+        # self.path = dynamic_routing(traffic_grid, origin[1], destination)
+        # print(f'{self.origin=}, {self.destination=}, {self.path=}')
         self.previous_node = None
         self.current_node = origin[1]
         self.next_index = 1
@@ -130,6 +134,10 @@ class Vehicle:
 
     def run(self):
         self.entry_time = self.env.now
+
+        ### Debugging:
+        # print(f'Original path:  {self.old_path}\nNew path:  {self.path}')
+
         print(f'{self.entry_time:05.1f}s: {self.name} arrives from {self.origin[0]} '
               f'at {self.origin[1]} heading to {self.destination} {self.path}')
 
@@ -195,7 +203,7 @@ class Vehicle:
                 direction = get_direction(current_node, next_node)
 
                 def preempt(light=light, arrival_time=arrival_time,
-                                        direction=direction, env=self.env):
+                            direction=direction, env=self.env):
                     preempt_buffer = 5  # seconds before arrival to preempt
                     restore_buffer = 2  # seconds after passing to restore
 
@@ -252,29 +260,68 @@ class Vehicle:
             return TLCState.RED
 
 
-def vehicle_generator(env, traffic_grid, arrival_interval):
+def dynamic_routing(traffic_grid, start, destination):
+    # Grid length or number of vertices must be a power of 2:
+    # grid = list(traffic_grid.nodes)
+    grid = [
+        (0, 0), (0, 1), (0, 2), (0, 3),
+        (1, 0), (1, 1), (1, 2), (1, 3),
+        (2, 0), (2, 1), (2, 2), (2, 3),
+        (3, 0), (3, 1), (3, 2), (3, 3),
+    ]
+    edges = list(traffic_grid.edges)
+
+    # grid = np.reshape(grid, (4, -1))
+    grid = np.array(grid)
+    cols = 4
+    grid = [grid[i:i + cols] for i in range(0, len(grid), cols)]
+    n, m = len(grid), len(grid[0])
+    dp = [[inf] * m for _ in range(n)]
+    parent = [[None for _ in range(m)] for _ in range(n)]  # To track path
+
+    # Debugging:
+    print(f'{start=}, {destination=}\n')
+
+    dp[start[0]][start[1]] = 0
+
+    for i in range(n):
+        for j in range(m):
+            if dp[i][j] == inf:
+                continue
+            for ni, nj in list(traffic_grid.edges((i, j))):
+                print(f'{ni=}, {nj=}')
+                # immediate_cost = traffic_grid.edges[(i, j), (ni, nj)]['weight']
+                immediate_cost = traffic_grid.edges[ni, nj]['weight']
+                new_cost = dp[ni[0]][ni[1]] + immediate_cost
+                if new_cost < dp[nj[0]][nj[1]]:
+                    dp[nj[0]][nj[1]] = new_cost
+                    parent[nj[0]][nj[1]] = ni  # Track where we came from
+
+    print(f'{dp=}\n{parent=}')
+
+    # Reconstruct path from destination to start
+    path = []
+    curr = destination
+    while curr is not None:
+        path.append(curr)
+        curr = parent[curr[0]][curr[1]]
+    path.reverse()  # Reverse the path to get start -> destination
+
+    print(f'dynamic_routing:  cost is {dp[destination[0]][destination[1]]} and {path=}')
+    return path
+
+
+def vehicle_generator(env, traffic_grid, origins, destinations, epath, arrival_interval):
     ambulance_in = False
     count = 0
-    roads = [
-        ('N', (1, 2)), ('N', (1, 3)),
-        ('W', (2, 1)), ('W', (3, 1)),
-        ('E', (2, 4)), ('E', (3, 4)),
-        ('S', (4, 2)), ('S', (4, 3)),
-    ]
-    destinations = {
-        (1, 2), (1, 3),
-        (2, 1), (3, 1),
-        (2, 4), (3, 4),
-        (4, 2), (4, 3)
-    }
 
     while True:
         yield env.timeout(RNG.randint(1, arrival_interval))
         if env.now > 90 and not ambulance_in:
-            Vehicle(env, 'Ambulance', ('S', (4, 2)), (2, 4), traffic_grid, emergency=True)
+            Vehicle(env, 'Ambulance', epath[0], epath[1], traffic_grid, emergency=True)
             ambulance_in = True
         else:
-            origin = RNG.choice(roads)
+            origin = RNG.choice(origins)
             destination = RNG.choice(list(destinations - {origin[1]}))
             Vehicle(env, f'Car-{count}', origin, destination, traffic_grid)
             count += 1
@@ -297,26 +344,15 @@ def get_direction(current_node, next_node):
     return 'NS' if current_node[1] == next_node[1] else 'EW'
 
 
-def setup_grid(env: simpy.Environment) -> networkx.Graph:
+def setup_grid(env: simpy.Environment, vertices, edges, lights) -> networkx.Graph:
     G = networkx.Graph()
-    G.add_nodes_from([
-                 (1, 2), (1, 3),
-         (2, 1), (2, 2), (2, 3), (2, 4),
-         (3, 1), (3, 2), (3, 3), (3, 4),
-                 (4, 2), (4, 3),
-    ])
+    G.add_nodes_from(vertices)
     # Note:  Using weight as distance in miles:
-    G.add_edges_from([
-                ((1, 2), (2, 2)), ((1, 3), (2, 3)),
-        ((2, 1), (2, 2)), ((2, 2), (2, 3)), ((2, 3), (2, 4)),
-                ((2, 2), (3, 2)), ((2, 3), (3, 3)),
-        ((3, 1), (3, 2)), ((3, 2), (3, 3)), ((3, 3), (3, 4)),
-                ((3, 2), (4, 2)), ((3, 3), (4, 3)),
-    ])
+    G.add_edges_from(edges)
     for edge in G.edges:
         G.edges[edge]['length'] = 1  # Length in miles
         G.edges[edge]['weight'] = 1  # For future use...
-    for vertex in ((2, 2), (2, 3), (3, 2), (3, 3)):
+    for vertex in lights:
         G.nodes[vertex]['tl'] = TrafficLight(env, vertex=vertex, debug=True)
 
     return G
@@ -328,10 +364,91 @@ if __name__ == '__main__':
 
     RNG = random.SystemRandom()
     env = simpy.Environment()
-    traffic_grid = setup_grid(env)
+
+    '''
+    vertices = [
+                (0, 1), (0, 2),
+        (1, 0), (1, 1), (1, 2), (1, 3),
+        (2, 0), (2, 1), (2, 2), (2, 3),
+                (3, 1), (3, 2),
+    ]
+    edges = [
+                ((0, 1), (1, 1)), ((0, 2), (1, 2)),
+        ((1, 0), (1, 1)), ((1, 1), (1, 2)), ((1, 2), (1, 3)),
+                ((1, 1), (2, 1)), ((1, 2), (2, 2)),
+        ((2, 0), (2, 1)), ((2, 1), (2, 2)), ((2, 2), (2, 3)),
+                ((2, 1), (3, 1)), ((2, 2), (3, 2)),
+    ]
+    lights = [
+        (1, 1), (1, 2), (2, 1), (2, 2)
+    ]
+    origins = [
+        ('N', (0, 1)), ('N', (0, 2)),
+        ('W', (1, 0)), ('W', (2, 0)),
+        ('E', (1, 3)), ('E', (2, 3)),
+        ('S', (3, 1)), ('S', (3, 2)),
+    ]
+    destinations = {
+        (0, 1), (0, 2),
+        (1, 0), (2, 0),
+        (1, 3), (2, 3),
+        (3, 1), (3, 2)
+    }
+    emergency_path = [('S', (3, 1)), (1, 3)]
+    duration = 600
+    '''
+    vertices = [
+                (0, 1), (0, 2), (0, 3), (0, 4),
+        (1, 0), (1, 1), (1, 2), (1, 3), (1, 4), (1, 5),
+        (2, 0), (2, 1), (2, 2), (2, 3), (2, 4), (2, 5),
+        (3, 0), (3, 1), (3, 2), (3, 3), (3, 4), (3, 5),
+        (4, 0), (4, 1), (4, 2), (4, 3), (4, 4), (4, 5),
+                (5, 1), (5, 2), (5, 3), (5, 4),
+    ]
+    edges = [
+                ((0, 1), (1, 1)), ((0, 2), (1, 2)), ((0, 3), (1, 3)), ((0, 4), (1, 4)),
+        ((1, 0), (1, 1)), ((1, 1), (1, 2)), ((1, 2), (1, 3)), ((1, 3), (1, 4)), ((1, 4), (1, 5)),
+                ((1, 1), (2, 1)), ((1, 2), (2, 2)), ((1, 3), (2, 3)), ((1, 4), (2, 4)),
+        ((2, 0), (2, 1)), ((2, 1), (2, 2)), ((2, 2), (2, 3)), ((2, 3), (2, 4)), ((2, 4), (2, 5)),
+                ((2, 1), (3, 1)), ((2, 2), (3, 2)), ((2, 3), (3, 3)), ((2, 4), (3, 4)),
+        ((3, 0), (3, 1)), ((3, 1), (3, 2)), ((3, 2), (3, 3)), ((3, 3), (3, 4)), ((3, 4), (3, 5)),
+                ((3, 1), (4, 1)), ((3, 2), (4, 2)), ((3, 3), (4, 3)), ((3, 4), (4, 4)),
+        ((4, 0), (4, 1)), ((4, 1), (4, 2)), ((4, 2), (4, 3)), ((4, 3), (4, 4)), ((4, 4), (4, 5)),
+                ((4, 1), (5, 1)), ((4, 2), (5, 2)), ((4, 3), (5, 3)), ((4, 4), (5, 4)),
+    ]
+    lights = [
+        (1, 1), (1, 2), (1, 3), (1, 4),
+        (2, 1), (2, 2), (2, 3), (2, 4),
+        (3, 1), (3, 2), (3, 3), (3, 4),
+        (4, 1), (4, 2), (4, 3), (4, 4),
+    ]
+    origins = [
+        ('N', (0, 1)), ('N', (0, 2)), ('N', (0, 3)), ('N', (0, 4)),
+        ('W', (1, 0)), ('W', (2, 0)), ('W', (3, 0)), ('W', (4, 0)),
+        ('E', (1, 5)), ('E', (2, 5)), ('E', (3, 5)), ('E', (4, 5)),
+        ('S', (5, 1)), ('S', (5, 2)), ('S', (5, 3)), ('S', (5, 4)),
+    ]
+    destinations = {
+        (0, 1), (0, 2), (0, 3), (0, 4),
+        (1, 0), (2, 0), (3, 0), (4, 0),
+        (1, 5), (2, 5), (3, 5), (4, 5),
+        (5, 1), (5, 2), (5, 3), (5, 4),
+    }
+    emergency_path = [('S', (5, 1)), (1, 5)]
+    duration = 1080
+
+    traffic_grid = setup_grid(env, vertices, edges, lights)
     sim_start = env.now
-    env.process(vehicle_generator(env, traffic_grid, arrival_interval=10))
+
+    # Debug:
+    # Vehicle(env, f'Car-0', ('E', (1, 1)), (2, 0), traffic_grid)
+
+    env.process(
+        vehicle_generator(
+            env, traffic_grid, origins, destinations, emergency_path, arrival_interval=10
+        )
+    )
 
     # Run simulation for 10 minutes:
-    env.run(until=600)
+    env.run(until=duration)
     report_results()
