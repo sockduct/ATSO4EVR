@@ -16,6 +16,7 @@ Traffic Grid Simulation:
 
 # Standard Library:
 from enum import Enum
+from itertools import pairwise
 import random
 import statistics
 import sys
@@ -50,9 +51,11 @@ class TrafficLight:
 
     Note:  Omitting yellow state for now
     '''
-    def __init__(self, env: simpy.Environment, vertex, debug: bool=False) -> None:
+    def __init__(self, env: simpy.Environment, vertex, light_length: int=LIGHT_LENGTH,
+                 debug: bool=False) -> None:
         self.env = env
         self.vertex = vertex
+        self.light_length = light_length
         self.debug = debug
         self.ns_state = TLCState.GREEN
         self.ew_state = TLCState.RED
@@ -61,6 +64,9 @@ class TrafficLight:
         self.init = True
         self.change_event = env.event()
         env.process(self.run())
+
+    def __repr__(self):
+        return f'TrafficLight({self.vertex}, {self.allowed=})'
 
     def run(self):
         while True:
@@ -71,7 +77,7 @@ class TrafficLight:
             yield self.env.timeout(1)
 
             if (self.ns_state == TLCState.GREEN and self.ew_state == TLCState.RED
-                    and self.env.now - self.start >= LIGHT_LENGTH):
+                    and self.env.now - self.start >= self.light_length):
                 self.change_event.succeed()
                 self.change_event = self.env.event()
                 self.ns_state = TLCState.RED
@@ -82,7 +88,7 @@ class TrafficLight:
                     print(f'{self.env.now:05.1f}s: Traffic Light {self.vertex} Transition '
                           f'({self.ns_state=}, {self.ew_state=}, {self.allowed=})')
             elif (self.ns_state == TLCState.RED and self.ew_state == TLCState.GREEN
-                    and self.env.now - self.start >= LIGHT_LENGTH):
+                    and self.env.now - self.start >= self.light_length):
                 self.ns_state = TLCState.GREEN
                 self.ew_state = TLCState.RED
                 self.allowed = 'NS'
@@ -106,6 +112,7 @@ class Vehicle:
         self.origin = origin
         self.destination = destination
         self.path = networkx.shortest_path(traffic_grid, origin[1], destination)
+        self.previous_node = None
         self.current_node = origin[1]
         self.next_index = 1
         self.next_node = self.path[self.next_index]
@@ -118,6 +125,9 @@ class Vehicle:
         self.exit_time = None
         env.process(self.run())
 
+    def __repr__(self):
+        return f'Vehicle({self.name} at {self.current_node})'
+
     def run(self):
         self.entry_time = self.env.now
         print(f'{self.entry_time:05.1f}s: {self.name} arrives from {self.origin[0]} '
@@ -126,7 +136,7 @@ class Vehicle:
         if self.emergency:
             print(f'{self.env.now:05.1f}s: {self.name} is an emergency vehicle - setting '
                   'up traffic light preemption...')
-            TrafficLightPreemptor(self)
+            self.preempt_traffic_lights()
 
         while True:
             # Check if current node is intersection with traffic light:
@@ -156,8 +166,10 @@ class Vehicle:
                 self.path[self.next_index + 1]
                 if self.next_index + 1 < len(self.path) else 'Exit'
             )
+
+            direction = get_direction(self.previous_node, self.current_node)
             print(f'{self.env.now:05.1f}s: {self.name} reaches {self.current_node} from '
-                  f'{self.previous_node} going to {next_node}')
+                  f'{self.previous_node} going to {next_node}, {direction=}')
 
             # Check if exit node:
             if self.current_node == self.destination:
@@ -173,51 +185,38 @@ class Vehicle:
         VEHICLE_TOTAL_TIMES.append(total_time)
         print(f'{self.exit_time:05.1f}s: {self.name} exits simulation after {total_time:.1f}s')
 
-
-class TrafficLightPreemptor:
-    def __init__(self, vehicle):
-        self.vehicle = vehicle
-        self.path = self.vehicle.path
-        self.traffic_grid = self.vehicle.traffic_grid
-        self.speed = self.vehicle.speed
-        self.preempt_traffic_lights()
-
     def preempt_traffic_lights(self):
-        for i in range(len(self.path) - 1):
-            current_node = self.path[i]
-            next_node = self.path[i + 1]
-            edge_length_miles = self.traffic_grid.edges[current_node, next_node]['length']
-            travel_time_seconds = (edge_length_miles / self.speed) * 3600
+        arrival_time = 0
+        for current_node, next_node in pairwise(self.path):
+            edge_length_miles = self.traffic_grid.edges[self.current_node, self.next_node]['length']
+            arrival_time += (edge_length_miles / self.speed) * 3600
 
-            # Compute estimated arrival time at next node
-            arrival_time = env.now + sum(
-                (
-                    self.traffic_grid.edges[self.path[j], self.path[j + 1]]['length'] / self.speed
-                ) * 3600
-                for j in range(i + 1)
-            )
-
-            if 'tl' in self.traffic_grid.nodes[next_node]:
-                light = self.traffic_grid.nodes[next_node]['tl']
+            if light := self.traffic_grid.nodes[next_node].get('tl'):
                 direction = get_direction(current_node, next_node)
 
-                def preempt_and_restore(light=self.traffic_grid.nodes[next_node]['tl'],
-                                        arrival=arrival_time, direction=direction):
+                def preempt(light=light, arrival_time=arrival_time,
+                                        direction=direction, env=self.env):
                     preempt_buffer = 5  # seconds before arrival to preempt
                     restore_buffer = 2  # seconds after passing to restore
 
                     # Wait until just before EV arrives
-                    yield env.timeout(max(arrival - env.now - preempt_buffer, 0))
+                    print(f'{self.env.now:05.1f}s: Scheduling TL preemption at {light.vertex} in '
+                          f'{arrival_time - preempt_buffer} seconds for Ambulance for {direction=}')
+                    # yield env.timeout(max(arrival_time - env.now - preempt_buffer, 0))
+                    yield env.timeout(arrival_time - preempt_buffer)
 
-                    # Save original state
-                    original_ns_state = light.ns_state
-                    original_ew_state = light.ew_state
-                    original_allowed = light.allowed
-                    original_start_time = light.start
-                    elapsed = env.now - light.start
+                    print(f'{self.env.now:05.1f}s: TL preemption for {light.vertex} awoke '
+                          f'for Ambulance for {direction=}')
 
-                    # Preempt light if needed
-                    if light.allowed != direction:
+                    light_future_state = self.get_light_state(light, direction)
+
+                    # Light will change - extend:
+                    if light_future_state == TLCState.YELLOW:
+                        light.start += preempt_buffer + restore_buffer
+                        print(f'{env.now:05.1f}s: ⚠️ Extended TL at {light.vertex} for '
+                              f'Ambulance for {direction=}')
+                    # Light will be red - preempt:
+                    elif light_future_state == TLCState.RED:
                         light.ns_state = TLCState.GREEN if direction == 'NS' else TLCState.RED
                         light.ew_state = TLCState.GREEN if direction == 'EW' else TLCState.RED
                         light.allowed = direction
@@ -227,128 +226,30 @@ class TrafficLightPreemptor:
                         print(f'{env.now:05.1f}s: ⚠️ Preempted TL at {light.vertex} for '
                               f'Ambulance for {direction=}')
 
-                    # Wait until just after EV passes the light
-                    yield env.timeout(travel_time_seconds + restore_buffer)
+                env.process(preempt())
 
-                    # Restore original state if it changed
-                    if (light.ns_state, light.ew_state, light.allowed) != (
-                        original_ns_state, original_ew_state, original_allowed
-                    ):
-                        light.ns_state = original_ns_state
-                        light.ew_state = original_ew_state
-                        light.allowed = original_allowed
-                        light.start = env.now - elapsed
-                        print(f'{env.now:05.1f}s: ✅ Restored TL at {light.vertex} to {light.allowed=}')
+    def get_light_state(self, light, direction):
+        '''
+        Ambulance will cross this light in 5 seconds - need to determine light state:
+        1) Light is and will be green - no action needed
+        2) Light is green but turning to red - need to extend
+        3) Light is red but turning to green - no action needed
+        4) Light is and will be red - need to preempt
+        '''
+        # Light color for direction:
+        current_color = TLCState.GREEN if light.allowed == direction else TLCState.RED
 
-                env.process(preempt_and_restore())
+        # Will light change state?
+        changing = self.env.now + 5 - light.start >= light.light_length
 
-
-def preempt_traffic_lights(env, vehicle: Vehicle, traffic_grid: networkx.Graph):
-    """
-    Preempts traffic lights on the path of the emergency vehicle to ensure all are green
-    when the vehicle arrives. Delays preemption as much as possible to reduce disruption.
-    """
-    speed_mph = vehicle.speed
-    path = vehicle.path
-
-    for i in range(len(path) - 1):
-        current_node = path[i]
-        next_node = path[i + 1]
-
-        edge_length_miles = traffic_grid.edges[current_node, next_node]['length']
-        travel_time_seconds = (edge_length_miles / speed_mph) * 3600
-
-        arrival_time = env.now + sum(
-            (traffic_grid.edges[path[j], path[j + 1]]['length'] / speed_mph) * 3600
-            for j in range(i)
-        )
-
-        # If node has a traffic light, schedule preemption
-        if 'tl' in traffic_grid.nodes[next_node]:
-            light = traffic_grid.nodes[next_node]['tl']
-            direction = get_direction(current_node, next_node)
-
-            def preempt_light(light=light, arrival_time=arrival_time, direction=direction):
-                yield env.timeout(arrival_time - env.now - 5)  # preempt ~5s before arrival
-                if light.allowed != direction:
-                    # Force state change
-                    light.ns_state = TLCState.GREEN if direction == 'NS' else TLCState.RED
-                    light.ew_state = TLCState.GREEN if direction == 'EW' else TLCState.RED
-                    light.allowed = direction
-                    light.start = env.now
-                    light.change_event.succeed()
-                    light.change_event = env.event()
-                    print(f'{env.now:05.1f}s: ⚠️ Preempted TL at {light.vertex} for {direction=}')
-
-            env.process(preempt_light())
-
-
-def preempt_traffic_lights2(vehicle: Vehicle):
-    """
-    Preempts traffic lights along the path of the emergency vehicle and restores
-    their original state after the vehicle passes.
-    """
-    env = vehicle.env
-    traffic_grid = vehicle.traffic_grid
-    speed_mph = vehicle.speed
-    path = vehicle.path
-
-    for i in range(len(path) - 1):
-        current_node = path[i]
-        next_node = path[i + 1]
-        edge_length_miles = traffic_grid.edges[current_node, next_node]['length']
-        travel_time_seconds = (edge_length_miles / speed_mph) * 3600
-
-        # Compute estimated arrival time at next node
-        arrival_time = env.now + sum(
-            (traffic_grid.edges[path[j], path[j + 1]]['length'] / speed_mph) * 3600
-            for j in range(i)
-        )
-
-        if 'tl' in traffic_grid.nodes[next_node]:
-            light = traffic_grid.nodes[next_node]['tl']
-            direction = get_direction(current_node, next_node)
-
-            def preempt_and_restore(light=light, arrival=arrival_time, direction=direction):
-                preempt_buffer = 5  # seconds before arrival to preempt
-                restore_buffer = 2  # seconds after passing to restore
-
-                # Wait until just before EV arrives
-                yield env.timeout(max(arrival - env.now - preempt_buffer, 0))
-
-                # Save original state
-                original_ns_state = light.ns_state
-                original_ew_state = light.ew_state
-                original_allowed = light.allowed
-                original_start_time = light.start
-                elapsed = env.now - light.start
-
-                # Preempt light if needed
-                if light.allowed != direction:
-                    light.ns_state = TLCState.GREEN if direction == 'NS' else TLCState.RED
-                    light.ew_state = TLCState.GREEN if direction == 'EW' else TLCState.RED
-                    light.allowed = direction
-                    light.start = env.now
-                    light.change_event.succeed()
-                    light.change_event = env.event()
-                    print(f'{env.now:05.1f}s: ⚠️ Preempted TL at {light.vertex} for '
-                          f'Ambulance for {direction=}')
-
-                # Wait until just after EV passes the light
-                yield env.timeout(travel_time_seconds + restore_buffer)
-
-                # Restore original state if it changed
-                if (light.ns_state, light.ew_state, light.allowed) != (
-                    original_ns_state, original_ew_state, original_allowed
-                ):
-                    light.ns_state = original_ns_state
-                    light.ew_state = original_ew_state
-                    light.allowed = original_allowed
-                    light.start = env.now - elapsed
-                    print(f'{env.now:05.1f}s: ✅ Restored TL at {light.vertex} to '
-                          f'{light.allowed=} after Ambulance')
-
-            env.process(preempt_and_restore())
+        if current_color == TLCState.GREEN and not changing:
+            return TLCState.GREEN
+        elif current_color == TLCState.GREEN and changing:
+            return TLCState.YELLOW
+        elif current_color == TLCState.RED and changing:
+            return TLCState.GREEN
+        elif current_color == TLCState.RED and not changing:
+            return TLCState.RED
 
 
 def vehicle_generator(env, traffic_grid, arrival_interval):
@@ -370,8 +271,7 @@ def vehicle_generator(env, traffic_grid, arrival_interval):
     while True:
         yield env.timeout(RNG.randint(1, arrival_interval))
         if env.now > 90 and not ambulance_in:
-            ambulance = Vehicle(env, 'Ambulance', ('S', (4, 2)), (2, 4), traffic_grid, emergency=True)
-            preempt_traffic_lights2(ambulance)
+            Vehicle(env, 'Ambulance', ('S', (4, 2)), (2, 4), traffic_grid, emergency=True)
             ambulance_in = True
         else:
             origin = RNG.choice(roads)
@@ -395,23 +295,6 @@ def report_results():
 
 def get_direction(current_node, next_node):
     return 'NS' if current_node[1] == next_node[1] else 'EW'
-
-
-def opposite_direction(direction: str) -> str:
-    match direction:
-        case 'N': return 'S'
-        case 'S': return 'N'
-        case 'E': return 'W'
-        case 'W': return 'E'
-        case _: raise ValueError(f'Expected direction to be N, S, E or W, got {direction}')
-
-
-def get_ellapsed_time(env: simpy.Environment) -> str:
-    seconds = env.now - sim_start
-    minutes, seconds = divmod(seconds, 60)
-    minutestr = 'minute' if minutes == 1 else 'minutes'
-    secondstr = 'second' if seconds == 1 else 'seconds'
-    return f'{minutes:.1f} {minutestr}, {seconds:.1f} {secondstr}'
 
 
 def setup_grid(env: simpy.Environment) -> networkx.Graph:
