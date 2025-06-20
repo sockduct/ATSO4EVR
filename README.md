@@ -25,8 +25,12 @@
 * Run the program:
   `python sim1.py`
 
-## Traffic Grid
+## Traffic Grids
 
-* Current traffic grid layout used in sim1.py:
+* Simple 4x4 traffic grid layout used in sim1.py:
 
-  ![Traffic Grid Layout](./Traffic%20Grid.png)
+  ![Traffic Grid Layout](./Traffic%20Grid-4x4.png)
+
+* Medium 6x6 traffic grid layout used in sim1.py:
+
+  ![Traffic Grid Layout](./Traffic%20Grid-6x6.png)
