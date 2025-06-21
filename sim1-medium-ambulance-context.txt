@@ -1,0 +1,134 @@
+
+  090.0s: Traffic Light (4, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+  090.0s: Traffic Light (4, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+  090.0s: Traffic Light (4, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+> 092.0s: Ambulance arrives from S at (5, 1) heading to (1, 5) [(5, 1), (4, 1), (3, 1), (2, 1), (1, 1), (1, 2), (1, 3), (1, 4), (1, 5)]
+> 092.0s: Ambulance is an emergency vehicle - setting up traffic light preemption...
+> 092.0s: Scheduling TL preemption at (4, 1) in 115.0 seconds for Ambulance for direction='NS'
+> 092.0s: Scheduling TL preemption at (3, 1) in 235.0 seconds for Ambulance for direction='NS'
+> 092.0s: Scheduling TL preemption at (2, 1) in 355.0 seconds for Ambulance for direction='NS'
+> 092.0s: Scheduling TL preemption at (1, 1) in 475.0 seconds for Ambulance for direction='NS'
+> 092.0s: Scheduling TL preemption at (1, 2) in 595.0 seconds for Ambulance for direction='EW'
+> 092.0s: Scheduling TL preemption at (1, 3) in 715.0 seconds for Ambulance for direction='EW'
+> 092.0s: Scheduling TL preemption at (1, 4) in 835.0 seconds for Ambulance for direction='EW'
+  099.0s: Car-17 arrives from E at (4, 5) heading to (3, 5) [(4, 5), (4, 4), (3, 4), (3, 5)]
+  103.0s: Car-18 arrives from S at (5, 1) heading to (0, 1) [(5, 1), (4, 1), (3, 1), (2, 1), (1, 1), (0, 1)]
+  109.0s: Car-19 arrives from S at (5, 2) heading to (4, 0) [(5, 2), (4, 2), (4, 1), (4, 0)]
+  199.0s: Car-14 reaches (1, 1) from (0, 1) going to (1, 2), direction='NS'
+  199.0s: Car-14 crosses intersection with traffic light
+  205.0s: Car-36 arrives from E at (1, 5) heading to (4, 0) [(1, 5), (1, 4), (2, 4), (2, 3), (3, 3), (3, 2), (4, 2), (4, 1), (4, 0)]
+> 207.0s: TL preemption for (4, 1) awoke for Ambulance for direction='NS'
+> 207.0s: Extended TL at (4, 1) for Ambulance for direction='NS'
+  208.0s: Car-15 reaches (4, 4) from (5, 4) going to (3, 4), direction='NS'
+  208.0s: Car-15 crosses intersection with traffic light
+  208.0s: Car-37 arrives from N at (0, 4) heading to (2, 0) [(0, 4), (1, 4), (1, 3), (2, 3), (2, 2), (2, 1), (2, 0)]
+  210.0s: Car-11 crosses intersection with traffic light
+  210.0s: Car-8 waited 44.0s
+  210.0s: Car-8 crosses intersection with traffic light
+> 212.0s: Ambulance reaches (4, 1) from (5, 1) going to (3, 1), direction='NS'
+> 212.0s: Ambulance crosses intersection with traffic light
+  214.0s: Car-38 arrives from E at (1, 5) heading to (2, 5) [(1, 5), (1, 4), (2, 4), (2, 5)]
+  217.0s: Traffic Light (4, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+  219.0s: Car-17 reaches (4, 4) from (4, 5) going to (3, 4), direction='EW'
+  319.0s: Car-14 waits at red
+  325.0s: Car-36 reaches (1, 4) from (1, 5) going to (2, 4), direction='EW'
+  325.0s: Car-36 waits at red
+> 327.0s: TL preemption for (3, 1) awoke for Ambulance for direction='NS'
+> 327.0s: Extended TL at (3, 1) for Ambulance for direction='NS'
+  328.0s: Car-15 reaches (3, 4) from (4, 4) going to (2, 4), direction='NS'
+  328.0s: Car-15 crosses intersection with traffic light
+  328.0s: Car-37 reaches (1, 4) from (0, 4) going to (1, 3), direction='NS'
+  330.0s: Car-11 crosses intersection with traffic light
+  330.0s: Car-32 waited 30.0s
+  330.0s: Car-32 crosses intersection with traffic light
+> 332.0s: Ambulance reaches (3, 1) from (4, 1) going to (2, 1), direction='NS'
+> 332.0s: Ambulance crosses intersection with traffic light
+  334.0s: Car-38 reaches (1, 4) from (1, 5) going to (2, 4), direction='EW'
+  334.0s: Car-38 crosses intersection with traffic light
+  335.0s: Car-54 arrives from W at (2, 0) heading to (3, 0) [(2, 0), (2, 1), (3, 1), (3, 0)]
+  438.0s: Car-51 crosses intersection with traffic light
+  438.0s: Car-73 arrives from E at (2, 5) heading to (5, 2) [(2, 5), (2, 4), (3, 4), (3, 3), (4, 3), (4, 2), (5, 2)]
+  441.0s: Car-74 arrives from E at (4, 5) heading to (5, 3) [(4, 5), (4, 4), (4, 3), (5, 3)]
+> 447.0s: TL preemption for (2, 1) awoke for Ambulance for direction='NS'
+> 447.0s: Extended TL at (2, 1) for Ambulance for direction='NS'
+  448.0s: Car-15 reaches (2, 4) from (3, 4) going to (2, 5), direction='NS'
+  448.0s: Car-15 crosses intersection with traffic light
+  448.0s: Car-37 reaches (1, 3) from (1, 4) going to (2, 3), direction='EW'
+  450.0s: Car-11 crosses intersection with traffic light
+  450.0s: Car-30 waited 41.0s
+  450.0s: Car-30 crosses intersection with traffic light
+> 452.0s: Ambulance reaches (2, 1) from (3, 1) going to (1, 1), direction='NS'
+> 452.0s: Ambulance crosses intersection with traffic light
+  454.0s: Car-38 reaches (2, 4) from (1, 4) going to (2, 5), direction='NS'
+  454.0s: Car-38 waits at red
+  455.0s: Car-54 reaches (2, 1) from (2, 0) going to (3, 1), direction='EW'
+  561.0s: Car-74 reaches (4, 4) from (4, 5) going to (4, 3), direction='EW'
+  561.0s: Car-74 waits at red
+  562.0s: Car-96 arrives from W at (4, 0) heading to (1, 5) [(4, 0), (4, 1), (4, 2), (4, 3), (4, 4), (3, 4), (2, 4), (1, 4), (1, 5)]
+> 567.0s: TL preemption for (1, 1) awoke for Ambulance for direction='NS'
+> 567.0s: Extended TL at (1, 1) for Ambulance for direction='NS'
+  568.0s: Car-15 reaches (2, 5) from (2, 4) going to Exit, direction='EW'
+  568.0s: Car-15 exits simulation after 480.0s
+  568.0s: Car-52 reaches (1, 2) from (1, 1) going to (1, 3), direction='EW'
+  570.0s: Car-74 waited 9.0s
+  570.0s: Car-74 crosses intersection with traffic light
+  571.0s: Car-98 arrives from N at (0, 3) heading to (5, 4) [(0, 3), (1, 3), (1, 4), (2, 4), (3, 4), (4, 4), (5, 4)]
+> 572.0s: Ambulance reaches (1, 1) from (2, 1) going to (1, 2), direction='NS'
+> 572.0s: Ambulance crosses intersection with traffic light
+  576.0s: Car-76 reaches (3, 1) from (3, 0) going to (3, 2), direction='EW'
+  576.0s: Car-76 waits at red
+  577.0s: Car-29 reaches (2, 0) from (2, 1) going to Exit, direction='EW'
+  681.0s: Car-117 arrives from N at (0, 2) heading to (2, 0) [(0, 2), (1, 2), (1, 1), (2, 1), (2, 0)]
+  682.0s: Car-96 reaches (4, 1) from (4, 0) going to (4, 2), direction='EW'
+  682.0s: Car-96 waits at red
+> 687.0s: TL preemption for (1, 2) awoke for Ambulance for direction='EW'
+  688.0s: Car-118 arrives from N at (0, 2) heading to (1, 5) [(0, 2), (1, 2), (1, 3), (1, 4), (1, 5)]
+  689.0s: Car-119 arrives from E at (3, 5) heading to (4, 5) [(3, 5), (3, 4), (4, 4), (4, 5)]
+  690.0s: Car-10 reaches (4, 0) from (4, 1) going to Exit, direction='EW'
+  690.0s: Car-70 crosses intersection with traffic light
+  691.0s: Car-98 reaches (1, 3) from (0, 3) going to (1, 4), direction='NS'
+  691.0s: Car-98 waits at red
+> 692.0s: Ambulance reaches (1, 2) from (1, 1) going to (1, 3), direction='EW'
+> 692.0s: Ambulance crosses intersection with traffic light
+  697.0s: Car-50 reaches (1, 0) from (1, 1) going to Exit, direction='EW'
+  697.0s: Car-50 exits simulation after 387.0s
+  697.0s: Car-54 reaches (3, 0) from (3, 1) going to Exit, direction='EW'
+  801.0s: Car-117 reaches (1, 2) from (0, 2) going to (1, 1), direction='NS'
+  801.0s: Car-117 crosses intersection with traffic light
+  801.0s: Car-139 arrives from E at (2, 5) heading to (4, 0) [(2, 5), (2, 4), (3, 4), (3, 3), (4, 3), (4, 2), (4, 1), (4, 0)]
+> 807.0s: TL preemption for (1, 3) awoke for Ambulance for direction='EW'
+  808.0s: Car-118 reaches (1, 2) from (0, 2) going to (1, 3), direction='NS'
+  808.0s: Car-118 crosses intersection with traffic light
+  809.0s: Car-119 reaches (3, 4) from (3, 5) going to (4, 4), direction='EW'
+  810.0s: Car-28 crosses intersection with traffic light
+  810.0s: Car-87 waited 42.0s
+  810.0s: Car-87 crosses intersection with traffic light
+> 812.0s: Ambulance reaches (1, 3) from (1, 2) going to (1, 4), direction='EW'
+> 812.0s: Ambulance crosses intersection with traffic light
+  817.0s: Car-99 reaches (3, 1) from (4, 1) going to (3, 2), direction='NS'
+  817.0s: Car-99 crosses intersection with traffic light
+  817.0s: Car-75 reaches (1, 3) from (1, 2) going to (2, 3), direction='EW'
+  921.0s: Car-139 reaches (2, 4) from (2, 5) going to (3, 4), direction='EW'
+  921.0s: Car-139 waits at red
+  924.0s: Car-161 arrives from S at (5, 2) heading to (1, 5) [(5, 2), (4, 2), (3, 2), (2, 2), (1, 2), (1, 3), (1, 4), (1, 5)]
+> 927.0s: TL preemption for (1, 4) awoke for Ambulance for direction='EW'
+  928.0s: Car-118 reaches (1, 3) from (1, 2) going to (1, 4), direction='EW'
+  928.0s: Car-118 waits at red
+  929.0s: Car-140 reaches (4, 1) from (5, 1) going to (3, 1), direction='NS'
+  930.0s: Car-87 crosses intersection with traffic light
+  930.0s: Car-128 waited 54.0s
+  930.0s: Car-128 crosses intersection with traffic light
+> 932.0s: Ambulance reaches (1, 4) from (1, 3) going to (1, 5), direction='EW'
+> 932.0s: Ambulance crosses intersection with traffic light
+  933.0s: Car-163 arrives from E at (1, 5) heading to (5, 1) [(1, 5), (1, 4), (2, 4), (2, 3), (3, 3), (3, 2), (4, 2), (4, 1), (5, 1)]
+  937.0s: Car-99 reaches (3, 2) from (3, 1) going to (3, 3), direction='EW'
+  937.0s: Car-99 crosses intersection with traffic light
+  1050.0s: Car-128 crosses intersection with traffic light
+  1050.0s: Car-132 waited 34.0s
+  1050.0s: Car-132 crosses intersection with traffic light
+> 1052.0s: Ambulance reaches (1, 5) from (1, 4) going to Exit, direction='EW'
+> 1052.0s: Ambulance exits simulation after 960.0s
+  1053.0s: Car-163 reaches (1, 4) from (1, 5) going to (2, 4), direction='EW'
+  1053.0s: Car-163 crosses intersection with traffic light
+  1054.0s: Car-185 arrives from N at (0, 2) heading to (5, 1) [(0, 2), (1, 2), (1, 1), (2, 1), (3, 1), (4, 1), (5, 1)]
+

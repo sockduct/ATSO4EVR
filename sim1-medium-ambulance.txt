@@ -1,0 +1,38 @@
+
+092.0s: Ambulance arrives from S at (5, 1) heading to (1, 5) [(5, 1), (4, 1), (3, 1), (2, 1), (1, 1), (1, 2), (1, 3), (1, 4), (1, 5)]
+092.0s: Ambulance is an emergency vehicle - setting up traffic light preemption...
+092.0s: Scheduling TL preemption at (4, 1) in 115.0 seconds for Ambulance for direction='NS'
+092.0s: Scheduling TL preemption at (3, 1) in 235.0 seconds for Ambulance for direction='NS'
+092.0s: Scheduling TL preemption at (2, 1) in 355.0 seconds for Ambulance for direction='NS'
+092.0s: Scheduling TL preemption at (1, 1) in 475.0 seconds for Ambulance for direction='NS'
+092.0s: Scheduling TL preemption at (1, 2) in 595.0 seconds for Ambulance for direction='EW'
+092.0s: Scheduling TL preemption at (1, 3) in 715.0 seconds for Ambulance for direction='EW'
+092.0s: Scheduling TL preemption at (1, 4) in 835.0 seconds for Ambulance for direction='EW'
+207.0s: TL preemption for (4, 1) awoke for Ambulance for direction='NS'
+207.0s: Extended TL at (4, 1) for Ambulance for direction='NS'
+212.0s: Ambulance reaches (4, 1) from (5, 1) going to (3, 1), direction='NS'
+212.0s: Ambulance crosses intersection with traffic light
+327.0s: TL preemption for (3, 1) awoke for Ambulance for direction='NS'
+327.0s: Extended TL at (3, 1) for Ambulance for direction='NS'
+332.0s: Ambulance reaches (3, 1) from (4, 1) going to (2, 1), direction='NS'
+332.0s: Ambulance crosses intersection with traffic light
+447.0s: TL preemption for (2, 1) awoke for Ambulance for direction='NS'
+447.0s: Extended TL at (2, 1) for Ambulance for direction='NS'
+452.0s: Ambulance reaches (2, 1) from (3, 1) going to (1, 1), direction='NS'
+452.0s: Ambulance crosses intersection with traffic light
+567.0s: TL preemption for (1, 1) awoke for Ambulance for direction='NS'
+567.0s: Extended TL at (1, 1) for Ambulance for direction='NS'
+572.0s: Ambulance reaches (1, 1) from (2, 1) going to (1, 2), direction='NS'
+572.0s: Ambulance crosses intersection with traffic light
+687.0s: TL preemption for (1, 2) awoke for Ambulance for direction='EW'
+692.0s: Ambulance reaches (1, 2) from (1, 1) going to (1, 3), direction='EW'
+692.0s: Ambulance crosses intersection with traffic light
+807.0s: TL preemption for (1, 3) awoke for Ambulance for direction='EW'
+812.0s: Ambulance reaches (1, 3) from (1, 2) going to (1, 4), direction='EW'
+812.0s: Ambulance crosses intersection with traffic light
+927.0s: TL preemption for (1, 4) awoke for Ambulance for direction='EW'
+932.0s: Ambulance reaches (1, 4) from (1, 3) going to (1, 5), direction='EW'
+932.0s: Ambulance crosses intersection with traffic light
+1052.0s: Ambulance reaches (1, 5) from (1, 4) going to Exit, direction='EW'
+1052.0s: Ambulance exits simulation after 960.0s
+

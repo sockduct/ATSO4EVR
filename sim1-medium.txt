@@ -1,0 +1,2358 @@
+Starting traffic grid simulation - medium size - at 2025-06-20 22:43:12 for 1080 seconds
+000.0s: Traffic Light (1, 1) Initialized (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+000.0s: Traffic Light (1, 2) Initialized (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+000.0s: Traffic Light (1, 3) Initialized (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+000.0s: Traffic Light (1, 4) Initialized (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+000.0s: Traffic Light (2, 1) Initialized (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+000.0s: Traffic Light (2, 2) Initialized (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+000.0s: Traffic Light (2, 3) Initialized (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+000.0s: Traffic Light (2, 4) Initialized (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+000.0s: Traffic Light (3, 1) Initialized (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+000.0s: Traffic Light (3, 2) Initialized (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+000.0s: Traffic Light (3, 3) Initialized (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+000.0s: Traffic Light (3, 4) Initialized (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+000.0s: Traffic Light (4, 1) Initialized (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+000.0s: Traffic Light (4, 2) Initialized (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+000.0s: Traffic Light (4, 3) Initialized (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+000.0s: Traffic Light (4, 4) Initialized (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+006.0s: Car-0 arrives from S at (5, 2) heading to (4, 0) [(5, 2), (4, 2), (4, 1), (4, 0)]
+007.0s: Car-1 arrives from E at (3, 5) heading to (4, 0) [(3, 5), (3, 4), (4, 4), (4, 3), (4, 2), (4, 1), (4, 0)]
+010.0s: Car-2 arrives from S at (5, 3) heading to (0, 1) [(5, 3), (4, 3), (3, 3), (2, 3), (1, 3), (1, 2), (1, 1), (0, 1)]
+019.0s: Car-3 arrives from S at (5, 4) heading to (4, 5) [(5, 4), (4, 4), (4, 5)]
+025.0s: Car-4 arrives from E at (4, 5) heading to (3, 5) [(4, 5), (4, 4), (3, 4), (3, 5)]
+030.0s: Traffic Light (1, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+030.0s: Traffic Light (1, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+030.0s: Traffic Light (1, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+030.0s: Traffic Light (1, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+030.0s: Traffic Light (2, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+030.0s: Traffic Light (2, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+030.0s: Traffic Light (2, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+030.0s: Traffic Light (2, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+030.0s: Traffic Light (3, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+030.0s: Traffic Light (3, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+030.0s: Traffic Light (3, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+030.0s: Traffic Light (3, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+030.0s: Traffic Light (4, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+030.0s: Traffic Light (4, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+030.0s: Traffic Light (4, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+030.0s: Traffic Light (4, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+031.0s: Car-5 arrives from N at (0, 1) heading to (0, 3) [(0, 1), (1, 1), (1, 2), (1, 3), (0, 3)]
+033.0s: Car-6 arrives from N at (0, 1) heading to (0, 3) [(0, 1), (1, 1), (1, 2), (1, 3), (0, 3)]
+036.0s: Car-7 arrives from E at (2, 5) heading to (1, 5) [(2, 5), (2, 4), (1, 4), (1, 5)]
+046.0s: Car-8 arrives from S at (5, 4) heading to (1, 5) [(5, 4), (4, 4), (3, 4), (2, 4), (1, 4), (1, 5)]
+052.0s: Car-9 arrives from W at (1, 0) heading to (2, 5) [(1, 0), (1, 1), (1, 2), (1, 3), (1, 4), (2, 4), (2, 5)]
+058.0s: Car-10 arrives from N at (0, 1) heading to (4, 0) [(0, 1), (1, 1), (2, 1), (3, 1), (4, 1), (4, 0)]
+060.0s: Traffic Light (1, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+060.0s: Traffic Light (1, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+060.0s: Traffic Light (1, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+060.0s: Traffic Light (1, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+060.0s: Traffic Light (2, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+060.0s: Traffic Light (2, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+060.0s: Traffic Light (2, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+060.0s: Traffic Light (2, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+060.0s: Traffic Light (3, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+060.0s: Traffic Light (3, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+060.0s: Traffic Light (3, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+060.0s: Traffic Light (3, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+060.0s: Traffic Light (4, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+060.0s: Traffic Light (4, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+060.0s: Traffic Light (4, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+060.0s: Traffic Light (4, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+065.0s: Car-11 arrives from W at (2, 0) heading to (5, 3) [(2, 0), (2, 1), (2, 2), (2, 3), (3, 3), (4, 3), (5, 3)]
+071.0s: Car-12 arrives from N at (0, 4) heading to (0, 3) [(0, 4), (1, 4), (1, 3), (0, 3)]
+073.0s: Car-13 arrives from S at (5, 1) heading to (2, 5) [(5, 1), (4, 1), (3, 1), (2, 1), (2, 2), (2, 3), (2, 4), (2, 5)]
+079.0s: Car-14 arrives from N at (0, 1) heading to (3, 5) [(0, 1), (1, 1), (1, 2), (1, 3), (1, 4), (2, 4), (3, 4), (3, 5)]
+088.0s: Car-15 arrives from S at (5, 4) heading to (2, 5) [(5, 4), (4, 4), (3, 4), (2, 4), (2, 5)]
+090.0s: Traffic Light (1, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+090.0s: Traffic Light (1, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+090.0s: Traffic Light (1, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+090.0s: Traffic Light (1, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+090.0s: Traffic Light (2, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+090.0s: Traffic Light (2, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+090.0s: Traffic Light (2, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+090.0s: Traffic Light (2, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+090.0s: Traffic Light (3, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+090.0s: Traffic Light (3, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+090.0s: Traffic Light (3, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+090.0s: Traffic Light (3, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+090.0s: Traffic Light (4, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+090.0s: Traffic Light (4, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+090.0s: Traffic Light (4, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+090.0s: Traffic Light (4, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+092.0s: Ambulance arrives from S at (5, 1) heading to (1, 5) [(5, 1), (4, 1), (3, 1), (2, 1), (1, 1), (1, 2), (1, 3), (1, 4), (1, 5)]
+092.0s: Ambulance is an emergency vehicle - setting up traffic light preemption...
+092.0s: Scheduling TL preemption at (4, 1) in 115.0 seconds for Ambulance for direction='NS'
+092.0s: Scheduling TL preemption at (3, 1) in 235.0 seconds for Ambulance for direction='NS'
+092.0s: Scheduling TL preemption at (2, 1) in 355.0 seconds for Ambulance for direction='NS'
+092.0s: Scheduling TL preemption at (1, 1) in 475.0 seconds for Ambulance for direction='NS'
+092.0s: Scheduling TL preemption at (1, 2) in 595.0 seconds for Ambulance for direction='EW'
+092.0s: Scheduling TL preemption at (1, 3) in 715.0 seconds for Ambulance for direction='EW'
+092.0s: Scheduling TL preemption at (1, 4) in 835.0 seconds for Ambulance for direction='EW'
+099.0s: Car-17 arrives from E at (4, 5) heading to (3, 5) [(4, 5), (4, 4), (3, 4), (3, 5)]
+103.0s: Car-18 arrives from S at (5, 1) heading to (0, 1) [(5, 1), (4, 1), (3, 1), (2, 1), (1, 1), (0, 1)]
+109.0s: Car-19 arrives from S at (5, 2) heading to (4, 0) [(5, 2), (4, 2), (4, 1), (4, 0)]
+118.0s: Car-20 arrives from N at (0, 3) heading to (4, 0) [(0, 3), (1, 3), (1, 2), (2, 2), (2, 1), (3, 1), (4, 1), (4, 0)]
+120.0s: Traffic Light (1, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+120.0s: Traffic Light (1, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+120.0s: Traffic Light (1, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+120.0s: Traffic Light (1, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+120.0s: Traffic Light (2, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+120.0s: Traffic Light (2, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+120.0s: Traffic Light (2, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+120.0s: Traffic Light (2, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+120.0s: Traffic Light (3, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+120.0s: Traffic Light (3, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+120.0s: Traffic Light (3, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+120.0s: Traffic Light (3, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+120.0s: Traffic Light (4, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+120.0s: Traffic Light (4, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+120.0s: Traffic Light (4, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+120.0s: Traffic Light (4, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+123.0s: Car-21 arrives from E at (3, 5) heading to (1, 0) [(3, 5), (3, 4), (2, 4), (1, 4), (1, 3), (1, 2), (1, 1), (1, 0)]
+126.0s: Car-0 reaches (4, 2) from (5, 2) going to (4, 1), direction='NS'
+126.0s: Car-0 crosses intersection with traffic light
+127.0s: Car-1 reaches (3, 4) from (3, 5) going to (4, 4), direction='EW'
+127.0s: Car-1 waits at red
+130.0s: Car-2 reaches (4, 3) from (5, 3) going to (3, 3), direction='NS'
+130.0s: Car-2 crosses intersection with traffic light
+132.0s: Car-22 arrives from S at (5, 2) heading to (0, 1) [(5, 2), (4, 2), (3, 2), (2, 2), (1, 2), (1, 1), (0, 1)]
+139.0s: Car-3 reaches (4, 4) from (5, 4) going to (4, 5), direction='NS'
+139.0s: Car-3 crosses intersection with traffic light
+142.0s: Car-23 arrives from E at (1, 5) heading to (5, 4) [(1, 5), (1, 4), (2, 4), (3, 4), (4, 4), (5, 4)]
+143.0s: Car-24 arrives from N at (0, 1) heading to (3, 0) [(0, 1), (1, 1), (2, 1), (3, 1), (3, 0)]
+145.0s: Car-4 reaches (4, 4) from (4, 5) going to (3, 4), direction='EW'
+145.0s: Car-4 waits at red
+147.0s: Car-25 arrives from E at (4, 5) heading to (0, 4) [(4, 5), (4, 4), (3, 4), (2, 4), (1, 4), (0, 4)]
+148.0s: Car-26 arrives from S at (5, 3) heading to (0, 2) [(5, 3), (4, 3), (3, 3), (2, 3), (1, 3), (1, 2), (0, 2)]
+150.0s: Traffic Light (1, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+150.0s: Traffic Light (1, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+150.0s: Traffic Light (1, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+150.0s: Traffic Light (1, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+150.0s: Traffic Light (2, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+150.0s: Traffic Light (2, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+150.0s: Traffic Light (2, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+150.0s: Traffic Light (2, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+150.0s: Traffic Light (3, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+150.0s: Traffic Light (3, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+150.0s: Traffic Light (3, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+150.0s: Traffic Light (3, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+150.0s: Traffic Light (4, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+150.0s: Traffic Light (4, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+150.0s: Traffic Light (4, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+150.0s: Traffic Light (4, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+150.0s: Car-1 waited 23.0s
+150.0s: Car-1 crosses intersection with traffic light
+150.0s: Car-4 waited 5.0s
+150.0s: Car-4 crosses intersection with traffic light
+151.0s: Car-5 reaches (1, 1) from (0, 1) going to (1, 2), direction='NS'
+151.0s: Car-5 waits at red
+152.0s: Car-27 arrives from E at (4, 5) heading to (5, 3) [(4, 5), (4, 4), (4, 3), (5, 3)]
+153.0s: Car-6 reaches (1, 1) from (0, 1) going to (1, 2), direction='NS'
+153.0s: Car-6 waits at red
+155.0s: Car-28 arrives from W at (3, 0) heading to (4, 5) [(3, 0), (3, 1), (3, 2), (3, 3), (3, 4), (4, 4), (4, 5)]
+156.0s: Car-7 reaches (2, 4) from (2, 5) going to (1, 4), direction='EW'
+156.0s: Car-7 crosses intersection with traffic light
+159.0s: Car-29 arrives from W at (1, 0) heading to (2, 0) [(1, 0), (1, 1), (2, 1), (2, 0)]
+166.0s: Car-8 reaches (4, 4) from (5, 4) going to (3, 4), direction='NS'
+166.0s: Car-8 waits at red
+169.0s: Car-30 arrives from E at (2, 5) heading to (4, 0) [(2, 5), (2, 4), (3, 4), (3, 3), (4, 3), (4, 2), (4, 1), (4, 0)]
+172.0s: Car-9 reaches (1, 1) from (1, 0) going to (1, 2), direction='EW'
+172.0s: Car-9 crosses intersection with traffic light
+177.0s: Car-31 arrives from W at (3, 0) heading to (2, 0) [(3, 0), (3, 1), (2, 1), (2, 0)]
+178.0s: Car-10 reaches (1, 1) from (0, 1) going to (2, 1), direction='NS'
+178.0s: Car-10 waits at red
+180.0s: Car-32 arrives from S at (5, 4) heading to (4, 5) [(5, 4), (4, 4), (4, 5)]
+180.0s: Traffic Light (1, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+180.0s: Traffic Light (1, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+180.0s: Traffic Light (1, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+180.0s: Traffic Light (1, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+180.0s: Traffic Light (2, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+180.0s: Traffic Light (2, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+180.0s: Traffic Light (2, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+180.0s: Traffic Light (2, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+180.0s: Traffic Light (3, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+180.0s: Traffic Light (3, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+180.0s: Traffic Light (3, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+180.0s: Traffic Light (3, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+180.0s: Traffic Light (4, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+180.0s: Traffic Light (4, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+180.0s: Traffic Light (4, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+180.0s: Traffic Light (4, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+185.0s: Car-11 reaches (2, 1) from (2, 0) going to (2, 2), direction='EW'
+185.0s: Car-11 waits at red
+189.0s: Car-33 arrives from N at (0, 3) heading to (2, 0) [(0, 3), (1, 3), (1, 2), (2, 2), (2, 1), (2, 0)]
+191.0s: Car-12 reaches (1, 4) from (0, 4) going to (1, 3), direction='NS'
+191.0s: Car-12 crosses intersection with traffic light
+191.0s: Car-34 arrives from N at (0, 2) heading to (0, 4) [(0, 2), (1, 2), (1, 3), (1, 4), (0, 4)]
+193.0s: Car-13 reaches (4, 1) from (5, 1) going to (3, 1), direction='NS'
+193.0s: Car-13 crosses intersection with traffic light
+195.0s: Car-35 arrives from W at (2, 0) heading to (0, 1) [(2, 0), (2, 1), (1, 1), (0, 1)]
+199.0s: Car-14 reaches (1, 1) from (0, 1) going to (1, 2), direction='NS'
+199.0s: Car-14 crosses intersection with traffic light
+205.0s: Car-36 arrives from E at (1, 5) heading to (4, 0) [(1, 5), (1, 4), (2, 4), (2, 3), (3, 3), (3, 2), (4, 2), (4, 1), (4, 0)]
+207.0s: TL preemption for (4, 1) awoke for Ambulance for direction='NS'
+207.0s: Extended TL at (4, 1) for Ambulance for direction='NS'
+208.0s: Car-15 reaches (4, 4) from (5, 4) going to (3, 4), direction='NS'
+208.0s: Car-15 crosses intersection with traffic light
+208.0s: Car-37 arrives from N at (0, 4) heading to (2, 0) [(0, 4), (1, 4), (1, 3), (2, 3), (2, 2), (2, 1), (2, 0)]
+210.0s: Traffic Light (1, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+210.0s: Traffic Light (1, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+210.0s: Traffic Light (1, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+210.0s: Traffic Light (1, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+210.0s: Traffic Light (2, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+210.0s: Traffic Light (2, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+210.0s: Traffic Light (2, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+210.0s: Traffic Light (2, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+210.0s: Traffic Light (3, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+210.0s: Traffic Light (3, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+210.0s: Traffic Light (3, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+210.0s: Traffic Light (3, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+210.0s: Traffic Light (4, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+210.0s: Traffic Light (4, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+210.0s: Traffic Light (4, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+210.0s: Car-5 waited 59.0s
+210.0s: Car-5 crosses intersection with traffic light
+210.0s: Car-6 waited 57.0s
+210.0s: Car-6 crosses intersection with traffic light
+210.0s: Car-10 waited 32.0s
+210.0s: Car-10 crosses intersection with traffic light
+210.0s: Car-11 waited 25.0s
+210.0s: Car-11 crosses intersection with traffic light
+210.0s: Car-8 waited 44.0s
+210.0s: Car-8 crosses intersection with traffic light
+212.0s: Ambulance reaches (4, 1) from (5, 1) going to (3, 1), direction='NS'
+212.0s: Ambulance crosses intersection with traffic light
+214.0s: Car-38 arrives from E at (1, 5) heading to (2, 5) [(1, 5), (1, 4), (2, 4), (2, 5)]
+217.0s: Traffic Light (4, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+219.0s: Car-17 reaches (4, 4) from (4, 5) going to (3, 4), direction='EW'
+219.0s: Car-17 crosses intersection with traffic light
+222.0s: Car-39 arrives from W at (2, 0) heading to (0, 2) [(2, 0), (2, 1), (2, 2), (1, 2), (0, 2)]
+223.0s: Car-18 reaches (4, 1) from (5, 1) going to (3, 1), direction='NS'
+223.0s: Car-18 waits at red
+227.0s: Car-40 arrives from N at (0, 2) heading to (5, 2) [(0, 2), (1, 2), (2, 2), (3, 2), (4, 2), (5, 2)]
+229.0s: Car-19 reaches (4, 2) from (5, 2) going to (4, 1), direction='NS'
+229.0s: Car-19 waits at red
+237.0s: Car-41 arrives from E at (3, 5) heading to (5, 1) [(3, 5), (3, 4), (4, 4), (4, 3), (4, 2), (4, 1), (5, 1)]
+238.0s: Car-20 reaches (1, 3) from (0, 3) going to (1, 2), direction='NS'
+238.0s: Car-20 waits at red
+240.0s: Traffic Light (1, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+240.0s: Traffic Light (1, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+240.0s: Traffic Light (1, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+240.0s: Traffic Light (1, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+240.0s: Traffic Light (2, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+240.0s: Traffic Light (2, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+240.0s: Traffic Light (2, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+240.0s: Traffic Light (2, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+240.0s: Traffic Light (3, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+240.0s: Traffic Light (3, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+240.0s: Traffic Light (3, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+240.0s: Traffic Light (3, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+240.0s: Traffic Light (4, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+240.0s: Traffic Light (4, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+240.0s: Traffic Light (4, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+243.0s: Car-21 reaches (3, 4) from (3, 5) going to (2, 4), direction='EW'
+243.0s: Car-21 waits at red
+245.0s: Car-42 arrives from N at (0, 1) heading to (5, 4) [(0, 1), (1, 1), (1, 2), (1, 3), (1, 4), (2, 4), (3, 4), (4, 4), (5, 4)]
+246.0s: Car-0 reaches (4, 1) from (4, 2) going to (4, 0), direction='EW'
+246.0s: Car-0 crosses intersection with traffic light
+247.0s: Traffic Light (4, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+250.0s: Car-2 reaches (3, 3) from (4, 3) going to (2, 3), direction='NS'
+250.0s: Car-2 crosses intersection with traffic light
+252.0s: Car-22 reaches (4, 2) from (5, 2) going to (3, 2), direction='NS'
+252.0s: Car-22 crosses intersection with traffic light
+252.0s: Car-43 arrives from E at (2, 5) heading to (0, 3) [(2, 5), (2, 4), (1, 4), (1, 3), (0, 3)]
+259.0s: Car-3 reaches (4, 5) from (4, 4) going to Exit, direction='EW'
+259.0s: Car-3 exits simulation after 240.0s
+262.0s: Car-23 reaches (1, 4) from (1, 5) going to (2, 4), direction='EW'
+262.0s: Car-23 waits at red
+262.0s: Car-44 arrives from W at (1, 0) heading to (3, 5) [(1, 0), (1, 1), (1, 2), (1, 3), (1, 4), (2, 4), (3, 4), (3, 5)]
+263.0s: Car-24 reaches (1, 1) from (0, 1) going to (2, 1), direction='NS'
+263.0s: Car-24 crosses intersection with traffic light
+267.0s: Car-25 reaches (4, 4) from (4, 5) going to (3, 4), direction='EW'
+267.0s: Car-25 waits at red
+268.0s: Car-26 reaches (4, 3) from (5, 3) going to (3, 3), direction='NS'
+268.0s: Car-26 crosses intersection with traffic light
+270.0s: Car-1 reaches (4, 4) from (3, 4) going to (4, 3), direction='NS'
+270.0s: Car-1 crosses intersection with traffic light
+270.0s: Car-4 reaches (3, 4) from (4, 4) going to (3, 5), direction='NS'
+270.0s: Car-4 crosses intersection with traffic light
+270.0s: Traffic Light (1, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+270.0s: Traffic Light (1, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+270.0s: Traffic Light (1, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+270.0s: Traffic Light (1, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+270.0s: Traffic Light (2, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+270.0s: Traffic Light (2, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+270.0s: Traffic Light (2, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+270.0s: Traffic Light (2, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+270.0s: Traffic Light (3, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+270.0s: Traffic Light (3, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+270.0s: Traffic Light (3, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+270.0s: Traffic Light (3, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+270.0s: Traffic Light (4, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+270.0s: Traffic Light (4, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+270.0s: Traffic Light (4, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+270.0s: Car-20 waited 32.0s
+270.0s: Car-20 crosses intersection with traffic light
+270.0s: Car-23 waited 8.0s
+270.0s: Car-23 crosses intersection with traffic light
+270.0s: Car-21 waited 27.0s
+270.0s: Car-21 crosses intersection with traffic light
+270.0s: Car-19 waited 41.0s
+270.0s: Car-19 crosses intersection with traffic light
+270.0s: Car-25 waited 3.0s
+270.0s: Car-25 crosses intersection with traffic light
+272.0s: Car-27 reaches (4, 4) from (4, 5) going to (4, 3), direction='EW'
+272.0s: Car-27 crosses intersection with traffic light
+272.0s: Car-45 arrives from E at (4, 5) heading to (0, 3) [(4, 5), (4, 4), (3, 4), (2, 4), (1, 4), (1, 3), (0, 3)]
+275.0s: Car-28 reaches (3, 1) from (3, 0) going to (3, 2), direction='EW'
+275.0s: Car-28 crosses intersection with traffic light
+276.0s: Car-7 reaches (1, 4) from (2, 4) going to (1, 5), direction='NS'
+276.0s: Car-7 waits at red
+277.0s: Traffic Light (4, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+277.0s: Car-18 waited 54.0s
+277.0s: Car-18 crosses intersection with traffic light
+278.0s: Car-46 arrives from W at (3, 0) heading to (0, 2) [(3, 0), (3, 1), (3, 2), (2, 2), (1, 2), (0, 2)]
+279.0s: Car-29 reaches (1, 1) from (1, 0) going to (2, 1), direction='EW'
+279.0s: Car-29 crosses intersection with traffic light
+288.0s: Car-47 arrives from W at (1, 0) heading to (0, 1) [(1, 0), (1, 1), (0, 1)]
+289.0s: Car-30 reaches (2, 4) from (2, 5) going to (3, 4), direction='EW'
+289.0s: Car-30 crosses intersection with traffic light
+292.0s: Car-9 reaches (1, 2) from (1, 1) going to (1, 3), direction='EW'
+292.0s: Car-9 crosses intersection with traffic light
+297.0s: Car-31 reaches (3, 1) from (3, 0) going to (2, 1), direction='EW'
+297.0s: Car-31 crosses intersection with traffic light
+298.0s: Car-48 arrives from W at (3, 0) heading to (4, 0) [(3, 0), (3, 1), (4, 1), (4, 0)]
+300.0s: Car-32 reaches (4, 4) from (5, 4) going to (4, 5), direction='NS'
+300.0s: Car-32 waits at red
+300.0s: Traffic Light (1, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+300.0s: Traffic Light (1, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+300.0s: Traffic Light (1, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+300.0s: Traffic Light (1, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+300.0s: Traffic Light (2, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+300.0s: Traffic Light (2, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+300.0s: Traffic Light (2, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+300.0s: Traffic Light (2, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+300.0s: Traffic Light (3, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+300.0s: Traffic Light (3, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+300.0s: Traffic Light (3, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+300.0s: Traffic Light (3, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+300.0s: Traffic Light (4, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+300.0s: Traffic Light (4, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+300.0s: Traffic Light (4, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+307.0s: Traffic Light (4, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+308.0s: Car-49 arrives from S at (5, 2) heading to (2, 0) [(5, 2), (4, 2), (3, 2), (2, 2), (2, 1), (2, 0)]
+309.0s: Car-33 reaches (1, 3) from (0, 3) going to (1, 2), direction='NS'
+309.0s: Car-33 crosses intersection with traffic light
+310.0s: Car-50 arrives from W at (2, 0) heading to (1, 0) [(2, 0), (2, 1), (1, 1), (1, 0)]
+311.0s: Car-12 reaches (1, 3) from (1, 4) going to (0, 3), direction='EW'
+311.0s: Car-12 waits at red
+311.0s: Car-34 reaches (1, 2) from (0, 2) going to (1, 3), direction='NS'
+311.0s: Car-34 crosses intersection with traffic light
+313.0s: Car-13 reaches (3, 1) from (4, 1) going to (2, 1), direction='NS'
+313.0s: Car-13 crosses intersection with traffic light
+315.0s: Car-35 reaches (2, 1) from (2, 0) going to (1, 1), direction='EW'
+315.0s: Car-35 waits at red
+318.0s: Car-51 arrives from N at (0, 1) heading to (3, 0) [(0, 1), (1, 1), (2, 1), (3, 1), (3, 0)]
+319.0s: Car-14 reaches (1, 2) from (1, 1) going to (1, 3), direction='EW'
+319.0s: Car-14 waits at red
+325.0s: Car-36 reaches (1, 4) from (1, 5) going to (2, 4), direction='EW'
+325.0s: Car-36 waits at red
+327.0s: TL preemption for (3, 1) awoke for Ambulance for direction='NS'
+327.0s: Extended TL at (3, 1) for Ambulance for direction='NS'
+328.0s: Car-15 reaches (3, 4) from (4, 4) going to (2, 4), direction='NS'
+328.0s: Car-15 crosses intersection with traffic light
+328.0s: Car-37 reaches (1, 4) from (0, 4) going to (1, 3), direction='NS'
+328.0s: Car-37 crosses intersection with traffic light
+328.0s: Car-52 arrives from N at (0, 1) heading to (0, 3) [(0, 1), (1, 1), (1, 2), (1, 3), (0, 3)]
+329.0s: Car-53 arrives from W at (3, 0) heading to (0, 2) [(3, 0), (3, 1), (3, 2), (2, 2), (1, 2), (0, 2)]
+330.0s: Car-5 reaches (1, 2) from (1, 1) going to (1, 3), direction='EW'
+330.0s: Car-5 waits at red
+330.0s: Car-6 reaches (1, 2) from (1, 1) going to (1, 3), direction='EW'
+330.0s: Car-6 waits at red
+330.0s: Car-10 reaches (2, 1) from (1, 1) going to (3, 1), direction='NS'
+330.0s: Car-10 crosses intersection with traffic light
+330.0s: Car-11 reaches (2, 2) from (2, 1) going to (2, 3), direction='EW'
+330.0s: Car-11 waits at red
+330.0s: Car-8 reaches (3, 4) from (4, 4) going to (2, 4), direction='NS'
+330.0s: Car-8 crosses intersection with traffic light
+330.0s: Traffic Light (1, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+330.0s: Traffic Light (1, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+330.0s: Traffic Light (1, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+330.0s: Traffic Light (1, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+330.0s: Traffic Light (2, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+330.0s: Traffic Light (2, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+330.0s: Traffic Light (2, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+330.0s: Traffic Light (2, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+330.0s: Traffic Light (3, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+330.0s: Traffic Light (3, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+330.0s: Traffic Light (3, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+330.0s: Traffic Light (4, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+330.0s: Traffic Light (4, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+330.0s: Traffic Light (4, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+330.0s: Car-14 waited 11.0s
+330.0s: Car-14 crosses intersection with traffic light
+330.0s: Car-5 waited 0.0s
+330.0s: Car-5 crosses intersection with traffic light
+330.0s: Car-6 waited 0.0s
+330.0s: Car-6 crosses intersection with traffic light
+330.0s: Car-12 waited 19.0s
+330.0s: Car-12 crosses intersection with traffic light
+330.0s: Car-7 waited 54.0s
+330.0s: Car-7 crosses intersection with traffic light
+330.0s: Car-36 waited 5.0s
+330.0s: Car-36 crosses intersection with traffic light
+330.0s: Car-35 waited 15.0s
+330.0s: Car-35 crosses intersection with traffic light
+330.0s: Car-11 waited 0.0s
+330.0s: Car-11 crosses intersection with traffic light
+330.0s: Car-32 waited 30.0s
+330.0s: Car-32 crosses intersection with traffic light
+332.0s: Ambulance reaches (3, 1) from (4, 1) going to (2, 1), direction='NS'
+332.0s: Ambulance crosses intersection with traffic light
+334.0s: Car-38 reaches (1, 4) from (1, 5) going to (2, 4), direction='EW'
+334.0s: Car-38 crosses intersection with traffic light
+335.0s: Car-54 arrives from W at (2, 0) heading to (3, 0) [(2, 0), (2, 1), (3, 1), (3, 0)]
+337.0s: Traffic Light (3, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+337.0s: Traffic Light (4, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+339.0s: Car-17 reaches (3, 4) from (4, 4) going to (3, 5), direction='NS'
+339.0s: Car-17 waits at red
+341.0s: Car-55 arrives from W at (1, 0) heading to (2, 0) [(1, 0), (1, 1), (2, 1), (2, 0)]
+342.0s: Car-39 reaches (2, 1) from (2, 0) going to (2, 2), direction='EW'
+342.0s: Car-39 crosses intersection with traffic light
+347.0s: Car-40 reaches (1, 2) from (0, 2) going to (2, 2), direction='NS'
+347.0s: Car-40 waits at red
+347.0s: Car-56 arrives from N at (0, 1) heading to (2, 0) [(0, 1), (1, 1), (2, 1), (2, 0)]
+357.0s: Car-41 reaches (3, 4) from (3, 5) going to (4, 4), direction='EW'
+357.0s: Car-41 crosses intersection with traffic light
+357.0s: Car-57 arrives from W at (4, 0) heading to (1, 0) [(4, 0), (4, 1), (3, 1), (2, 1), (1, 1), (1, 0)]
+358.0s: Car-58 arrives from N at (0, 4) heading to (3, 5) [(0, 4), (1, 4), (2, 4), (3, 4), (3, 5)]
+360.0s: Traffic Light (1, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+360.0s: Traffic Light (1, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+360.0s: Traffic Light (1, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+360.0s: Traffic Light (1, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+360.0s: Traffic Light (2, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+360.0s: Traffic Light (2, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+360.0s: Traffic Light (2, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+360.0s: Traffic Light (2, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+360.0s: Traffic Light (3, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+360.0s: Traffic Light (3, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+360.0s: Traffic Light (3, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+360.0s: Traffic Light (4, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+360.0s: Traffic Light (4, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+360.0s: Traffic Light (4, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+365.0s: Car-42 reaches (1, 1) from (0, 1) going to (1, 2), direction='NS'
+365.0s: Car-42 crosses intersection with traffic light
+366.0s: Car-0 reaches (4, 0) from (4, 1) going to Exit, direction='EW'
+366.0s: Car-0 exits simulation after 360.0s
+367.0s: Traffic Light (3, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+367.0s: Traffic Light (4, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+368.0s: Car-59 arrives from S at (5, 3) heading to (2, 0) [(5, 3), (4, 3), (3, 3), (2, 3), (2, 2), (2, 1), (2, 0)]
+370.0s: Car-2 reaches (2, 3) from (3, 3) going to (1, 3), direction='NS'
+370.0s: Car-2 crosses intersection with traffic light
+372.0s: Car-22 reaches (3, 2) from (4, 2) going to (2, 2), direction='NS'
+372.0s: Car-22 crosses intersection with traffic light
+372.0s: Car-43 reaches (2, 4) from (2, 5) going to (1, 4), direction='EW'
+372.0s: Car-43 waits at red
+376.0s: Car-60 arrives from S at (5, 4) heading to (2, 5) [(5, 4), (4, 4), (3, 4), (2, 4), (2, 5)]
+382.0s: Car-44 reaches (1, 1) from (1, 0) going to (1, 2), direction='EW'
+382.0s: Car-44 waits at red
+383.0s: Car-24 reaches (2, 1) from (1, 1) going to (3, 1), direction='NS'
+383.0s: Car-24 crosses intersection with traffic light
+384.0s: Car-61 arrives from W at (3, 0) heading to (0, 1) [(3, 0), (3, 1), (2, 1), (1, 1), (0, 1)]
+385.0s: Car-62 arrives from W at (3, 0) heading to (1, 0) [(3, 0), (3, 1), (2, 1), (1, 1), (1, 0)]
+388.0s: Car-26 reaches (3, 3) from (4, 3) going to (2, 3), direction='NS'
+388.0s: Car-26 crosses intersection with traffic light
+388.0s: Car-63 arrives from E at (4, 5) heading to (4, 0) [(4, 5), (4, 4), (4, 3), (4, 2), (4, 1), (4, 0)]
+390.0s: Car-1 reaches (4, 3) from (4, 4) going to (4, 2), direction='EW'
+390.0s: Car-1 waits at red
+390.0s: Car-4 reaches (3, 5) from (3, 4) going to Exit, direction='EW'
+390.0s: Car-4 exits simulation after 365.0s
+390.0s: Car-20 reaches (1, 2) from (1, 3) going to (2, 2), direction='EW'
+390.0s: Car-20 waits at red
+390.0s: Car-23 reaches (2, 4) from (1, 4) going to (3, 4), direction='NS'
+390.0s: Car-23 crosses intersection with traffic light
+390.0s: Car-21 reaches (2, 4) from (3, 4) going to (1, 4), direction='NS'
+390.0s: Car-21 crosses intersection with traffic light
+390.0s: Car-19 reaches (4, 1) from (4, 2) going to (4, 0), direction='EW'
+390.0s: Car-19 waits at red
+390.0s: Car-25 reaches (3, 4) from (4, 4) going to (2, 4), direction='NS'
+390.0s: Car-25 crosses intersection with traffic light
+390.0s: Traffic Light (1, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+390.0s: Traffic Light (1, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+390.0s: Traffic Light (1, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+390.0s: Traffic Light (1, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+390.0s: Traffic Light (2, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+390.0s: Traffic Light (2, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+390.0s: Traffic Light (2, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+390.0s: Traffic Light (2, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+390.0s: Traffic Light (3, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+390.0s: Traffic Light (3, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+390.0s: Traffic Light (3, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+390.0s: Traffic Light (4, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+390.0s: Traffic Light (4, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+390.0s: Traffic Light (4, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+390.0s: Car-44 waited 8.0s
+390.0s: Car-44 crosses intersection with traffic light
+390.0s: Car-40 waited 43.0s
+390.0s: Car-40 crosses intersection with traffic light
+390.0s: Car-20 waited 0.0s
+390.0s: Car-20 crosses intersection with traffic light
+390.0s: Car-43 waited 18.0s
+390.0s: Car-43 crosses intersection with traffic light
+390.0s: Car-17 waited 51.0s
+390.0s: Car-17 crosses intersection with traffic light
+390.0s: Car-1 waited 0.0s
+390.0s: Car-1 crosses intersection with traffic light
+392.0s: Car-27 reaches (4, 3) from (4, 4) going to (5, 3), direction='EW'
+392.0s: Car-27 crosses intersection with traffic light
+392.0s: Car-45 reaches (4, 4) from (4, 5) going to (3, 4), direction='EW'
+392.0s: Car-45 crosses intersection with traffic light
+393.0s: Car-64 arrives from N at (0, 2) heading to (4, 5) [(0, 2), (1, 2), (1, 3), (1, 4), (2, 4), (3, 4), (4, 4), (4, 5)]
+395.0s: Car-28 reaches (3, 2) from (3, 1) going to (3, 3), direction='EW'
+395.0s: Car-28 crosses intersection with traffic light
+397.0s: Car-18 reaches (3, 1) from (4, 1) going to (2, 1), direction='NS'
+397.0s: Car-18 crosses intersection with traffic light
+397.0s: Traffic Light (3, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+397.0s: Traffic Light (4, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+397.0s: Car-19 waited 7.0s
+397.0s: Car-19 crosses intersection with traffic light
+398.0s: Car-46 reaches (3, 1) from (3, 0) going to (3, 2), direction='EW'
+398.0s: Car-46 crosses intersection with traffic light
+399.0s: Car-29 reaches (2, 1) from (1, 1) going to (2, 0), direction='NS'
+399.0s: Car-29 waits at red
+401.0s: Car-65 arrives from E at (2, 5) heading to (0, 2) [(2, 5), (2, 4), (1, 4), (1, 3), (1, 2), (0, 2)]
+405.0s: Car-66 arrives from N at (0, 3) heading to (1, 5) [(0, 3), (1, 3), (1, 4), (1, 5)]
+408.0s: Car-47 reaches (1, 1) from (1, 0) going to (0, 1), direction='EW'
+408.0s: Car-47 crosses intersection with traffic light
+409.0s: Car-30 reaches (3, 4) from (2, 4) going to (3, 3), direction='NS'
+409.0s: Car-30 waits at red
+412.0s: Car-9 reaches (1, 3) from (1, 2) going to (1, 4), direction='EW'
+412.0s: Car-9 crosses intersection with traffic light
+414.0s: Car-67 arrives from N at (0, 4) heading to (5, 3) [(0, 4), (1, 4), (1, 3), (2, 3), (3, 3), (4, 3), (5, 3)]
+416.0s: Car-68 arrives from E at (4, 5) heading to (4, 0) [(4, 5), (4, 4), (4, 3), (4, 2), (4, 1), (4, 0)]
+417.0s: Car-31 reaches (2, 1) from (3, 1) going to (2, 0), direction='NS'
+417.0s: Car-31 waits at red
+418.0s: Car-48 reaches (3, 1) from (3, 0) going to (4, 1), direction='EW'
+418.0s: Car-48 crosses intersection with traffic light
+420.0s: Traffic Light (1, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+420.0s: Traffic Light (1, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+420.0s: Traffic Light (1, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+420.0s: Traffic Light (1, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+420.0s: Traffic Light (2, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+420.0s: Traffic Light (2, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+420.0s: Traffic Light (2, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+420.0s: Traffic Light (2, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+420.0s: Traffic Light (3, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+420.0s: Traffic Light (3, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+420.0s: Traffic Light (3, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+420.0s: Traffic Light (4, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+420.0s: Traffic Light (4, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+420.0s: Traffic Light (4, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+426.0s: Car-69 arrives from N at (0, 3) heading to (4, 0) [(0, 3), (1, 3), (1, 2), (2, 2), (2, 1), (3, 1), (4, 1), (4, 0)]
+427.0s: Traffic Light (3, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+427.0s: Traffic Light (4, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+428.0s: Car-49 reaches (4, 2) from (5, 2) going to (3, 2), direction='NS'
+428.0s: Car-49 crosses intersection with traffic light
+429.0s: Car-33 reaches (1, 2) from (1, 3) going to (2, 2), direction='EW'
+429.0s: Car-33 waits at red
+429.0s: Car-70 arrives from S at (5, 3) heading to (5, 4) [(5, 3), (4, 3), (4, 4), (5, 4)]
+430.0s: Car-50 reaches (2, 1) from (2, 0) going to (1, 1), direction='EW'
+430.0s: Car-50 waits at red
+430.0s: Car-71 arrives from E at (3, 5) heading to (5, 2) [(3, 5), (3, 4), (4, 4), (4, 3), (4, 2), (5, 2)]
+431.0s: Car-34 reaches (1, 3) from (1, 2) going to (1, 4), direction='EW'
+431.0s: Car-34 waits at red
+433.0s: Car-13 reaches (2, 1) from (3, 1) going to (2, 2), direction='NS'
+433.0s: Car-13 crosses intersection with traffic light
+433.0s: Car-72 arrives from W at (4, 0) heading to (0, 2) [(4, 0), (4, 1), (4, 2), (3, 2), (2, 2), (1, 2), (0, 2)]
+438.0s: Car-51 reaches (1, 1) from (0, 1) going to (2, 1), direction='NS'
+438.0s: Car-51 crosses intersection with traffic light
+438.0s: Car-73 arrives from E at (2, 5) heading to (5, 2) [(2, 5), (2, 4), (3, 4), (3, 3), (4, 3), (4, 2), (5, 2)]
+441.0s: Car-74 arrives from E at (4, 5) heading to (5, 3) [(4, 5), (4, 4), (4, 3), (5, 3)]
+447.0s: TL preemption for (2, 1) awoke for Ambulance for direction='NS'
+447.0s: Extended TL at (2, 1) for Ambulance for direction='NS'
+448.0s: Car-15 reaches (2, 4) from (3, 4) going to (2, 5), direction='NS'
+448.0s: Car-15 crosses intersection with traffic light
+448.0s: Car-37 reaches (1, 3) from (1, 4) going to (2, 3), direction='EW'
+448.0s: Car-37 waits at red
+448.0s: Car-52 reaches (1, 1) from (0, 1) going to (1, 2), direction='NS'
+448.0s: Car-52 crosses intersection with traffic light
+448.0s: Car-75 arrives from W at (1, 0) heading to (5, 3) [(1, 0), (1, 1), (1, 2), (1, 3), (2, 3), (3, 3), (4, 3), (5, 3)]
+449.0s: Car-53 reaches (3, 1) from (3, 0) going to (3, 2), direction='EW'
+449.0s: Car-53 waits at red
+450.0s: Car-10 reaches (3, 1) from (2, 1) going to (4, 1), direction='NS'
+450.0s: Car-10 crosses intersection with traffic light
+450.0s: Car-8 reaches (2, 4) from (3, 4) going to (1, 4), direction='NS'
+450.0s: Car-8 crosses intersection with traffic light
+450.0s: Car-14 reaches (1, 3) from (1, 2) going to (1, 4), direction='EW'
+450.0s: Car-14 waits at red
+450.0s: Car-5 reaches (1, 3) from (1, 2) going to (0, 3), direction='EW'
+450.0s: Car-5 waits at red
+450.0s: Car-6 reaches (1, 3) from (1, 2) going to (0, 3), direction='EW'
+450.0s: Car-6 waits at red
+450.0s: Car-12 reaches (0, 3) from (1, 3) going to Exit, direction='NS'
+450.0s: Car-12 exits simulation after 379.0s
+450.0s: Car-7 reaches (1, 5) from (1, 4) going to Exit, direction='EW'
+450.0s: Car-7 exits simulation after 414.0s
+450.0s: Car-36 reaches (2, 4) from (1, 4) going to (2, 3), direction='NS'
+450.0s: Car-36 crosses intersection with traffic light
+450.0s: Car-35 reaches (1, 1) from (2, 1) going to (0, 1), direction='NS'
+450.0s: Car-35 crosses intersection with traffic light
+450.0s: Car-11 reaches (2, 3) from (2, 2) going to (3, 3), direction='EW'
+450.0s: Car-11 waits at red
+450.0s: Car-32 reaches (4, 5) from (4, 4) going to Exit, direction='EW'
+450.0s: Car-32 exits simulation after 270.0s
+450.0s: Traffic Light (1, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+450.0s: Traffic Light (1, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+450.0s: Traffic Light (1, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+450.0s: Traffic Light (1, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+450.0s: Traffic Light (2, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+450.0s: Traffic Light (2, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+450.0s: Traffic Light (2, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+450.0s: Traffic Light (3, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+450.0s: Traffic Light (3, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+450.0s: Traffic Light (3, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+450.0s: Traffic Light (4, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+450.0s: Traffic Light (4, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+450.0s: Traffic Light (4, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+450.0s: Car-33 waited 21.0s
+450.0s: Car-33 crosses intersection with traffic light
+450.0s: Car-34 waited 19.0s
+450.0s: Car-34 crosses intersection with traffic light
+450.0s: Car-37 waited 2.0s
+450.0s: Car-37 crosses intersection with traffic light
+450.0s: Car-14 waited 0.0s
+450.0s: Car-14 crosses intersection with traffic light
+450.0s: Car-5 waited 0.0s
+450.0s: Car-5 crosses intersection with traffic light
+450.0s: Car-6 waited 0.0s
+450.0s: Car-6 crosses intersection with traffic light
+450.0s: Car-11 waited 0.0s
+450.0s: Car-11 crosses intersection with traffic light
+450.0s: Car-30 waited 41.0s
+450.0s: Car-30 crosses intersection with traffic light
+452.0s: Ambulance reaches (2, 1) from (3, 1) going to (1, 1), direction='NS'
+452.0s: Ambulance crosses intersection with traffic light
+454.0s: Car-38 reaches (2, 4) from (1, 4) going to (2, 5), direction='NS'
+454.0s: Car-38 waits at red
+455.0s: Car-54 reaches (2, 1) from (2, 0) going to (3, 1), direction='EW'
+455.0s: Car-54 waits at red
+456.0s: Car-76 arrives from W at (3, 0) heading to (2, 5) [(3, 0), (3, 1), (3, 2), (3, 3), (3, 4), (2, 4), (2, 5)]
+457.0s: Traffic Light (2, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+457.0s: Traffic Light (3, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+457.0s: Traffic Light (4, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+457.0s: Car-29 waited 58.0s
+457.0s: Car-29 crosses intersection with traffic light
+457.0s: Car-31 waited 40.0s
+457.0s: Car-31 crosses intersection with traffic light
+457.0s: Car-50 waited 27.0s
+457.0s: Car-50 crosses intersection with traffic light
+457.0s: Car-54 waited 2.0s
+457.0s: Car-54 crosses intersection with traffic light
+457.0s: Car-53 waited 8.0s
+457.0s: Car-53 crosses intersection with traffic light
+461.0s: Car-55 reaches (1, 1) from (1, 0) going to (2, 1), direction='EW'
+461.0s: Car-55 crosses intersection with traffic light
+462.0s: Car-39 reaches (2, 2) from (2, 1) going to (1, 2), direction='EW'
+462.0s: Car-39 crosses intersection with traffic light
+462.0s: Car-77 arrives from W at (4, 0) heading to (3, 0) [(4, 0), (4, 1), (3, 1), (3, 0)]
+465.0s: Car-78 arrives from W at (1, 0) heading to (3, 5) [(1, 0), (1, 1), (1, 2), (1, 3), (1, 4), (2, 4), (3, 4), (3, 5)]
+467.0s: Car-56 reaches (1, 1) from (0, 1) going to (2, 1), direction='NS'
+467.0s: Car-56 waits at red
+473.0s: Car-79 arrives from S at (5, 1) heading to (5, 4) [(5, 1), (4, 1), (4, 2), (4, 3), (4, 4), (5, 4)]
+477.0s: Car-41 reaches (4, 4) from (3, 4) going to (4, 3), direction='NS'
+477.0s: Car-41 waits at red
+477.0s: Car-57 reaches (4, 1) from (4, 0) going to (3, 1), direction='EW'
+477.0s: Car-57 crosses intersection with traffic light
+477.0s: Car-80 arrives from N at (0, 2) heading to (1, 0) [(0, 2), (1, 2), (1, 1), (1, 0)]
+478.0s: Car-58 reaches (1, 4) from (0, 4) going to (2, 4), direction='NS'
+478.0s: Car-58 waits at red
+480.0s: Traffic Light (1, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+480.0s: Traffic Light (1, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+480.0s: Traffic Light (1, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+480.0s: Traffic Light (1, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+480.0s: Traffic Light (2, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+480.0s: Traffic Light (2, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+480.0s: Traffic Light (2, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+480.0s: Traffic Light (3, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+480.0s: Traffic Light (3, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+480.0s: Traffic Light (3, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+480.0s: Traffic Light (4, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+480.0s: Traffic Light (4, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+480.0s: Traffic Light (4, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+485.0s: Car-42 reaches (1, 2) from (1, 1) going to (1, 3), direction='EW'
+485.0s: Car-42 waits at red
+487.0s: Car-81 arrives from W at (2, 0) heading to (0, 1) [(2, 0), (2, 1), (1, 1), (0, 1)]
+487.0s: Traffic Light (2, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+487.0s: Traffic Light (3, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+487.0s: Traffic Light (4, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+488.0s: Car-59 reaches (4, 3) from (5, 3) going to (3, 3), direction='NS'
+488.0s: Car-59 crosses intersection with traffic light
+490.0s: Car-2 reaches (1, 3) from (2, 3) going to (1, 2), direction='NS'
+490.0s: Car-2 crosses intersection with traffic light
+492.0s: Car-22 reaches (2, 2) from (3, 2) going to (1, 2), direction='NS'
+492.0s: Car-22 crosses intersection with traffic light
+495.0s: Car-82 arrives from W at (3, 0) heading to (5, 1) [(3, 0), (3, 1), (4, 1), (5, 1)]
+496.0s: Car-60 reaches (4, 4) from (5, 4) going to (3, 4), direction='NS'
+496.0s: Car-60 crosses intersection with traffic light
+497.0s: Car-83 arrives from S at (5, 1) heading to (4, 5) [(5, 1), (4, 1), (4, 2), (4, 3), (4, 4), (4, 5)]
+503.0s: Car-24 reaches (3, 1) from (2, 1) going to (3, 0), direction='NS'
+503.0s: Car-24 crosses intersection with traffic light
+504.0s: Car-61 reaches (3, 1) from (3, 0) going to (2, 1), direction='EW'
+504.0s: Car-61 waits at red
+505.0s: Car-62 reaches (3, 1) from (3, 0) going to (2, 1), direction='EW'
+505.0s: Car-62 waits at red
+507.0s: Car-84 arrives from S at (5, 2) heading to (5, 3) [(5, 2), (4, 2), (4, 3), (5, 3)]
+508.0s: Car-26 reaches (2, 3) from (3, 3) going to (1, 3), direction='NS'
+508.0s: Car-26 crosses intersection with traffic light
+508.0s: Car-63 reaches (4, 4) from (4, 5) going to (4, 3), direction='EW'
+508.0s: Car-63 waits at red
+510.0s: Car-23 reaches (3, 4) from (2, 4) going to (4, 4), direction='NS'
+510.0s: Car-23 crosses intersection with traffic light
+510.0s: Car-21 reaches (1, 4) from (2, 4) going to (1, 3), direction='NS'
+510.0s: Car-21 crosses intersection with traffic light
+510.0s: Car-25 reaches (2, 4) from (3, 4) going to (1, 4), direction='NS'
+510.0s: Car-25 crosses intersection with traffic light
+510.0s: Car-44 reaches (1, 2) from (1, 1) going to (1, 3), direction='EW'
+510.0s: Car-44 waits at red
+510.0s: Car-40 reaches (2, 2) from (1, 2) going to (3, 2), direction='NS'
+510.0s: Car-40 crosses intersection with traffic light
+510.0s: Car-20 reaches (2, 2) from (1, 2) going to (2, 1), direction='NS'
+510.0s: Car-20 crosses intersection with traffic light
+510.0s: Car-43 reaches (1, 4) from (2, 4) going to (1, 3), direction='NS'
+510.0s: Car-43 crosses intersection with traffic light
+510.0s: Car-17 reaches (3, 5) from (3, 4) going to Exit, direction='EW'
+510.0s: Car-17 exits simulation after 411.0s
+510.0s: Car-1 reaches (4, 2) from (4, 3) going to (4, 1), direction='EW'
+510.0s: Car-1 waits at red
+510.0s: Traffic Light (1, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+510.0s: Traffic Light (1, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+510.0s: Traffic Light (1, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+510.0s: Traffic Light (1, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+510.0s: Traffic Light (2, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+510.0s: Traffic Light (2, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+510.0s: Traffic Light (2, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+510.0s: Traffic Light (3, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+510.0s: Traffic Light (3, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+510.0s: Traffic Light (3, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+510.0s: Traffic Light (4, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+510.0s: Traffic Light (4, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+510.0s: Traffic Light (4, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+510.0s: Car-56 waited 43.0s
+510.0s: Car-56 crosses intersection with traffic light
+510.0s: Car-42 waited 25.0s
+510.0s: Car-42 crosses intersection with traffic light
+510.0s: Car-44 waited 0.0s
+510.0s: Car-44 crosses intersection with traffic light
+510.0s: Car-58 waited 32.0s
+510.0s: Car-58 crosses intersection with traffic light
+510.0s: Car-38 waited 56.0s
+510.0s: Car-38 crosses intersection with traffic light
+510.0s: Car-1 waited 0.0s
+510.0s: Car-1 crosses intersection with traffic light
+510.0s: Car-41 waited 33.0s
+510.0s: Car-41 crosses intersection with traffic light
+510.0s: Car-63 waited 2.0s
+510.0s: Car-63 crosses intersection with traffic light
+512.0s: Car-27 reaches (5, 3) from (4, 3) going to Exit, direction='NS'
+512.0s: Car-27 exits simulation after 360.0s
+512.0s: Car-45 reaches (3, 4) from (4, 4) going to (2, 4), direction='NS'
+512.0s: Car-45 waits at red
+513.0s: Car-64 reaches (1, 2) from (0, 2) going to (1, 3), direction='NS'
+513.0s: Car-64 waits at red
+515.0s: Car-28 reaches (3, 3) from (3, 2) going to (3, 4), direction='EW'
+515.0s: Car-28 crosses intersection with traffic light
+516.0s: Car-85 arrives from E at (4, 5) heading to (2, 5) [(4, 5), (4, 4), (3, 4), (2, 4), (2, 5)]
+517.0s: Car-18 reaches (2, 1) from (3, 1) going to (1, 1), direction='NS'
+517.0s: Car-18 crosses intersection with traffic light
+517.0s: Car-19 reaches (4, 0) from (4, 1) going to Exit, direction='EW'
+517.0s: Car-19 exits simulation after 408.0s
+517.0s: Traffic Light (2, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+517.0s: Traffic Light (3, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+517.0s: Traffic Light (4, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+517.0s: Car-61 waited 13.0s
+517.0s: Car-61 crosses intersection with traffic light
+517.0s: Car-62 waited 12.0s
+517.0s: Car-62 crosses intersection with traffic light
+518.0s: Car-46 reaches (3, 2) from (3, 1) going to (2, 2), direction='EW'
+518.0s: Car-46 crosses intersection with traffic light
+521.0s: Car-65 reaches (2, 4) from (2, 5) going to (1, 4), direction='EW'
+521.0s: Car-65 crosses intersection with traffic light
+522.0s: Car-86 arrives from W at (1, 0) heading to (5, 1) [(1, 0), (1, 1), (2, 1), (3, 1), (4, 1), (5, 1)]
+525.0s: Car-66 reaches (1, 3) from (0, 3) going to (1, 4), direction='NS'
+525.0s: Car-66 waits at red
+528.0s: Car-47 reaches (0, 1) from (1, 1) going to Exit, direction='NS'
+528.0s: Car-47 exits simulation after 240.0s
+528.0s: Car-87 arrives from E at (3, 5) heading to (5, 1) [(3, 5), (3, 4), (4, 4), (4, 3), (4, 2), (4, 1), (5, 1)]
+532.0s: Car-9 reaches (1, 4) from (1, 3) going to (2, 4), direction='EW'
+532.0s: Car-9 crosses intersection with traffic light
+534.0s: Car-67 reaches (1, 4) from (0, 4) going to (1, 3), direction='NS'
+534.0s: Car-67 waits at red
+536.0s: Car-68 reaches (4, 4) from (4, 5) going to (4, 3), direction='EW'
+536.0s: Car-68 crosses intersection with traffic light
+538.0s: Car-48 reaches (4, 1) from (3, 1) going to (4, 0), direction='NS'
+538.0s: Car-48 waits at red
+538.0s: Car-88 arrives from W at (3, 0) heading to (5, 2) [(3, 0), (3, 1), (3, 2), (4, 2), (5, 2)]
+540.0s: Car-89 arrives from N at (0, 1) heading to (0, 3) [(0, 1), (1, 1), (1, 2), (1, 3), (0, 3)]
+540.0s: Traffic Light (1, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+540.0s: Traffic Light (1, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+540.0s: Traffic Light (1, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+540.0s: Traffic Light (1, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+540.0s: Traffic Light (2, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+540.0s: Traffic Light (2, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+540.0s: Traffic Light (2, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+540.0s: Traffic Light (3, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+540.0s: Traffic Light (3, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+540.0s: Traffic Light (3, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+540.0s: Traffic Light (4, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+540.0s: Traffic Light (4, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+540.0s: Traffic Light (4, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+541.0s: Car-90 arrives from S at (5, 1) heading to (3, 0) [(5, 1), (4, 1), (3, 1), (3, 0)]
+546.0s: Car-69 reaches (1, 3) from (0, 3) going to (1, 2), direction='NS'
+546.0s: Car-69 crosses intersection with traffic light
+547.0s: Traffic Light (2, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+547.0s: Traffic Light (3, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+547.0s: Traffic Light (4, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+548.0s: Car-49 reaches (3, 2) from (4, 2) going to (2, 2), direction='NS'
+548.0s: Car-49 crosses intersection with traffic light
+549.0s: Car-70 reaches (4, 3) from (5, 3) going to (4, 4), direction='NS'
+549.0s: Car-70 crosses intersection with traffic light
+550.0s: Car-71 reaches (3, 4) from (3, 5) going to (4, 4), direction='EW'
+550.0s: Car-71 waits at red
+550.0s: Car-91 arrives from N at (0, 2) heading to (4, 0) [(0, 2), (1, 2), (1, 1), (2, 1), (3, 1), (4, 1), (4, 0)]
+553.0s: Car-13 reaches (2, 2) from (2, 1) going to (2, 3), direction='EW'
+553.0s: Car-13 waits at red
+553.0s: Car-72 reaches (4, 1) from (4, 0) going to (4, 2), direction='EW'
+553.0s: Car-72 waits at red
+554.0s: Car-92 arrives from N at (0, 3) heading to (5, 3) [(0, 3), (1, 3), (2, 3), (3, 3), (4, 3), (5, 3)]
+555.0s: Car-93 arrives from N at (0, 4) heading to (2, 0) [(0, 4), (1, 4), (1, 3), (2, 3), (2, 2), (2, 1), (2, 0)]
+558.0s: Car-51 reaches (2, 1) from (1, 1) going to (3, 1), direction='NS'
+558.0s: Car-51 crosses intersection with traffic light
+558.0s: Car-73 reaches (2, 4) from (2, 5) going to (3, 4), direction='EW'
+558.0s: Car-73 waits at red
+558.0s: Car-94 arrives from W at (4, 0) heading to (5, 1) [(4, 0), (4, 1), (5, 1)]
+560.0s: Car-95 arrives from N at (0, 4) heading to (5, 4) [(0, 4), (1, 4), (2, 4), (3, 4), (4, 4), (5, 4)]
+561.0s: Car-74 reaches (4, 4) from (4, 5) going to (4, 3), direction='EW'
+561.0s: Car-74 waits at red
+562.0s: Car-96 arrives from W at (4, 0) heading to (1, 5) [(4, 0), (4, 1), (4, 2), (4, 3), (4, 4), (3, 4), (2, 4), (1, 4), (1, 5)]
+567.0s: TL preemption for (1, 1) awoke for Ambulance for direction='NS'
+567.0s: Extended TL at (1, 1) for Ambulance for direction='NS'
+568.0s: Car-15 reaches (2, 5) from (2, 4) going to Exit, direction='EW'
+568.0s: Car-15 exits simulation after 480.0s
+568.0s: Car-52 reaches (1, 2) from (1, 1) going to (1, 3), direction='EW'
+568.0s: Car-52 waits at red
+568.0s: Car-75 reaches (1, 1) from (1, 0) going to (1, 2), direction='EW'
+568.0s: Car-75 waits at red
+570.0s: Car-10 reaches (4, 1) from (3, 1) going to (4, 0), direction='NS'
+570.0s: Car-10 crosses intersection with traffic light
+570.0s: Car-8 reaches (1, 4) from (2, 4) going to (1, 5), direction='NS'
+570.0s: Car-8 crosses intersection with traffic light
+570.0s: Car-36 reaches (2, 3) from (2, 4) going to (3, 3), direction='EW'
+570.0s: Car-36 waits at red
+570.0s: Car-35 reaches (0, 1) from (1, 1) going to Exit, direction='NS'
+570.0s: Car-35 exits simulation after 375.0s
+570.0s: Car-33 reaches (2, 2) from (1, 2) going to (2, 1), direction='NS'
+570.0s: Car-33 crosses intersection with traffic light
+570.0s: Car-34 reaches (1, 4) from (1, 3) going to (0, 4), direction='EW'
+570.0s: Car-34 waits at red
+570.0s: Car-37 reaches (2, 3) from (1, 3) going to (2, 2), direction='NS'
+570.0s: Car-37 crosses intersection with traffic light
+570.0s: Car-14 reaches (1, 4) from (1, 3) going to (2, 4), direction='EW'
+570.0s: Car-14 waits at red
+570.0s: Car-5 reaches (0, 3) from (1, 3) going to Exit, direction='NS'
+570.0s: Car-5 exits simulation after 539.0s
+570.0s: Car-6 reaches (0, 3) from (1, 3) going to Exit, direction='NS'
+570.0s: Car-6 exits simulation after 537.0s
+570.0s: Car-11 reaches (3, 3) from (2, 3) going to (4, 3), direction='NS'
+570.0s: Car-11 crosses intersection with traffic light
+570.0s: Car-30 reaches (3, 3) from (3, 4) going to (4, 3), direction='EW'
+570.0s: Car-30 waits at red
+570.0s: Car-97 arrives from N at (0, 2) heading to (0, 1) [(0, 2), (1, 2), (1, 1), (0, 1)]
+570.0s: Traffic Light (1, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+570.0s: Traffic Light (1, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+570.0s: Traffic Light (1, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+570.0s: Traffic Light (2, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+570.0s: Traffic Light (2, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+570.0s: Traffic Light (2, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+570.0s: Traffic Light (3, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+570.0s: Traffic Light (3, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+570.0s: Traffic Light (3, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+570.0s: Traffic Light (4, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+570.0s: Traffic Light (4, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+570.0s: Traffic Light (4, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+570.0s: Car-64 waited 57.0s
+570.0s: Car-64 crosses intersection with traffic light
+570.0s: Car-52 waited 2.0s
+570.0s: Car-52 crosses intersection with traffic light
+570.0s: Car-66 waited 45.0s
+570.0s: Car-66 crosses intersection with traffic light
+570.0s: Car-67 waited 36.0s
+570.0s: Car-67 crosses intersection with traffic light
+570.0s: Car-34 waited 0.0s
+570.0s: Car-34 crosses intersection with traffic light
+570.0s: Car-14 waited 0.0s
+570.0s: Car-14 crosses intersection with traffic light
+570.0s: Car-13 waited 17.0s
+570.0s: Car-13 crosses intersection with traffic light
+570.0s: Car-36 waited 0.0s
+570.0s: Car-36 crosses intersection with traffic light
+570.0s: Car-73 waited 12.0s
+570.0s: Car-73 crosses intersection with traffic light
+570.0s: Car-30 waited 0.0s
+570.0s: Car-30 crosses intersection with traffic light
+570.0s: Car-45 waited 58.0s
+570.0s: Car-45 crosses intersection with traffic light
+570.0s: Car-71 waited 20.0s
+570.0s: Car-71 crosses intersection with traffic light
+570.0s: Car-74 waited 9.0s
+570.0s: Car-74 crosses intersection with traffic light
+571.0s: Car-98 arrives from N at (0, 3) heading to (5, 4) [(0, 3), (1, 3), (1, 4), (2, 4), (3, 4), (4, 4), (5, 4)]
+572.0s: Ambulance reaches (1, 1) from (2, 1) going to (1, 2), direction='NS'
+572.0s: Ambulance crosses intersection with traffic light
+576.0s: Car-76 reaches (3, 1) from (3, 0) going to (3, 2), direction='EW'
+576.0s: Car-76 waits at red
+577.0s: Car-29 reaches (2, 0) from (2, 1) going to Exit, direction='EW'
+577.0s: Car-29 exits simulation after 418.0s
+577.0s: Car-31 reaches (2, 0) from (2, 1) going to Exit, direction='EW'
+577.0s: Car-31 exits simulation after 400.0s
+577.0s: Car-50 reaches (1, 1) from (2, 1) going to (1, 0), direction='NS'
+577.0s: Car-50 crosses intersection with traffic light
+577.0s: Car-54 reaches (3, 1) from (2, 1) going to (3, 0), direction='NS'
+577.0s: Car-54 crosses intersection with traffic light
+577.0s: Car-53 reaches (3, 2) from (3, 1) going to (2, 2), direction='EW'
+577.0s: Car-53 crosses intersection with traffic light
+577.0s: Car-99 arrives from S at (5, 1) heading to (3, 5) [(5, 1), (4, 1), (3, 1), (3, 2), (3, 3), (3, 4), (3, 5)]
+577.0s: Traffic Light (1, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+577.0s: Traffic Light (2, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+577.0s: Traffic Light (3, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+577.0s: Traffic Light (4, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+577.0s: Car-75 waited 9.0s
+577.0s: Car-75 crosses intersection with traffic light
+577.0s: Car-76 waited 1.0s
+577.0s: Car-76 crosses intersection with traffic light
+577.0s: Car-48 waited 39.0s
+577.0s: Car-48 crosses intersection with traffic light
+577.0s: Car-72 waited 24.0s
+577.0s: Car-72 crosses intersection with traffic light
+581.0s: Car-55 reaches (2, 1) from (1, 1) going to (2, 0), direction='NS'
+581.0s: Car-55 waits at red
+582.0s: Car-39 reaches (1, 2) from (2, 2) going to (0, 2), direction='NS'
+582.0s: Car-39 waits at red
+582.0s: Car-77 reaches (4, 1) from (4, 0) going to (3, 1), direction='EW'
+582.0s: Car-77 crosses intersection with traffic light
+584.0s: Car-100 arrives from S at (5, 2) heading to (4, 0) [(5, 2), (4, 2), (4, 1), (4, 0)]
+585.0s: Car-78 reaches (1, 1) from (1, 0) going to (1, 2), direction='EW'
+585.0s: Car-78 crosses intersection with traffic light
+590.0s: Car-101 arrives from N at (0, 3) heading to (0, 4) [(0, 3), (1, 3), (1, 4), (0, 4)]
+593.0s: Car-79 reaches (4, 1) from (5, 1) going to (4, 2), direction='NS'
+593.0s: Car-79 waits at red
+597.0s: Car-57 reaches (3, 1) from (4, 1) going to (2, 1), direction='NS'
+597.0s: Car-57 waits at red
+597.0s: Car-80 reaches (1, 2) from (0, 2) going to (1, 1), direction='NS'
+597.0s: Car-80 waits at red
+600.0s: Car-102 arrives from E at (4, 5) heading to (0, 4) [(4, 5), (4, 4), (3, 4), (2, 4), (1, 4), (0, 4)]
+600.0s: Traffic Light (1, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+600.0s: Traffic Light (1, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+600.0s: Traffic Light (1, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+600.0s: Traffic Light (2, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+600.0s: Traffic Light (2, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+600.0s: Traffic Light (2, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+600.0s: Traffic Light (3, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+600.0s: Traffic Light (3, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+600.0s: Traffic Light (3, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+600.0s: Traffic Light (4, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+600.0s: Traffic Light (4, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+600.0s: Traffic Light (4, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+604.0s: Car-103 arrives from W at (3, 0) heading to (2, 5) [(3, 0), (3, 1), (3, 2), (3, 3), (3, 4), (2, 4), (2, 5)]
+607.0s: Car-81 reaches (2, 1) from (2, 0) going to (1, 1), direction='EW'
+607.0s: Car-81 crosses intersection with traffic light
+607.0s: Traffic Light (1, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+607.0s: Traffic Light (2, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+607.0s: Traffic Light (3, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+607.0s: Traffic Light (4, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+608.0s: Car-59 reaches (3, 3) from (4, 3) going to (2, 3), direction='NS'
+608.0s: Car-59 crosses intersection with traffic light
+610.0s: Car-2 reaches (1, 2) from (1, 3) going to (1, 1), direction='EW'
+610.0s: Car-2 waits at red
+611.0s: Car-104 arrives from S at (5, 3) heading to (4, 0) [(5, 3), (4, 3), (4, 2), (4, 1), (4, 0)]
+612.0s: Car-22 reaches (1, 2) from (2, 2) going to (1, 1), direction='NS'
+612.0s: Car-22 crosses intersection with traffic light
+615.0s: Car-82 reaches (3, 1) from (3, 0) going to (4, 1), direction='EW'
+615.0s: Car-82 waits at red
+616.0s: Car-60 reaches (3, 4) from (4, 4) going to (2, 4), direction='NS'
+616.0s: Car-60 crosses intersection with traffic light
+617.0s: Car-83 reaches (4, 1) from (5, 1) going to (4, 2), direction='NS'
+617.0s: Car-83 crosses intersection with traffic light
+617.0s: Car-105 arrives from N at (0, 4) heading to (3, 0) [(0, 4), (1, 4), (1, 3), (2, 3), (2, 2), (3, 2), (3, 1), (3, 0)]
+619.0s: Car-106 arrives from N at (0, 2) heading to (0, 3) [(0, 2), (1, 2), (1, 3), (0, 3)]
+622.0s: Car-107 arrives from E at (3, 5) heading to (5, 4) [(3, 5), (3, 4), (4, 4), (5, 4)]
+623.0s: Car-24 reaches (3, 0) from (3, 1) going to Exit, direction='EW'
+623.0s: Car-24 exits simulation after 480.0s
+624.0s: Car-108 arrives from N at (0, 2) heading to (4, 5) [(0, 2), (1, 2), (1, 3), (1, 4), (2, 4), (3, 4), (4, 4), (4, 5)]
+627.0s: Car-84 reaches (4, 2) from (5, 2) going to (4, 3), direction='NS'
+627.0s: Car-84 crosses intersection with traffic light
+628.0s: Car-26 reaches (1, 3) from (2, 3) going to (1, 2), direction='NS'
+628.0s: Car-26 crosses intersection with traffic light
+630.0s: Car-23 reaches (4, 4) from (3, 4) going to (5, 4), direction='NS'
+630.0s: Car-23 crosses intersection with traffic light
+630.0s: Car-21 reaches (1, 3) from (1, 4) going to (1, 2), direction='EW'
+630.0s: Car-21 waits at red
+630.0s: Car-25 reaches (1, 4) from (2, 4) going to (0, 4), direction='NS'
+630.0s: Car-25 crosses intersection with traffic light
+630.0s: Car-40 reaches (3, 2) from (2, 2) going to (4, 2), direction='NS'
+630.0s: Car-40 crosses intersection with traffic light
+630.0s: Car-20 reaches (2, 1) from (2, 2) going to (3, 1), direction='EW'
+630.0s: Car-20 waits at red
+630.0s: Car-43 reaches (1, 3) from (1, 4) going to (0, 3), direction='EW'
+630.0s: Car-43 waits at red
+630.0s: Car-56 reaches (2, 1) from (1, 1) going to (2, 0), direction='NS'
+630.0s: Car-56 crosses intersection with traffic light
+630.0s: Car-42 reaches (1, 3) from (1, 2) going to (1, 4), direction='EW'
+630.0s: Car-42 waits at red
+630.0s: Car-44 reaches (1, 3) from (1, 2) going to (1, 4), direction='EW'
+630.0s: Car-44 waits at red
+630.0s: Car-58 reaches (2, 4) from (1, 4) going to (3, 4), direction='NS'
+630.0s: Car-58 crosses intersection with traffic light
+630.0s: Car-38 reaches (2, 5) from (2, 4) going to Exit, direction='EW'
+630.0s: Car-38 exits simulation after 416.0s
+630.0s: Car-1 reaches (4, 1) from (4, 2) going to (4, 0), direction='EW'
+630.0s: Car-1 waits at red
+630.0s: Car-41 reaches (4, 3) from (4, 4) going to (4, 2), direction='EW'
+630.0s: Car-41 waits at red
+630.0s: Car-63 reaches (4, 3) from (4, 4) going to (4, 2), direction='EW'
+630.0s: Car-63 waits at red
+630.0s: Traffic Light (1, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+630.0s: Traffic Light (1, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+630.0s: Traffic Light (1, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+630.0s: Traffic Light (2, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+630.0s: Traffic Light (2, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+630.0s: Traffic Light (2, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+630.0s: Traffic Light (3, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+630.0s: Traffic Light (3, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+630.0s: Traffic Light (3, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+630.0s: Traffic Light (4, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+630.0s: Traffic Light (4, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+630.0s: Traffic Light (4, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+630.0s: Car-39 waited 48.0s
+630.0s: Car-39 crosses intersection with traffic light
+630.0s: Car-80 waited 33.0s
+630.0s: Car-80 crosses intersection with traffic light
+630.0s: Car-2 waited 20.0s
+630.0s: Car-2 crosses intersection with traffic light
+630.0s: Car-21 waited 0.0s
+630.0s: Car-21 crosses intersection with traffic light
+630.0s: Car-43 waited 0.0s
+630.0s: Car-43 crosses intersection with traffic light
+630.0s: Car-42 waited 0.0s
+630.0s: Car-42 crosses intersection with traffic light
+630.0s: Car-44 waited 0.0s
+630.0s: Car-44 crosses intersection with traffic light
+630.0s: Car-41 waited 0.0s
+630.0s: Car-41 crosses intersection with traffic light
+630.0s: Car-63 waited 0.0s
+630.0s: Car-63 crosses intersection with traffic light
+634.0s: Car-109 arrives from N at (0, 4) heading to (0, 1) [(0, 4), (1, 4), (1, 3), (1, 2), (1, 1), (0, 1)]
+635.0s: Car-28 reaches (3, 4) from (3, 3) going to (4, 4), direction='EW'
+635.0s: Car-28 crosses intersection with traffic light
+636.0s: Car-85 reaches (4, 4) from (4, 5) going to (3, 4), direction='EW'
+636.0s: Car-85 crosses intersection with traffic light
+637.0s: Car-18 reaches (1, 1) from (2, 1) going to (0, 1), direction='NS'
+637.0s: Car-18 crosses intersection with traffic light
+637.0s: Car-61 reaches (2, 1) from (3, 1) going to (1, 1), direction='NS'
+637.0s: Car-61 crosses intersection with traffic light
+637.0s: Car-62 reaches (2, 1) from (3, 1) going to (1, 1), direction='NS'
+637.0s: Car-62 crosses intersection with traffic light
+637.0s: Traffic Light (1, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+637.0s: Traffic Light (2, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+637.0s: Traffic Light (3, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+637.0s: Traffic Light (4, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+637.0s: Car-55 waited 56.0s
+637.0s: Car-55 crosses intersection with traffic light
+637.0s: Car-20 waited 7.0s
+637.0s: Car-20 crosses intersection with traffic light
+637.0s: Car-57 waited 40.0s
+637.0s: Car-57 crosses intersection with traffic light
+637.0s: Car-82 waited 22.0s
+637.0s: Car-82 crosses intersection with traffic light
+637.0s: Car-79 waited 44.0s
+637.0s: Car-79 crosses intersection with traffic light
+637.0s: Car-1 waited 7.0s
+637.0s: Car-1 crosses intersection with traffic light
+638.0s: Car-46 reaches (2, 2) from (3, 2) going to (1, 2), direction='NS'
+638.0s: Car-46 waits at red
+641.0s: Car-65 reaches (1, 4) from (2, 4) going to (1, 3), direction='NS'
+641.0s: Car-65 waits at red
+642.0s: Car-86 reaches (1, 1) from (1, 0) going to (2, 1), direction='EW'
+642.0s: Car-86 crosses intersection with traffic light
+642.0s: Car-110 arrives from N at (0, 1) heading to (2, 5) [(0, 1), (1, 1), (1, 2), (1, 3), (1, 4), (2, 4), (2, 5)]
+648.0s: Car-87 reaches (3, 4) from (3, 5) going to (4, 4), direction='EW'
+648.0s: Car-87 crosses intersection with traffic light
+651.0s: Car-111 arrives from S at (5, 1) heading to (5, 4) [(5, 1), (4, 1), (4, 2), (4, 3), (4, 4), (5, 4)]
+652.0s: Car-9 reaches (2, 4) from (1, 4) going to (2, 5), direction='NS'
+652.0s: Car-9 waits at red
+656.0s: Car-68 reaches (4, 3) from (4, 4) going to (4, 2), direction='EW'
+656.0s: Car-68 crosses intersection with traffic light
+658.0s: Car-88 reaches (3, 1) from (3, 0) going to (3, 2), direction='EW'
+658.0s: Car-88 crosses intersection with traffic light
+660.0s: Car-89 reaches (1, 1) from (0, 1) going to (1, 2), direction='NS'
+660.0s: Car-89 waits at red
+660.0s: Car-112 arrives from W at (4, 0) heading to (0, 2) [(4, 0), (4, 1), (4, 2), (3, 2), (2, 2), (1, 2), (0, 2)]
+660.0s: Traffic Light (1, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+660.0s: Traffic Light (1, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+660.0s: Traffic Light (1, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+660.0s: Traffic Light (2, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+660.0s: Traffic Light (2, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+660.0s: Traffic Light (2, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+660.0s: Traffic Light (3, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+660.0s: Traffic Light (3, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+660.0s: Traffic Light (3, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+660.0s: Traffic Light (4, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+660.0s: Traffic Light (4, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+660.0s: Traffic Light (4, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+661.0s: Car-90 reaches (4, 1) from (5, 1) going to (3, 1), direction='NS'
+661.0s: Car-90 waits at red
+662.0s: Car-113 arrives from N at (0, 2) heading to (5, 3) [(0, 2), (1, 2), (1, 3), (2, 3), (3, 3), (4, 3), (5, 3)]
+664.0s: Car-114 arrives from N at (0, 3) heading to (5, 1) [(0, 3), (1, 3), (1, 2), (2, 2), (2, 1), (3, 1), (4, 1), (5, 1)]
+666.0s: Car-69 reaches (1, 2) from (1, 3) going to (2, 2), direction='EW'
+666.0s: Car-69 waits at red
+667.0s: Traffic Light (1, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+667.0s: Traffic Light (2, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+667.0s: Traffic Light (3, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+667.0s: Traffic Light (4, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+668.0s: Car-49 reaches (2, 2) from (3, 2) going to (2, 1), direction='NS'
+668.0s: Car-49 crosses intersection with traffic light
+669.0s: Car-70 reaches (4, 4) from (4, 3) going to (5, 4), direction='EW'
+669.0s: Car-70 waits at red
+670.0s: Car-91 reaches (1, 2) from (0, 2) going to (1, 1), direction='NS'
+670.0s: Car-91 crosses intersection with traffic light
+671.0s: Car-115 arrives from S at (5, 3) heading to (3, 0) [(5, 3), (4, 3), (3, 3), (3, 2), (3, 1), (3, 0)]
+674.0s: Car-92 reaches (1, 3) from (0, 3) going to (2, 3), direction='NS'
+674.0s: Car-92 crosses intersection with traffic light
+675.0s: Car-93 reaches (1, 4) from (0, 4) going to (1, 3), direction='NS'
+675.0s: Car-93 crosses intersection with traffic light
+676.0s: Car-116 arrives from W at (3, 0) heading to (2, 5) [(3, 0), (3, 1), (3, 2), (3, 3), (3, 4), (2, 4), (2, 5)]
+678.0s: Car-51 reaches (3, 1) from (2, 1) going to (3, 0), direction='NS'
+678.0s: Car-51 crosses intersection with traffic light
+678.0s: Car-94 reaches (4, 1) from (4, 0) going to (5, 1), direction='EW'
+678.0s: Car-94 waits at red
+680.0s: Car-95 reaches (1, 4) from (0, 4) going to (2, 4), direction='NS'
+680.0s: Car-95 crosses intersection with traffic light
+681.0s: Car-117 arrives from N at (0, 2) heading to (2, 0) [(0, 2), (1, 2), (1, 1), (2, 1), (2, 0)]
+682.0s: Car-96 reaches (4, 1) from (4, 0) going to (4, 2), direction='EW'
+682.0s: Car-96 waits at red
+687.0s: TL preemption for (1, 2) awoke for Ambulance for direction='EW'
+688.0s: Car-118 arrives from N at (0, 2) heading to (1, 5) [(0, 2), (1, 2), (1, 3), (1, 4), (1, 5)]
+689.0s: Car-119 arrives from E at (3, 5) heading to (4, 5) [(3, 5), (3, 4), (4, 4), (4, 5)]
+690.0s: Car-10 reaches (4, 0) from (4, 1) going to Exit, direction='EW'
+690.0s: Car-10 exits simulation after 632.0s
+690.0s: Car-8 reaches (1, 5) from (1, 4) going to Exit, direction='EW'
+690.0s: Car-8 exits simulation after 644.0s
+690.0s: Car-33 reaches (2, 1) from (2, 2) going to (2, 0), direction='EW'
+690.0s: Car-33 waits at red
+690.0s: Car-37 reaches (2, 2) from (2, 3) going to (2, 1), direction='EW'
+690.0s: Car-37 waits at red
+690.0s: Car-11 reaches (4, 3) from (3, 3) going to (5, 3), direction='NS'
+690.0s: Car-11 crosses intersection with traffic light
+690.0s: Car-97 reaches (1, 2) from (0, 2) going to (1, 1), direction='NS'
+690.0s: Car-97 crosses intersection with traffic light
+690.0s: Car-64 reaches (1, 3) from (1, 2) going to (1, 4), direction='EW'
+690.0s: Car-64 waits at red
+690.0s: Car-52 reaches (1, 3) from (1, 2) going to (0, 3), direction='EW'
+690.0s: Car-52 waits at red
+690.0s: Car-66 reaches (1, 4) from (1, 3) going to (1, 5), direction='EW'
+690.0s: Car-66 waits at red
+690.0s: Car-67 reaches (1, 3) from (1, 4) going to (2, 3), direction='EW'
+690.0s: Car-67 waits at red
+690.0s: Car-34 reaches (0, 4) from (1, 4) going to Exit, direction='NS'
+690.0s: Car-34 exits simulation after 499.0s
+690.0s: Car-14 reaches (2, 4) from (1, 4) going to (3, 4), direction='NS'
+690.0s: Car-14 crosses intersection with traffic light
+690.0s: Car-13 reaches (2, 3) from (2, 2) going to (2, 4), direction='EW'
+690.0s: Car-13 waits at red
+690.0s: Car-36 reaches (3, 3) from (2, 3) going to (3, 2), direction='NS'
+690.0s: Car-36 crosses intersection with traffic light
+690.0s: Car-73 reaches (3, 4) from (2, 4) going to (3, 3), direction='NS'
+690.0s: Car-73 crosses intersection with traffic light
+690.0s: Car-30 reaches (4, 3) from (3, 3) going to (4, 2), direction='NS'
+690.0s: Car-30 crosses intersection with traffic light
+690.0s: Car-45 reaches (2, 4) from (3, 4) going to (1, 4), direction='NS'
+690.0s: Car-45 crosses intersection with traffic light
+690.0s: Car-71 reaches (4, 4) from (3, 4) going to (4, 3), direction='NS'
+690.0s: Car-71 crosses intersection with traffic light
+690.0s: Car-74 reaches (4, 3) from (4, 4) going to (5, 3), direction='EW'
+690.0s: Car-74 waits at red
+690.0s: Car-120 arrives from N at (0, 2) heading to (0, 3) [(0, 2), (1, 2), (1, 3), (0, 3)]
+690.0s: Traffic Light (1, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+690.0s: Traffic Light (1, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+690.0s: Traffic Light (1, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+690.0s: Traffic Light (2, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+690.0s: Traffic Light (2, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+690.0s: Traffic Light (2, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+690.0s: Traffic Light (3, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+690.0s: Traffic Light (3, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+690.0s: Traffic Light (3, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+690.0s: Traffic Light (4, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+690.0s: Traffic Light (4, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+690.0s: Traffic Light (4, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+690.0s: Car-69 waited 24.0s
+690.0s: Car-69 crosses intersection with traffic light
+690.0s: Car-64 waited 0.0s
+690.0s: Car-64 crosses intersection with traffic light
+690.0s: Car-52 waited 0.0s
+690.0s: Car-52 crosses intersection with traffic light
+690.0s: Car-67 waited 0.0s
+690.0s: Car-67 crosses intersection with traffic light
+690.0s: Car-65 waited 49.0s
+690.0s: Car-65 crosses intersection with traffic light
+690.0s: Car-66 waited 0.0s
+690.0s: Car-66 crosses intersection with traffic light
+690.0s: Car-46 waited 52.0s
+690.0s: Car-46 crosses intersection with traffic light
+690.0s: Car-37 waited 0.0s
+690.0s: Car-37 crosses intersection with traffic light
+690.0s: Car-13 waited 0.0s
+690.0s: Car-13 crosses intersection with traffic light
+690.0s: Car-9 waited 38.0s
+690.0s: Car-9 crosses intersection with traffic light
+690.0s: Car-74 waited 0.0s
+690.0s: Car-74 crosses intersection with traffic light
+690.0s: Car-70 waited 21.0s
+690.0s: Car-70 crosses intersection with traffic light
+691.0s: Car-98 reaches (1, 3) from (0, 3) going to (1, 4), direction='NS'
+691.0s: Car-98 waits at red
+692.0s: Ambulance reaches (1, 2) from (1, 1) going to (1, 3), direction='EW'
+692.0s: Ambulance crosses intersection with traffic light
+697.0s: Car-50 reaches (1, 0) from (1, 1) going to Exit, direction='EW'
+697.0s: Car-50 exits simulation after 387.0s
+697.0s: Car-54 reaches (3, 0) from (3, 1) going to Exit, direction='EW'
+697.0s: Car-54 exits simulation after 362.0s
+697.0s: Car-53 reaches (2, 2) from (3, 2) going to (1, 2), direction='NS'
+697.0s: Car-53 waits at red
+697.0s: Car-99 reaches (4, 1) from (5, 1) going to (3, 1), direction='NS'
+697.0s: Car-99 crosses intersection with traffic light
+697.0s: Car-75 reaches (1, 2) from (1, 1) going to (1, 3), direction='EW'
+697.0s: Car-75 crosses intersection with traffic light
+697.0s: Car-76 reaches (3, 2) from (3, 1) going to (3, 3), direction='EW'
+697.0s: Car-76 crosses intersection with traffic light
+697.0s: Car-48 reaches (4, 0) from (4, 1) going to Exit, direction='EW'
+697.0s: Car-48 exits simulation after 399.0s
+697.0s: Car-72 reaches (4, 2) from (4, 1) going to (3, 2), direction='EW'
+697.0s: Car-72 crosses intersection with traffic light
+697.0s: Traffic Light (1, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+697.0s: Traffic Light (2, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+697.0s: Traffic Light (3, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+697.0s: Traffic Light (4, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+697.0s: Car-89 waited 37.0s
+697.0s: Car-89 crosses intersection with traffic light
+697.0s: Car-33 waited 7.0s
+697.0s: Car-33 crosses intersection with traffic light
+697.0s: Car-90 waited 36.0s
+697.0s: Car-90 crosses intersection with traffic light
+697.0s: Car-94 waited 19.0s
+697.0s: Car-94 crosses intersection with traffic light
+697.0s: Car-96 waited 15.0s
+697.0s: Car-96 crosses intersection with traffic light
+700.0s: Car-121 arrives from W at (3, 0) heading to (2, 5) [(3, 0), (3, 1), (3, 2), (3, 3), (3, 4), (2, 4), (2, 5)]
+702.0s: Car-77 reaches (3, 1) from (4, 1) going to (3, 0), direction='NS'
+702.0s: Car-77 waits at red
+704.0s: Car-100 reaches (4, 2) from (5, 2) going to (4, 1), direction='NS'
+704.0s: Car-100 waits at red
+705.0s: Car-78 reaches (1, 2) from (1, 1) going to (1, 3), direction='EW'
+705.0s: Car-78 crosses intersection with traffic light
+709.0s: Car-122 arrives from N at (0, 4) heading to (0, 1) [(0, 4), (1, 4), (1, 3), (1, 2), (1, 1), (0, 1)]
+710.0s: Car-101 reaches (1, 3) from (0, 3) going to (1, 4), direction='NS'
+710.0s: Car-101 waits at red
+710.0s: Car-123 arrives from E at (4, 5) heading to (5, 3) [(4, 5), (4, 4), (4, 3), (5, 3)]
+720.0s: Car-102 reaches (4, 4) from (4, 5) going to (3, 4), direction='EW'
+720.0s: Car-102 crosses intersection with traffic light
+720.0s: Car-124 arrives from W at (3, 0) heading to (2, 5) [(3, 0), (3, 1), (3, 2), (3, 3), (3, 4), (2, 4), (2, 5)]
+720.0s: Traffic Light (1, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+720.0s: Traffic Light (1, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+720.0s: Traffic Light (1, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+720.0s: Traffic Light (2, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+720.0s: Traffic Light (2, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+720.0s: Traffic Light (2, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+720.0s: Traffic Light (3, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+720.0s: Traffic Light (3, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+720.0s: Traffic Light (3, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+720.0s: Traffic Light (4, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+720.0s: Traffic Light (4, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+720.0s: Traffic Light (4, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+724.0s: Car-103 reaches (3, 1) from (3, 0) going to (3, 2), direction='EW'
+724.0s: Car-103 crosses intersection with traffic light
+727.0s: Car-81 reaches (1, 1) from (2, 1) going to (0, 1), direction='NS'
+727.0s: Car-81 waits at red
+727.0s: Traffic Light (1, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+727.0s: Traffic Light (2, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+727.0s: Traffic Light (3, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+727.0s: Traffic Light (4, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+728.0s: Car-59 reaches (2, 3) from (3, 3) going to (2, 2), direction='NS'
+728.0s: Car-59 crosses intersection with traffic light
+730.0s: Car-125 arrives from E at (2, 5) heading to (0, 2) [(2, 5), (2, 4), (1, 4), (1, 3), (1, 2), (0, 2)]
+731.0s: Car-104 reaches (4, 3) from (5, 3) going to (4, 2), direction='NS'
+731.0s: Car-104 crosses intersection with traffic light
+732.0s: Car-22 reaches (1, 1) from (1, 2) going to (0, 1), direction='EW'
+732.0s: Car-22 waits at red
+736.0s: Car-60 reaches (2, 4) from (3, 4) going to (2, 5), direction='NS'
+736.0s: Car-60 crosses intersection with traffic light
+737.0s: Car-83 reaches (4, 2) from (4, 1) going to (4, 3), direction='EW'
+737.0s: Car-83 waits at red
+737.0s: Car-105 reaches (1, 4) from (0, 4) going to (1, 3), direction='NS'
+737.0s: Car-105 crosses intersection with traffic light
+737.0s: Car-126 arrives from N at (0, 2) heading to (4, 0) [(0, 2), (1, 2), (1, 1), (2, 1), (3, 1), (4, 1), (4, 0)]
+739.0s: Car-106 reaches (1, 2) from (0, 2) going to (1, 3), direction='NS'
+739.0s: Car-106 crosses intersection with traffic light
+742.0s: Car-107 reaches (3, 4) from (3, 5) going to (4, 4), direction='EW'
+742.0s: Car-107 waits at red
+744.0s: Car-108 reaches (1, 2) from (0, 2) going to (1, 3), direction='NS'
+744.0s: Car-108 crosses intersection with traffic light
+747.0s: Car-84 reaches (4, 3) from (4, 2) going to (5, 3), direction='EW'
+747.0s: Car-84 waits at red
+747.0s: Car-127 arrives from S at (5, 3) heading to (0, 1) [(5, 3), (4, 3), (3, 3), (2, 3), (1, 3), (1, 2), (1, 1), (0, 1)]
+748.0s: Car-26 reaches (1, 2) from (1, 3) going to (0, 2), direction='EW'
+748.0s: Car-26 waits at red
+750.0s: Car-23 reaches (5, 4) from (4, 4) going to Exit, direction='NS'
+750.0s: Car-23 exits simulation after 608.0s
+750.0s: Car-25 reaches (0, 4) from (1, 4) going to Exit, direction='NS'
+750.0s: Car-25 exits simulation after 603.0s
+750.0s: Car-40 reaches (4, 2) from (3, 2) going to (5, 2), direction='NS'
+750.0s: Car-40 crosses intersection with traffic light
+750.0s: Car-56 reaches (2, 0) from (2, 1) going to Exit, direction='EW'
+750.0s: Car-56 exits simulation after 403.0s
+750.0s: Car-58 reaches (3, 4) from (2, 4) going to (3, 5), direction='NS'
+750.0s: Car-58 crosses intersection with traffic light
+750.0s: Car-39 reaches (0, 2) from (1, 2) going to Exit, direction='NS'
+750.0s: Car-39 exits simulation after 528.0s
+750.0s: Car-80 reaches (1, 1) from (1, 2) going to (1, 0), direction='EW'
+750.0s: Car-80 waits at red
+750.0s: Car-2 reaches (1, 1) from (1, 2) going to (0, 1), direction='EW'
+750.0s: Car-2 waits at red
+750.0s: Car-21 reaches (1, 2) from (1, 3) going to (1, 1), direction='EW'
+750.0s: Car-21 waits at red
+750.0s: Car-43 reaches (0, 3) from (1, 3) going to Exit, direction='NS'
+750.0s: Car-43 exits simulation after 498.0s
+750.0s: Car-42 reaches (1, 4) from (1, 3) going to (2, 4), direction='EW'
+750.0s: Car-42 waits at red
+750.0s: Car-44 reaches (1, 4) from (1, 3) going to (2, 4), direction='EW'
+750.0s: Car-44 waits at red
+750.0s: Car-41 reaches (4, 2) from (4, 3) going to (4, 1), direction='EW'
+750.0s: Car-41 waits at red
+750.0s: Car-63 reaches (4, 2) from (4, 3) going to (4, 1), direction='EW'
+750.0s: Car-63 waits at red
+750.0s: Traffic Light (1, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+750.0s: Traffic Light (1, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+750.0s: Traffic Light (1, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+750.0s: Traffic Light (2, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+750.0s: Traffic Light (2, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+750.0s: Traffic Light (2, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+750.0s: Traffic Light (3, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+750.0s: Traffic Light (3, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+750.0s: Traffic Light (3, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+750.0s: Traffic Light (4, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+750.0s: Traffic Light (4, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+750.0s: Traffic Light (4, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+750.0s: Car-26 waited 2.0s
+750.0s: Car-26 crosses intersection with traffic light
+750.0s: Car-21 waited 0.0s
+750.0s: Car-21 crosses intersection with traffic light
+750.0s: Car-98 waited 59.0s
+750.0s: Car-98 crosses intersection with traffic light
+750.0s: Car-101 waited 40.0s
+750.0s: Car-101 crosses intersection with traffic light
+750.0s: Car-42 waited 0.0s
+750.0s: Car-42 crosses intersection with traffic light
+750.0s: Car-44 waited 0.0s
+750.0s: Car-44 crosses intersection with traffic light
+750.0s: Car-53 waited 53.0s
+750.0s: Car-53 crosses intersection with traffic light
+750.0s: Car-107 waited 8.0s
+750.0s: Car-107 crosses intersection with traffic light
+750.0s: Car-100 waited 46.0s
+750.0s: Car-100 crosses intersection with traffic light
+750.0s: Car-83 waited 13.0s
+750.0s: Car-83 crosses intersection with traffic light
+750.0s: Car-41 waited 0.0s
+750.0s: Car-41 crosses intersection with traffic light
+750.0s: Car-63 waited 0.0s
+750.0s: Car-63 crosses intersection with traffic light
+750.0s: Car-84 waited 3.0s
+750.0s: Car-84 crosses intersection with traffic light
+754.0s: Car-109 reaches (1, 4) from (0, 4) going to (1, 3), direction='NS'
+754.0s: Car-109 waits at red
+755.0s: Car-28 reaches (4, 4) from (3, 4) going to (4, 5), direction='NS'
+755.0s: Car-28 waits at red
+756.0s: Car-85 reaches (3, 4) from (4, 4) going to (2, 4), direction='NS'
+756.0s: Car-85 waits at red
+756.0s: Car-128 arrives from S at (5, 4) heading to (4, 0) [(5, 4), (4, 4), (4, 3), (4, 2), (4, 1), (4, 0)]
+757.0s: Car-18 reaches (0, 1) from (1, 1) going to Exit, direction='NS'
+757.0s: Car-18 exits simulation after 654.0s
+757.0s: Car-61 reaches (1, 1) from (2, 1) going to (0, 1), direction='NS'
+757.0s: Car-61 crosses intersection with traffic light
+757.0s: Car-62 reaches (1, 1) from (2, 1) going to (1, 0), direction='NS'
+757.0s: Car-62 crosses intersection with traffic light
+757.0s: Car-55 reaches (2, 0) from (2, 1) going to Exit, direction='EW'
+757.0s: Car-55 exits simulation after 416.0s
+757.0s: Car-20 reaches (3, 1) from (2, 1) going to (4, 1), direction='NS'
+757.0s: Car-20 crosses intersection with traffic light
+757.0s: Car-57 reaches (2, 1) from (3, 1) going to (1, 1), direction='NS'
+757.0s: Car-57 crosses intersection with traffic light
+757.0s: Car-82 reaches (4, 1) from (3, 1) going to (5, 1), direction='NS'
+757.0s: Car-82 crosses intersection with traffic light
+757.0s: Car-79 reaches (4, 2) from (4, 1) going to (4, 3), direction='EW'
+757.0s: Car-79 crosses intersection with traffic light
+757.0s: Car-1 reaches (4, 0) from (4, 1) going to Exit, direction='EW'
+757.0s: Car-1 exits simulation after 750.0s
+757.0s: Traffic Light (1, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+757.0s: Traffic Light (2, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+757.0s: Traffic Light (3, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+757.0s: Traffic Light (4, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+757.0s: Car-81 waited 30.0s
+757.0s: Car-81 crosses intersection with traffic light
+757.0s: Car-22 waited 25.0s
+757.0s: Car-22 crosses intersection with traffic light
+757.0s: Car-80 waited 7.0s
+757.0s: Car-80 crosses intersection with traffic light
+757.0s: Car-2 waited 7.0s
+757.0s: Car-2 crosses intersection with traffic light
+757.0s: Car-77 waited 55.0s
+757.0s: Car-77 crosses intersection with traffic light
+762.0s: Car-86 reaches (2, 1) from (1, 1) going to (3, 1), direction='NS'
+762.0s: Car-86 waits at red
+762.0s: Car-110 reaches (1, 1) from (0, 1) going to (1, 2), direction='NS'
+762.0s: Car-110 waits at red
+762.0s: Car-129 arrives from N at (0, 1) heading to (3, 5) [(0, 1), (1, 1), (1, 2), (1, 3), (1, 4), (2, 4), (3, 4), (3, 5)]
+766.0s: Car-130 arrives from E at (4, 5) heading to (2, 0) [(4, 5), (4, 4), (3, 4), (2, 4), (2, 3), (2, 2), (2, 1), (2, 0)]
+768.0s: Car-87 reaches (4, 4) from (3, 4) going to (4, 3), direction='NS'
+768.0s: Car-87 waits at red
+771.0s: Car-111 reaches (4, 1) from (5, 1) going to (4, 2), direction='NS'
+771.0s: Car-111 waits at red
+772.0s: Car-131 arrives from S at (5, 1) heading to (2, 5) [(5, 1), (4, 1), (3, 1), (2, 1), (2, 2), (2, 3), (2, 4), (2, 5)]
+776.0s: Car-68 reaches (4, 2) from (4, 3) going to (4, 1), direction='EW'
+776.0s: Car-68 crosses intersection with traffic light
+776.0s: Car-132 arrives from E at (3, 5) heading to (4, 5) [(3, 5), (3, 4), (4, 4), (4, 5)]
+778.0s: Car-88 reaches (3, 2) from (3, 1) going to (4, 2), direction='EW'
+778.0s: Car-88 crosses intersection with traffic light
+780.0s: Car-112 reaches (4, 1) from (4, 0) going to (4, 2), direction='EW'
+780.0s: Car-112 crosses intersection with traffic light
+780.0s: Traffic Light (1, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+780.0s: Traffic Light (1, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+780.0s: Traffic Light (1, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+780.0s: Traffic Light (2, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+780.0s: Traffic Light (2, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+780.0s: Traffic Light (2, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+780.0s: Traffic Light (3, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+780.0s: Traffic Light (3, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+780.0s: Traffic Light (3, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+780.0s: Traffic Light (4, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+780.0s: Traffic Light (4, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+780.0s: Traffic Light (4, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+781.0s: Car-133 arrives from W at (2, 0) heading to (5, 4) [(2, 0), (2, 1), (2, 2), (2, 3), (2, 4), (3, 4), (4, 4), (5, 4)]
+782.0s: Car-113 reaches (1, 2) from (0, 2) going to (1, 3), direction='NS'
+782.0s: Car-113 crosses intersection with traffic light
+782.0s: Car-134 arrives from N at (0, 3) heading to (5, 2) [(0, 3), (1, 3), (1, 2), (2, 2), (3, 2), (4, 2), (5, 2)]
+784.0s: Car-114 reaches (1, 3) from (0, 3) going to (1, 2), direction='NS'
+784.0s: Car-114 crosses intersection with traffic light
+787.0s: Traffic Light (1, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+787.0s: Traffic Light (2, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+787.0s: Traffic Light (3, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+787.0s: Traffic Light (4, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+788.0s: Car-49 reaches (2, 1) from (2, 2) going to (2, 0), direction='EW'
+788.0s: Car-49 waits at red
+789.0s: Car-135 arrives from S at (5, 4) heading to (0, 1) [(5, 4), (4, 4), (3, 4), (2, 4), (1, 4), (1, 3), (1, 2), (1, 1), (0, 1)]
+790.0s: Car-91 reaches (1, 1) from (1, 2) going to (2, 1), direction='EW'
+790.0s: Car-91 waits at red
+790.0s: Car-136 arrives from S at (5, 2) heading to (4, 0) [(5, 2), (4, 2), (4, 1), (4, 0)]
+791.0s: Car-115 reaches (4, 3) from (5, 3) going to (3, 3), direction='NS'
+791.0s: Car-115 crosses intersection with traffic light
+794.0s: Car-92 reaches (2, 3) from (1, 3) going to (3, 3), direction='NS'
+794.0s: Car-92 crosses intersection with traffic light
+795.0s: Car-93 reaches (1, 3) from (1, 4) going to (2, 3), direction='EW'
+795.0s: Car-93 waits at red
+796.0s: Car-116 reaches (3, 1) from (3, 0) going to (3, 2), direction='EW'
+796.0s: Car-116 waits at red
+796.0s: Car-137 arrives from E at (1, 5) heading to (5, 1) [(1, 5), (1, 4), (2, 4), (2, 3), (3, 3), (3, 2), (4, 2), (4, 1), (5, 1)]
+797.0s: Car-138 arrives from N at (0, 2) heading to (0, 4) [(0, 2), (1, 2), (1, 3), (1, 4), (0, 4)]
+798.0s: Car-51 reaches (3, 0) from (3, 1) going to Exit, direction='EW'
+798.0s: Car-51 exits simulation after 480.0s
+800.0s: Car-95 reaches (2, 4) from (1, 4) going to (3, 4), direction='NS'
+800.0s: Car-95 crosses intersection with traffic light
+801.0s: Car-117 reaches (1, 2) from (0, 2) going to (1, 1), direction='NS'
+801.0s: Car-117 crosses intersection with traffic light
+801.0s: Car-139 arrives from E at (2, 5) heading to (4, 0) [(2, 5), (2, 4), (3, 4), (3, 3), (4, 3), (4, 2), (4, 1), (4, 0)]
+807.0s: TL preemption for (1, 3) awoke for Ambulance for direction='EW'
+808.0s: Car-118 reaches (1, 2) from (0, 2) going to (1, 3), direction='NS'
+808.0s: Car-118 crosses intersection with traffic light
+809.0s: Car-119 reaches (3, 4) from (3, 5) going to (4, 4), direction='EW'
+809.0s: Car-119 waits at red
+809.0s: Car-140 arrives from S at (5, 1) heading to (0, 2) [(5, 1), (4, 1), (3, 1), (2, 1), (1, 1), (1, 2), (0, 2)]
+810.0s: Car-11 reaches (5, 3) from (4, 3) going to Exit, direction='NS'
+810.0s: Car-11 exits simulation after 745.0s
+810.0s: Car-97 reaches (1, 1) from (1, 2) going to (0, 1), direction='EW'
+810.0s: Car-97 waits at red
+810.0s: Car-14 reaches (3, 4) from (2, 4) going to (3, 5), direction='NS'
+810.0s: Car-14 crosses intersection with traffic light
+810.0s: Car-36 reaches (3, 2) from (3, 3) going to (4, 2), direction='EW'
+810.0s: Car-36 waits at red
+810.0s: Car-73 reaches (3, 3) from (3, 4) going to (4, 3), direction='EW'
+810.0s: Car-73 waits at red
+810.0s: Car-30 reaches (4, 2) from (4, 3) going to (4, 1), direction='EW'
+810.0s: Car-30 waits at red
+810.0s: Car-45 reaches (1, 4) from (2, 4) going to (1, 3), direction='NS'
+810.0s: Car-45 crosses intersection with traffic light
+810.0s: Car-71 reaches (4, 3) from (4, 4) going to (4, 2), direction='EW'
+810.0s: Car-71 waits at red
+810.0s: Car-120 reaches (1, 2) from (0, 2) going to (1, 3), direction='NS'
+810.0s: Car-120 crosses intersection with traffic light
+810.0s: Car-69 reaches (2, 2) from (1, 2) going to (2, 1), direction='NS'
+810.0s: Car-69 crosses intersection with traffic light
+810.0s: Car-64 reaches (1, 4) from (1, 3) going to (2, 4), direction='EW'
+810.0s: Car-64 waits at red
+810.0s: Car-52 reaches (0, 3) from (1, 3) going to Exit, direction='NS'
+810.0s: Car-52 exits simulation after 482.0s
+810.0s: Car-67 reaches (2, 3) from (1, 3) going to (3, 3), direction='NS'
+810.0s: Car-67 crosses intersection with traffic light
+810.0s: Car-65 reaches (1, 3) from (1, 4) going to (1, 2), direction='EW'
+810.0s: Car-65 waits at red
+810.0s: Car-66 reaches (1, 5) from (1, 4) going to Exit, direction='EW'
+810.0s: Car-66 exits simulation after 405.0s
+810.0s: Car-46 reaches (1, 2) from (2, 2) going to (0, 2), direction='NS'
+810.0s: Car-46 crosses intersection with traffic light
+810.0s: Car-37 reaches (2, 1) from (2, 2) going to (2, 0), direction='EW'
+810.0s: Car-37 waits at red
+810.0s: Car-13 reaches (2, 4) from (2, 3) going to (2, 5), direction='EW'
+810.0s: Car-13 waits at red
+810.0s: Car-9 reaches (2, 5) from (2, 4) going to Exit, direction='EW'
+810.0s: Car-9 exits simulation after 758.0s
+810.0s: Car-74 reaches (5, 3) from (4, 3) going to Exit, direction='NS'
+810.0s: Car-74 exits simulation after 369.0s
+810.0s: Car-70 reaches (5, 4) from (4, 4) going to Exit, direction='NS'
+810.0s: Car-70 exits simulation after 381.0s
+810.0s: Traffic Light (1, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+810.0s: Traffic Light (1, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+810.0s: Traffic Light (1, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+810.0s: Traffic Light (2, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+810.0s: Traffic Light (2, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+810.0s: Traffic Light (2, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+810.0s: Traffic Light (3, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+810.0s: Traffic Light (3, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+810.0s: Traffic Light (3, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+810.0s: Traffic Light (4, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+810.0s: Traffic Light (4, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+810.0s: Traffic Light (4, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+810.0s: Car-93 waited 15.0s
+810.0s: Car-93 crosses intersection with traffic light
+810.0s: Car-65 waited 0.0s
+810.0s: Car-65 crosses intersection with traffic light
+810.0s: Car-109 waited 56.0s
+810.0s: Car-109 crosses intersection with traffic light
+810.0s: Car-64 waited 0.0s
+810.0s: Car-64 crosses intersection with traffic light
+810.0s: Car-13 waited 0.0s
+810.0s: Car-13 crosses intersection with traffic light
+810.0s: Car-36 waited 0.0s
+810.0s: Car-36 crosses intersection with traffic light
+810.0s: Car-73 waited 0.0s
+810.0s: Car-73 crosses intersection with traffic light
+810.0s: Car-85 waited 54.0s
+810.0s: Car-85 crosses intersection with traffic light
+810.0s: Car-119 waited 1.0s
+810.0s: Car-119 crosses intersection with traffic light
+810.0s: Car-30 waited 0.0s
+810.0s: Car-30 crosses intersection with traffic light
+810.0s: Car-71 waited 0.0s
+810.0s: Car-71 crosses intersection with traffic light
+810.0s: Car-28 waited 55.0s
+810.0s: Car-28 crosses intersection with traffic light
+810.0s: Car-87 waited 42.0s
+810.0s: Car-87 crosses intersection with traffic light
+812.0s: Ambulance reaches (1, 3) from (1, 2) going to (1, 4), direction='EW'
+812.0s: Ambulance crosses intersection with traffic light
+817.0s: Car-99 reaches (3, 1) from (4, 1) going to (3, 2), direction='NS'
+817.0s: Car-99 crosses intersection with traffic light
+817.0s: Car-75 reaches (1, 3) from (1, 2) going to (2, 3), direction='EW'
+817.0s: Car-75 crosses intersection with traffic light
+817.0s: Car-76 reaches (3, 3) from (3, 2) going to (3, 4), direction='EW'
+817.0s: Car-76 crosses intersection with traffic light
+817.0s: Car-72 reaches (3, 2) from (4, 2) going to (2, 2), direction='NS'
+817.0s: Car-72 waits at red
+817.0s: Car-89 reaches (1, 2) from (1, 1) going to (1, 3), direction='EW'
+817.0s: Car-89 crosses intersection with traffic light
+817.0s: Car-33 reaches (2, 0) from (2, 1) going to Exit, direction='EW'
+817.0s: Car-33 exits simulation after 628.0s
+817.0s: Car-90 reaches (3, 1) from (4, 1) going to (3, 0), direction='NS'
+817.0s: Car-90 crosses intersection with traffic light
+817.0s: Car-94 reaches (5, 1) from (4, 1) going to Exit, direction='NS'
+817.0s: Car-94 exits simulation after 259.0s
+817.0s: Car-96 reaches (4, 2) from (4, 1) going to (4, 3), direction='EW'
+817.0s: Car-96 crosses intersection with traffic light
+817.0s: Traffic Light (1, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+817.0s: Traffic Light (2, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+817.0s: Traffic Light (3, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+817.0s: Traffic Light (4, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+817.0s: Car-110 waited 55.0s
+817.0s: Car-110 crosses intersection with traffic light
+817.0s: Car-91 waited 27.0s
+817.0s: Car-91 crosses intersection with traffic light
+817.0s: Car-97 waited 7.0s
+817.0s: Car-97 crosses intersection with traffic light
+817.0s: Car-86 waited 55.0s
+817.0s: Car-86 crosses intersection with traffic light
+817.0s: Car-49 waited 29.0s
+817.0s: Car-49 crosses intersection with traffic light
+817.0s: Car-37 waited 7.0s
+817.0s: Car-37 crosses intersection with traffic light
+817.0s: Car-116 waited 21.0s
+817.0s: Car-116 crosses intersection with traffic light
+817.0s: Car-111 waited 46.0s
+817.0s: Car-111 crosses intersection with traffic light
+818.0s: Car-141 arrives from E at (3, 5) heading to (3, 0) [(3, 5), (3, 4), (3, 3), (3, 2), (3, 1), (3, 0)]
+820.0s: Car-121 reaches (3, 1) from (3, 0) going to (3, 2), direction='EW'
+820.0s: Car-121 crosses intersection with traffic light
+820.0s: Car-142 arrives from E at (4, 5) heading to (5, 3) [(4, 5), (4, 4), (4, 3), (5, 3)]
+822.0s: Car-143 arrives from N at (0, 2) heading to (4, 0) [(0, 2), (1, 2), (1, 1), (2, 1), (3, 1), (4, 1), (4, 0)]
+825.0s: Car-78 reaches (1, 3) from (1, 2) going to (1, 4), direction='EW'
+825.0s: Car-78 crosses intersection with traffic light
+829.0s: Car-122 reaches (1, 4) from (0, 4) going to (1, 3), direction='NS'
+829.0s: Car-122 waits at red
+830.0s: Car-123 reaches (4, 4) from (4, 5) going to (4, 3), direction='EW'
+830.0s: Car-123 crosses intersection with traffic light
+832.0s: Car-144 arrives from E at (2, 5) heading to (1, 5) [(2, 5), (2, 4), (1, 4), (1, 5)]
+835.0s: Car-145 arrives from S at (5, 3) heading to (1, 0) [(5, 3), (4, 3), (3, 3), (2, 3), (1, 3), (1, 2), (1, 1), (1, 0)]
+840.0s: Car-102 reaches (3, 4) from (4, 4) going to (2, 4), direction='NS'
+840.0s: Car-102 waits at red
+840.0s: Car-124 reaches (3, 1) from (3, 0) going to (3, 2), direction='EW'
+840.0s: Car-124 crosses intersection with traffic light
+840.0s: Traffic Light (1, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+840.0s: Traffic Light (1, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+840.0s: Traffic Light (1, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+840.0s: Traffic Light (2, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+840.0s: Traffic Light (2, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+840.0s: Traffic Light (2, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+840.0s: Traffic Light (3, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+840.0s: Traffic Light (3, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+840.0s: Traffic Light (3, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+840.0s: Traffic Light (4, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+840.0s: Traffic Light (4, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+840.0s: Traffic Light (4, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+844.0s: Car-103 reaches (3, 2) from (3, 1) going to (3, 3), direction='EW'
+844.0s: Car-103 waits at red
+845.0s: Car-146 arrives from N at (0, 1) heading to (5, 1) [(0, 1), (1, 1), (2, 1), (3, 1), (4, 1), (5, 1)]
+847.0s: Traffic Light (1, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+847.0s: Traffic Light (2, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+847.0s: Traffic Light (3, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+847.0s: Traffic Light (4, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+848.0s: Car-59 reaches (2, 2) from (2, 3) going to (2, 1), direction='EW'
+848.0s: Car-59 waits at red
+850.0s: Car-125 reaches (2, 4) from (2, 5) going to (1, 4), direction='EW'
+850.0s: Car-125 waits at red
+851.0s: Car-104 reaches (4, 2) from (4, 3) going to (4, 1), direction='EW'
+851.0s: Car-104 waits at red
+852.0s: Car-147 arrives from W at (3, 0) heading to (5, 2) [(3, 0), (3, 1), (3, 2), (4, 2), (5, 2)]
+856.0s: Car-60 reaches (2, 5) from (2, 4) going to Exit, direction='EW'
+856.0s: Car-60 exits simulation after 480.0s
+857.0s: Car-105 reaches (1, 3) from (1, 4) going to (2, 3), direction='EW'
+857.0s: Car-105 waits at red
+857.0s: Car-126 reaches (1, 2) from (0, 2) going to (1, 1), direction='NS'
+857.0s: Car-126 crosses intersection with traffic light
+857.0s: Car-148 arrives from N at (0, 3) heading to (5, 2) [(0, 3), (1, 3), (1, 2), (2, 2), (3, 2), (4, 2), (5, 2)]
+859.0s: Car-106 reaches (1, 3) from (1, 2) going to (0, 3), direction='EW'
+859.0s: Car-106 waits at red
+862.0s: Car-149 arrives from W at (2, 0) heading to (0, 4) [(2, 0), (2, 1), (2, 2), (2, 3), (2, 4), (1, 4), (0, 4)]
+864.0s: Car-108 reaches (1, 3) from (1, 2) going to (1, 4), direction='EW'
+864.0s: Car-108 waits at red
+865.0s: Car-150 arrives from N at (0, 1) heading to (1, 0) [(0, 1), (1, 1), (1, 0)]
+867.0s: Car-127 reaches (4, 3) from (5, 3) going to (3, 3), direction='NS'
+867.0s: Car-127 crosses intersection with traffic light
+869.0s: Car-151 arrives from N at (0, 1) heading to (4, 0) [(0, 1), (1, 1), (2, 1), (3, 1), (4, 1), (4, 0)]
+870.0s: Car-40 reaches (5, 2) from (4, 2) going to Exit, direction='NS'
+870.0s: Car-40 exits simulation after 643.0s
+870.0s: Car-58 reaches (3, 5) from (3, 4) going to Exit, direction='EW'
+870.0s: Car-58 exits simulation after 512.0s
+870.0s: Car-26 reaches (0, 2) from (1, 2) going to Exit, direction='NS'
+870.0s: Car-26 exits simulation after 722.0s
+870.0s: Car-21 reaches (1, 1) from (1, 2) going to (1, 0), direction='EW'
+870.0s: Car-21 waits at red
+870.0s: Car-98 reaches (1, 4) from (1, 3) going to (2, 4), direction='EW'
+870.0s: Car-98 waits at red
+870.0s: Car-101 reaches (1, 4) from (1, 3) going to (0, 4), direction='EW'
+870.0s: Car-101 waits at red
+870.0s: Car-42 reaches (2, 4) from (1, 4) going to (3, 4), direction='NS'
+870.0s: Car-42 crosses intersection with traffic light
+870.0s: Car-44 reaches (2, 4) from (1, 4) going to (3, 4), direction='NS'
+870.0s: Car-44 crosses intersection with traffic light
+870.0s: Car-53 reaches (1, 2) from (2, 2) going to (0, 2), direction='NS'
+870.0s: Car-53 crosses intersection with traffic light
+870.0s: Car-107 reaches (4, 4) from (3, 4) going to (5, 4), direction='NS'
+870.0s: Car-107 crosses intersection with traffic light
+870.0s: Car-100 reaches (4, 1) from (4, 2) going to (4, 0), direction='EW'
+870.0s: Car-100 waits at red
+870.0s: Car-83 reaches (4, 3) from (4, 2) going to (4, 4), direction='EW'
+870.0s: Car-83 waits at red
+870.0s: Car-41 reaches (4, 1) from (4, 2) going to (5, 1), direction='EW'
+870.0s: Car-41 waits at red
+870.0s: Car-63 reaches (4, 1) from (4, 2) going to (4, 0), direction='EW'
+870.0s: Car-63 waits at red
+870.0s: Car-84 reaches (5, 3) from (4, 3) going to Exit, direction='NS'
+870.0s: Car-84 exits simulation after 363.0s
+870.0s: Car-152 arrives from N at (0, 1) heading to (3, 0) [(0, 1), (1, 1), (2, 1), (3, 1), (3, 0)]
+870.0s: Traffic Light (1, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+870.0s: Traffic Light (1, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+870.0s: Traffic Light (1, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+870.0s: Traffic Light (2, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+870.0s: Traffic Light (2, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+870.0s: Traffic Light (2, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+870.0s: Traffic Light (3, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+870.0s: Traffic Light (3, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+870.0s: Traffic Light (3, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+870.0s: Traffic Light (4, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+870.0s: Traffic Light (4, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+870.0s: Traffic Light (4, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+870.0s: Car-105 waited 13.0s
+870.0s: Car-105 crosses intersection with traffic light
+870.0s: Car-106 waited 11.0s
+870.0s: Car-106 crosses intersection with traffic light
+870.0s: Car-108 waited 6.0s
+870.0s: Car-108 crosses intersection with traffic light
+870.0s: Car-122 waited 41.0s
+870.0s: Car-122 crosses intersection with traffic light
+870.0s: Car-98 waited 0.0s
+870.0s: Car-98 crosses intersection with traffic light
+870.0s: Car-101 waited 0.0s
+870.0s: Car-101 crosses intersection with traffic light
+870.0s: Car-59 waited 22.0s
+870.0s: Car-59 crosses intersection with traffic light
+870.0s: Car-125 waited 20.0s
+870.0s: Car-125 crosses intersection with traffic light
+870.0s: Car-72 waited 53.0s
+870.0s: Car-72 crosses intersection with traffic light
+870.0s: Car-103 waited 26.0s
+870.0s: Car-103 crosses intersection with traffic light
+870.0s: Car-102 waited 30.0s
+870.0s: Car-102 crosses intersection with traffic light
+870.0s: Car-104 waited 19.0s
+870.0s: Car-104 crosses intersection with traffic light
+870.0s: Car-83 waited 0.0s
+870.0s: Car-83 crosses intersection with traffic light
+871.0s: Car-153 arrives from N at (0, 3) heading to (5, 3) [(0, 3), (1, 3), (2, 3), (3, 3), (4, 3), (5, 3)]
+876.0s: Car-128 reaches (4, 4) from (5, 4) going to (4, 3), direction='NS'
+876.0s: Car-128 waits at red
+877.0s: Car-61 reaches (0, 1) from (1, 1) going to Exit, direction='NS'
+877.0s: Car-61 exits simulation after 493.0s
+877.0s: Car-62 reaches (1, 0) from (1, 1) going to Exit, direction='EW'
+877.0s: Car-62 exits simulation after 492.0s
+877.0s: Car-20 reaches (4, 1) from (3, 1) going to (4, 0), direction='NS'
+877.0s: Car-20 crosses intersection with traffic light
+877.0s: Car-57 reaches (1, 1) from (2, 1) going to (1, 0), direction='NS'
+877.0s: Car-57 crosses intersection with traffic light
+877.0s: Car-82 reaches (5, 1) from (4, 1) going to Exit, direction='NS'
+877.0s: Car-82 exits simulation after 382.0s
+877.0s: Car-79 reaches (4, 3) from (4, 2) going to (4, 4), direction='EW'
+877.0s: Car-79 crosses intersection with traffic light
+877.0s: Car-81 reaches (0, 1) from (1, 1) going to Exit, direction='NS'
+877.0s: Car-81 exits simulation after 390.0s
+877.0s: Car-22 reaches (0, 1) from (1, 1) going to Exit, direction='NS'
+877.0s: Car-22 exits simulation after 745.0s
+877.0s: Car-80 reaches (1, 0) from (1, 1) going to Exit, direction='EW'
+877.0s: Car-80 exits simulation after 400.0s
+877.0s: Car-2 reaches (0, 1) from (1, 1) going to Exit, direction='NS'
+877.0s: Car-2 exits simulation after 867.0s
+877.0s: Car-77 reaches (3, 0) from (3, 1) going to Exit, direction='EW'
+877.0s: Car-77 exits simulation after 415.0s
+877.0s: Traffic Light (1, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+877.0s: Traffic Light (2, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+877.0s: Traffic Light (3, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+877.0s: Traffic Light (4, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+877.0s: Car-21 waited 7.0s
+877.0s: Car-21 crosses intersection with traffic light
+877.0s: Car-100 waited 7.0s
+877.0s: Car-100 crosses intersection with traffic light
+877.0s: Car-41 waited 7.0s
+877.0s: Car-41 crosses intersection with traffic light
+877.0s: Car-63 waited 7.0s
+877.0s: Car-63 crosses intersection with traffic light
+878.0s: Car-154 arrives from W at (3, 0) heading to (2, 5) [(3, 0), (3, 1), (3, 2), (3, 3), (3, 4), (2, 4), (2, 5)]
+882.0s: Car-129 reaches (1, 1) from (0, 1) going to (1, 2), direction='NS'
+882.0s: Car-129 waits at red
+886.0s: Car-130 reaches (4, 4) from (4, 5) going to (3, 4), direction='EW'
+886.0s: Car-130 crosses intersection with traffic light
+888.0s: Car-155 arrives from S at (5, 1) heading to (5, 4) [(5, 1), (4, 1), (4, 2), (4, 3), (4, 4), (5, 4)]
+892.0s: Car-131 reaches (4, 1) from (5, 1) going to (3, 1), direction='NS'
+892.0s: Car-131 waits at red
+893.0s: Car-156 arrives from N at (0, 4) heading to (1, 5) [(0, 4), (1, 4), (1, 5)]
+896.0s: Car-68 reaches (4, 1) from (4, 2) going to (4, 0), direction='EW'
+896.0s: Car-68 crosses intersection with traffic light
+896.0s: Car-132 reaches (3, 4) from (3, 5) going to (4, 4), direction='EW'
+896.0s: Car-132 crosses intersection with traffic light
+898.0s: Car-88 reaches (4, 2) from (3, 2) going to (5, 2), direction='NS'
+898.0s: Car-88 waits at red
+900.0s: Car-112 reaches (4, 2) from (4, 1) going to (3, 2), direction='EW'
+900.0s: Car-112 crosses intersection with traffic light
+900.0s: Car-157 arrives from N at (0, 3) heading to (4, 0) [(0, 3), (1, 3), (1, 2), (2, 2), (2, 1), (3, 1), (4, 1), (4, 0)]
+900.0s: Traffic Light (1, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+900.0s: Traffic Light (1, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+900.0s: Traffic Light (1, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+900.0s: Traffic Light (2, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+900.0s: Traffic Light (2, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+900.0s: Traffic Light (2, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+900.0s: Traffic Light (3, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+900.0s: Traffic Light (3, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+900.0s: Traffic Light (3, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+900.0s: Traffic Light (4, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+900.0s: Traffic Light (4, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+900.0s: Traffic Light (4, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+901.0s: Car-133 reaches (2, 1) from (2, 0) going to (2, 2), direction='EW'
+901.0s: Car-133 crosses intersection with traffic light
+902.0s: Car-113 reaches (1, 3) from (1, 2) going to (2, 3), direction='EW'
+902.0s: Car-113 waits at red
+902.0s: Car-134 reaches (1, 3) from (0, 3) going to (1, 2), direction='NS'
+902.0s: Car-134 crosses intersection with traffic light
+904.0s: Car-114 reaches (1, 2) from (1, 3) going to (2, 2), direction='EW'
+904.0s: Car-114 waits at red
+907.0s: Traffic Light (1, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+907.0s: Traffic Light (2, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+907.0s: Traffic Light (3, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+907.0s: Traffic Light (4, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+908.0s: Car-158 arrives from W at (1, 0) heading to (5, 4) [(1, 0), (1, 1), (1, 2), (1, 3), (1, 4), (2, 4), (3, 4), (4, 4), (5, 4)]
+909.0s: Car-135 reaches (4, 4) from (5, 4) going to (3, 4), direction='NS'
+909.0s: Car-135 crosses intersection with traffic light
+910.0s: Car-136 reaches (4, 2) from (5, 2) going to (4, 1), direction='NS'
+910.0s: Car-136 crosses intersection with traffic light
+911.0s: Car-115 reaches (3, 3) from (4, 3) going to (3, 2), direction='NS'
+911.0s: Car-115 crosses intersection with traffic light
+912.0s: Car-159 arrives from W at (2, 0) heading to (1, 0) [(2, 0), (2, 1), (1, 1), (1, 0)]
+914.0s: Car-92 reaches (3, 3) from (2, 3) going to (4, 3), direction='NS'
+914.0s: Car-92 crosses intersection with traffic light
+915.0s: Car-160 arrives from W at (3, 0) heading to (4, 5) [(3, 0), (3, 1), (3, 2), (3, 3), (3, 4), (4, 4), (4, 5)]
+916.0s: Car-137 reaches (1, 4) from (1, 5) going to (2, 4), direction='EW'
+916.0s: Car-137 waits at red
+917.0s: Car-138 reaches (1, 2) from (0, 2) going to (1, 3), direction='NS'
+917.0s: Car-138 crosses intersection with traffic light
+920.0s: Car-95 reaches (3, 4) from (2, 4) going to (4, 4), direction='NS'
+920.0s: Car-95 crosses intersection with traffic light
+921.0s: Car-117 reaches (1, 1) from (1, 2) going to (2, 1), direction='EW'
+921.0s: Car-117 waits at red
+921.0s: Car-139 reaches (2, 4) from (2, 5) going to (3, 4), direction='EW'
+921.0s: Car-139 waits at red
+924.0s: Car-161 arrives from S at (5, 2) heading to (1, 5) [(5, 2), (4, 2), (3, 2), (2, 2), (1, 2), (1, 3), (1, 4), (1, 5)]
+927.0s: TL preemption for (1, 4) awoke for Ambulance for direction='EW'
+928.0s: Car-118 reaches (1, 3) from (1, 2) going to (1, 4), direction='EW'
+928.0s: Car-118 waits at red
+929.0s: Car-140 reaches (4, 1) from (5, 1) going to (3, 1), direction='NS'
+929.0s: Car-140 crosses intersection with traffic light
+929.0s: Car-162 arrives from S at (5, 4) heading to (1, 0) [(5, 4), (4, 4), (3, 4), (2, 4), (1, 4), (1, 3), (1, 2), (1, 1), (1, 0)]
+930.0s: Car-14 reaches (3, 5) from (3, 4) going to Exit, direction='EW'
+930.0s: Car-14 exits simulation after 851.0s
+930.0s: Car-45 reaches (1, 3) from (1, 4) going to (0, 3), direction='EW'
+930.0s: Car-45 waits at red
+930.0s: Car-120 reaches (1, 3) from (1, 2) going to (0, 3), direction='EW'
+930.0s: Car-120 waits at red
+930.0s: Car-69 reaches (2, 1) from (2, 2) going to (3, 1), direction='EW'
+930.0s: Car-69 waits at red
+930.0s: Car-67 reaches (3, 3) from (2, 3) going to (4, 3), direction='NS'
+930.0s: Car-67 crosses intersection with traffic light
+930.0s: Car-46 reaches (0, 2) from (1, 2) going to Exit, direction='NS'
+930.0s: Car-46 exits simulation after 652.0s
+930.0s: Car-93 reaches (2, 3) from (1, 3) going to (2, 2), direction='NS'
+930.0s: Car-93 crosses intersection with traffic light
+930.0s: Car-65 reaches (1, 2) from (1, 3) going to (0, 2), direction='EW'
+930.0s: Car-65 waits at red
+930.0s: Car-109 reaches (1, 3) from (1, 4) going to (1, 2), direction='EW'
+930.0s: Car-109 waits at red
+930.0s: Car-64 reaches (2, 4) from (1, 4) going to (3, 4), direction='NS'
+930.0s: Car-64 crosses intersection with traffic light
+930.0s: Car-13 reaches (2, 5) from (2, 4) going to Exit, direction='EW'
+930.0s: Car-13 exits simulation after 857.0s
+930.0s: Car-36 reaches (4, 2) from (3, 2) going to (4, 1), direction='NS'
+930.0s: Car-36 crosses intersection with traffic light
+930.0s: Car-73 reaches (4, 3) from (3, 3) going to (4, 2), direction='NS'
+930.0s: Car-73 crosses intersection with traffic light
+930.0s: Car-85 reaches (2, 4) from (3, 4) going to (2, 5), direction='NS'
+930.0s: Car-85 crosses intersection with traffic light
+930.0s: Car-119 reaches (4, 4) from (3, 4) going to (4, 5), direction='NS'
+930.0s: Car-119 crosses intersection with traffic light
+930.0s: Car-30 reaches (4, 1) from (4, 2) going to (4, 0), direction='EW'
+930.0s: Car-30 waits at red
+930.0s: Car-71 reaches (4, 2) from (4, 3) going to (5, 2), direction='EW'
+930.0s: Car-71 waits at red
+930.0s: Car-28 reaches (4, 5) from (4, 4) going to Exit, direction='EW'
+930.0s: Car-28 exits simulation after 775.0s
+930.0s: Car-87 reaches (4, 3) from (4, 4) going to (4, 2), direction='EW'
+930.0s: Car-87 waits at red
+930.0s: Traffic Light (1, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+930.0s: Traffic Light (1, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+930.0s: Traffic Light (1, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+930.0s: Traffic Light (2, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+930.0s: Traffic Light (2, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+930.0s: Traffic Light (2, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+930.0s: Traffic Light (3, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+930.0s: Traffic Light (3, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+930.0s: Traffic Light (3, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+930.0s: Traffic Light (4, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+930.0s: Traffic Light (4, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+930.0s: Traffic Light (4, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+930.0s: Car-114 waited 26.0s
+930.0s: Car-114 crosses intersection with traffic light
+930.0s: Car-65 waited 0.0s
+930.0s: Car-65 crosses intersection with traffic light
+930.0s: Car-113 waited 28.0s
+930.0s: Car-113 crosses intersection with traffic light
+930.0s: Car-118 waited 2.0s
+930.0s: Car-118 crosses intersection with traffic light
+930.0s: Car-45 waited 0.0s
+930.0s: Car-45 crosses intersection with traffic light
+930.0s: Car-120 waited 0.0s
+930.0s: Car-120 crosses intersection with traffic light
+930.0s: Car-109 waited 0.0s
+930.0s: Car-109 crosses intersection with traffic light
+930.0s: Car-137 waited 14.0s
+930.0s: Car-137 crosses intersection with traffic light
+930.0s: Car-139 waited 9.0s
+930.0s: Car-139 crosses intersection with traffic light
+930.0s: Car-88 waited 32.0s
+930.0s: Car-88 crosses intersection with traffic light
+930.0s: Car-71 waited 0.0s
+930.0s: Car-71 crosses intersection with traffic light
+930.0s: Car-87 waited 0.0s
+930.0s: Car-87 crosses intersection with traffic light
+930.0s: Car-128 waited 54.0s
+930.0s: Car-128 crosses intersection with traffic light
+932.0s: Ambulance reaches (1, 4) from (1, 3) going to (1, 5), direction='EW'
+932.0s: Ambulance crosses intersection with traffic light
+933.0s: Car-163 arrives from E at (1, 5) heading to (5, 1) [(1, 5), (1, 4), (2, 4), (2, 3), (3, 3), (3, 2), (4, 2), (4, 1), (5, 1)]
+937.0s: Car-99 reaches (3, 2) from (3, 1) going to (3, 3), direction='EW'
+937.0s: Car-99 crosses intersection with traffic light
+937.0s: Car-75 reaches (2, 3) from (1, 3) going to (3, 3), direction='NS'
+937.0s: Car-75 waits at red
+937.0s: Car-76 reaches (3, 4) from (3, 3) going to (2, 4), direction='EW'
+937.0s: Car-76 crosses intersection with traffic light
+937.0s: Car-89 reaches (1, 3) from (1, 2) going to (0, 3), direction='EW'
+937.0s: Car-89 crosses intersection with traffic light
+937.0s: Car-90 reaches (3, 0) from (3, 1) going to Exit, direction='EW'
+937.0s: Car-90 exits simulation after 396.0s
+937.0s: Car-96 reaches (4, 3) from (4, 2) going to (4, 4), direction='EW'
+937.0s: Car-96 crosses intersection with traffic light
+937.0s: Car-110 reaches (1, 2) from (1, 1) going to (1, 3), direction='EW'
+937.0s: Car-110 crosses intersection with traffic light
+937.0s: Car-91 reaches (2, 1) from (1, 1) going to (3, 1), direction='NS'
+937.0s: Car-91 crosses intersection with traffic light
+937.0s: Car-97 reaches (0, 1) from (1, 1) going to Exit, direction='NS'
+937.0s: Car-97 exits simulation after 367.0s
+937.0s: Car-86 reaches (3, 1) from (2, 1) going to (4, 1), direction='NS'
+937.0s: Car-86 crosses intersection with traffic light
+937.0s: Car-49 reaches (2, 0) from (2, 1) going to Exit, direction='EW'
+937.0s: Car-49 exits simulation after 629.0s
+937.0s: Car-37 reaches (2, 0) from (2, 1) going to Exit, direction='EW'
+937.0s: Car-37 exits simulation after 729.0s
+937.0s: Car-116 reaches (3, 2) from (3, 1) going to (3, 3), direction='EW'
+937.0s: Car-116 crosses intersection with traffic light
+937.0s: Car-111 reaches (4, 2) from (4, 1) going to (4, 3), direction='EW'
+937.0s: Car-111 crosses intersection with traffic light
+937.0s: Traffic Light (1, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+937.0s: Traffic Light (2, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+937.0s: Traffic Light (3, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+937.0s: Traffic Light (4, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+937.0s: Car-129 waited 55.0s
+937.0s: Car-129 crosses intersection with traffic light
+937.0s: Car-117 waited 16.0s
+937.0s: Car-117 crosses intersection with traffic light
+937.0s: Car-69 waited 7.0s
+937.0s: Car-69 crosses intersection with traffic light
+937.0s: Car-131 waited 45.0s
+937.0s: Car-131 crosses intersection with traffic light
+937.0s: Car-30 waited 7.0s
+937.0s: Car-30 crosses intersection with traffic light
+938.0s: Car-141 reaches (3, 4) from (3, 5) going to (3, 3), direction='EW'
+938.0s: Car-141 crosses intersection with traffic light
+940.0s: Car-121 reaches (3, 2) from (3, 1) going to (3, 3), direction='EW'
+940.0s: Car-121 crosses intersection with traffic light
+940.0s: Car-142 reaches (4, 4) from (4, 5) going to (4, 3), direction='EW'
+940.0s: Car-142 crosses intersection with traffic light
+942.0s: Car-143 reaches (1, 2) from (0, 2) going to (1, 1), direction='NS'
+942.0s: Car-143 waits at red
+942.0s: Car-164 arrives from W at (3, 0) heading to (3, 5) [(3, 0), (3, 1), (3, 2), (3, 3), (3, 4), (3, 5)]
+945.0s: Car-78 reaches (1, 4) from (1, 3) going to (2, 4), direction='EW'
+945.0s: Car-78 crosses intersection with traffic light
+945.0s: Car-165 arrives from N at (0, 1) heading to (2, 5) [(0, 1), (1, 1), (1, 2), (1, 3), (1, 4), (2, 4), (2, 5)]
+947.0s: Car-166 arrives from E at (2, 5) heading to (1, 0) [(2, 5), (2, 4), (1, 4), (1, 3), (1, 2), (1, 1), (1, 0)]
+950.0s: Car-123 reaches (4, 3) from (4, 4) going to (5, 3), direction='EW'
+950.0s: Car-123 crosses intersection with traffic light
+950.0s: Car-167 arrives from S at (5, 1) heading to (0, 1) [(5, 1), (4, 1), (3, 1), (2, 1), (1, 1), (0, 1)]
+952.0s: Car-144 reaches (2, 4) from (2, 5) going to (1, 4), direction='EW'
+952.0s: Car-144 crosses intersection with traffic light
+955.0s: Car-145 reaches (4, 3) from (5, 3) going to (3, 3), direction='NS'
+955.0s: Car-145 waits at red
+955.0s: Car-168 arrives from E at (2, 5) heading to (4, 5) [(2, 5), (2, 4), (3, 4), (4, 4), (4, 5)]
+960.0s: Car-124 reaches (3, 2) from (3, 1) going to (3, 3), direction='EW'
+960.0s: Car-124 crosses intersection with traffic light
+960.0s: Traffic Light (1, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+960.0s: Traffic Light (1, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+960.0s: Traffic Light (1, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+960.0s: Traffic Light (2, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+960.0s: Traffic Light (2, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+960.0s: Traffic Light (2, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+960.0s: Traffic Light (3, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+960.0s: Traffic Light (3, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+960.0s: Traffic Light (3, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+960.0s: Traffic Light (4, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+960.0s: Traffic Light (4, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+960.0s: Traffic Light (4, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+963.0s: Car-169 arrives from E at (1, 5) heading to (5, 3) [(1, 5), (1, 4), (2, 4), (2, 3), (3, 3), (4, 3), (5, 3)]
+965.0s: Car-146 reaches (1, 1) from (0, 1) going to (2, 1), direction='NS'
+965.0s: Car-146 waits at red
+967.0s: Car-170 arrives from W at (3, 0) heading to (0, 4) [(3, 0), (3, 1), (3, 2), (3, 3), (3, 4), (2, 4), (1, 4), (0, 4)]
+967.0s: Traffic Light (1, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+967.0s: Traffic Light (2, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+967.0s: Traffic Light (3, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+967.0s: Traffic Light (4, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+972.0s: Car-147 reaches (3, 1) from (3, 0) going to (3, 2), direction='EW'
+972.0s: Car-147 waits at red
+973.0s: Car-171 arrives from E at (1, 5) heading to (0, 2) [(1, 5), (1, 4), (1, 3), (1, 2), (0, 2)]
+977.0s: Car-126 reaches (1, 1) from (1, 2) going to (2, 1), direction='EW'
+977.0s: Car-126 waits at red
+977.0s: Car-148 reaches (1, 3) from (0, 3) going to (1, 2), direction='NS'
+977.0s: Car-148 crosses intersection with traffic light
+977.0s: Car-172 arrives from W at (3, 0) heading to (1, 0) [(3, 0), (3, 1), (2, 1), (1, 1), (1, 0)]
+982.0s: Car-149 reaches (2, 1) from (2, 0) going to (2, 2), direction='EW'
+982.0s: Car-149 waits at red
+983.0s: Car-173 arrives from E at (3, 5) heading to (1, 0) [(3, 5), (3, 4), (2, 4), (1, 4), (1, 3), (1, 2), (1, 1), (1, 0)]
+985.0s: Car-150 reaches (1, 1) from (0, 1) going to (1, 0), direction='NS'
+985.0s: Car-150 crosses intersection with traffic light
+987.0s: Car-127 reaches (3, 3) from (4, 3) going to (2, 3), direction='NS'
+987.0s: Car-127 crosses intersection with traffic light
+989.0s: Car-151 reaches (1, 1) from (0, 1) going to (2, 1), direction='NS'
+989.0s: Car-151 crosses intersection with traffic light
+989.0s: Car-174 arrives from N at (0, 2) heading to (0, 4) [(0, 2), (1, 2), (1, 3), (1, 4), (0, 4)]
+990.0s: Car-42 reaches (3, 4) from (2, 4) going to (4, 4), direction='NS'
+990.0s: Car-42 crosses intersection with traffic light
+990.0s: Car-44 reaches (3, 4) from (2, 4) going to (3, 5), direction='NS'
+990.0s: Car-44 crosses intersection with traffic light
+990.0s: Car-53 reaches (0, 2) from (1, 2) going to Exit, direction='NS'
+990.0s: Car-53 exits simulation after 661.0s
+990.0s: Car-107 reaches (5, 4) from (4, 4) going to Exit, direction='NS'
+990.0s: Car-107 exits simulation after 368.0s
+990.0s: Car-152 reaches (1, 1) from (0, 1) going to (2, 1), direction='NS'
+990.0s: Car-152 crosses intersection with traffic light
+990.0s: Car-105 reaches (2, 3) from (1, 3) going to (2, 2), direction='NS'
+990.0s: Car-105 crosses intersection with traffic light
+990.0s: Car-106 reaches (0, 3) from (1, 3) going to Exit, direction='NS'
+990.0s: Car-106 exits simulation after 371.0s
+990.0s: Car-108 reaches (1, 4) from (1, 3) going to (2, 4), direction='EW'
+990.0s: Car-108 waits at red
+990.0s: Car-122 reaches (1, 3) from (1, 4) going to (1, 2), direction='EW'
+990.0s: Car-122 waits at red
+990.0s: Car-98 reaches (2, 4) from (1, 4) going to (3, 4), direction='NS'
+990.0s: Car-98 crosses intersection with traffic light
+990.0s: Car-101 reaches (0, 4) from (1, 4) going to Exit, direction='NS'
+990.0s: Car-101 exits simulation after 400.0s
+990.0s: Car-59 reaches (2, 1) from (2, 2) going to (2, 0), direction='EW'
+990.0s: Car-59 waits at red
+990.0s: Car-125 reaches (1, 4) from (2, 4) going to (1, 3), direction='NS'
+990.0s: Car-125 crosses intersection with traffic light
+990.0s: Car-72 reaches (2, 2) from (3, 2) going to (1, 2), direction='NS'
+990.0s: Car-72 crosses intersection with traffic light
+990.0s: Car-103 reaches (3, 3) from (3, 2) going to (3, 4), direction='EW'
+990.0s: Car-103 waits at red
+990.0s: Car-102 reaches (2, 4) from (3, 4) going to (1, 4), direction='NS'
+990.0s: Car-102 crosses intersection with traffic light
+990.0s: Car-104 reaches (4, 1) from (4, 2) going to (4, 0), direction='EW'
+990.0s: Car-104 waits at red
+990.0s: Car-83 reaches (4, 4) from (4, 3) going to (4, 5), direction='EW'
+990.0s: Car-83 waits at red
+990.0s: Traffic Light (1, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+990.0s: Traffic Light (1, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+990.0s: Traffic Light (1, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+990.0s: Traffic Light (2, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+990.0s: Traffic Light (2, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+990.0s: Traffic Light (2, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+990.0s: Traffic Light (3, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+990.0s: Traffic Light (3, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+990.0s: Traffic Light (3, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+990.0s: Traffic Light (4, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+990.0s: Traffic Light (4, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+990.0s: Traffic Light (4, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+990.0s: Car-143 waited 48.0s
+990.0s: Car-143 crosses intersection with traffic light
+990.0s: Car-122 waited 0.0s
+990.0s: Car-122 crosses intersection with traffic light
+990.0s: Car-108 waited 0.0s
+990.0s: Car-108 crosses intersection with traffic light
+990.0s: Car-75 waited 53.0s
+990.0s: Car-75 crosses intersection with traffic light
+990.0s: Car-103 waited 0.0s
+990.0s: Car-103 crosses intersection with traffic light
+990.0s: Car-145 waited 35.0s
+990.0s: Car-145 crosses intersection with traffic light
+990.0s: Car-83 waited 0.0s
+990.0s: Car-83 crosses intersection with traffic light
+991.0s: Car-153 reaches (1, 3) from (0, 3) going to (2, 3), direction='NS'
+991.0s: Car-153 waits at red
+997.0s: Car-20 reaches (4, 0) from (4, 1) going to Exit, direction='EW'
+997.0s: Car-20 exits simulation after 879.0s
+997.0s: Car-57 reaches (1, 0) from (1, 1) going to Exit, direction='EW'
+997.0s: Car-57 exits simulation after 640.0s
+997.0s: Car-79 reaches (4, 4) from (4, 3) going to (5, 4), direction='EW'
+997.0s: Car-79 crosses intersection with traffic light
+997.0s: Car-21 reaches (1, 0) from (1, 1) going to Exit, direction='EW'
+997.0s: Car-21 exits simulation after 874.0s
+997.0s: Car-100 reaches (4, 0) from (4, 1) going to Exit, direction='EW'
+997.0s: Car-100 exits simulation after 413.0s
+997.0s: Car-41 reaches (5, 1) from (4, 1) going to Exit, direction='NS'
+997.0s: Car-41 exits simulation after 760.0s
+997.0s: Car-63 reaches (4, 0) from (4, 1) going to Exit, direction='EW'
+997.0s: Car-63 exits simulation after 609.0s
+997.0s: Car-175 arrives from W at (3, 0) heading to (3, 5) [(3, 0), (3, 1), (3, 2), (3, 3), (3, 4), (3, 5)]
+997.0s: Traffic Light (1, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+997.0s: Traffic Light (2, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+997.0s: Traffic Light (3, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+997.0s: Traffic Light (4, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+997.0s: Car-146 waited 32.0s
+997.0s: Car-146 crosses intersection with traffic light
+997.0s: Car-126 waited 20.0s
+997.0s: Car-126 crosses intersection with traffic light
+997.0s: Car-149 waited 15.0s
+997.0s: Car-149 crosses intersection with traffic light
+997.0s: Car-59 waited 7.0s
+997.0s: Car-59 crosses intersection with traffic light
+997.0s: Car-147 waited 25.0s
+997.0s: Car-147 crosses intersection with traffic light
+997.0s: Car-104 waited 7.0s
+997.0s: Car-104 crosses intersection with traffic light
+998.0s: Car-154 reaches (3, 1) from (3, 0) going to (3, 2), direction='EW'
+998.0s: Car-154 crosses intersection with traffic light
+998.0s: Car-176 arrives from E at (1, 5) heading to (5, 1) [(1, 5), (1, 4), (2, 4), (2, 3), (3, 3), (3, 2), (4, 2), (4, 1), (5, 1)]
+1002.0s: Car-177 arrives from S at (5, 3) heading to (0, 1) [(5, 3), (4, 3), (3, 3), (2, 3), (1, 3), (1, 2), (1, 1), (0, 1)]
+1004.0s: Car-178 arrives from N at (0, 1) heading to (0, 4) [(0, 1), (1, 1), (1, 2), (1, 3), (1, 4), (0, 4)]
+1006.0s: Car-130 reaches (3, 4) from (4, 4) going to (2, 4), direction='NS'
+1006.0s: Car-130 waits at red
+1008.0s: Car-155 reaches (4, 1) from (5, 1) going to (4, 2), direction='NS'
+1008.0s: Car-155 waits at red
+1010.0s: Car-179 arrives from N at (0, 1) heading to (0, 2) [(0, 1), (1, 1), (1, 2), (0, 2)]
+1013.0s: Car-156 reaches (1, 4) from (0, 4) going to (1, 5), direction='NS'
+1013.0s: Car-156 waits at red
+1016.0s: Car-68 reaches (4, 0) from (4, 1) going to Exit, direction='EW'
+1016.0s: Car-68 exits simulation after 600.0s
+1016.0s: Car-132 reaches (4, 4) from (3, 4) going to (4, 5), direction='NS'
+1016.0s: Car-132 waits at red
+1020.0s: Car-112 reaches (3, 2) from (4, 2) going to (2, 2), direction='NS'
+1020.0s: Car-112 waits at red
+1020.0s: Car-157 reaches (1, 3) from (0, 3) going to (1, 2), direction='NS'
+1020.0s: Car-157 waits at red
+1020.0s: Car-180 arrives from N at (0, 2) heading to (0, 4) [(0, 2), (1, 2), (1, 3), (1, 4), (0, 4)]
+1020.0s: Traffic Light (1, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+1020.0s: Traffic Light (1, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+1020.0s: Traffic Light (1, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+1020.0s: Traffic Light (2, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+1020.0s: Traffic Light (2, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+1020.0s: Traffic Light (2, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+1020.0s: Traffic Light (3, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+1020.0s: Traffic Light (3, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+1020.0s: Traffic Light (3, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+1020.0s: Traffic Light (4, 2) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+1020.0s: Traffic Light (4, 3) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+1020.0s: Traffic Light (4, 4) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+1021.0s: Car-133 reaches (2, 2) from (2, 1) going to (2, 3), direction='EW'
+1021.0s: Car-133 waits at red
+1022.0s: Car-134 reaches (1, 2) from (1, 3) going to (2, 2), direction='EW'
+1022.0s: Car-134 waits at red
+1027.0s: Car-181 arrives from S at (5, 2) heading to (2, 5) [(5, 2), (4, 2), (3, 2), (2, 2), (2, 3), (2, 4), (2, 5)]
+1027.0s: Traffic Light (1, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+1027.0s: Traffic Light (2, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+1027.0s: Traffic Light (3, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+1027.0s: Traffic Light (4, 1) Transition (self.ns_state=GREEN, self.ew_state=RED, self.allowed='NS')
+1028.0s: Car-158 reaches (1, 1) from (1, 0) going to (1, 2), direction='EW'
+1028.0s: Car-158 waits at red
+1029.0s: Car-135 reaches (3, 4) from (4, 4) going to (2, 4), direction='NS'
+1029.0s: Car-135 crosses intersection with traffic light
+1030.0s: Car-136 reaches (4, 1) from (4, 2) going to (4, 0), direction='EW'
+1030.0s: Car-136 waits at red
+1031.0s: Car-115 reaches (3, 2) from (3, 3) going to (3, 1), direction='EW'
+1031.0s: Car-115 waits at red
+1032.0s: Car-159 reaches (2, 1) from (2, 0) going to (1, 1), direction='EW'
+1032.0s: Car-159 waits at red
+1034.0s: Car-92 reaches (4, 3) from (3, 3) going to (5, 3), direction='NS'
+1034.0s: Car-92 crosses intersection with traffic light
+1035.0s: Car-160 reaches (3, 1) from (3, 0) going to (3, 2), direction='EW'
+1035.0s: Car-160 waits at red
+1037.0s: Car-138 reaches (1, 3) from (1, 2) going to (1, 4), direction='EW'
+1037.0s: Car-138 waits at red
+1037.0s: Car-182 arrives from E at (4, 5) heading to (0, 3) [(4, 5), (4, 4), (3, 4), (2, 4), (1, 4), (1, 3), (0, 3)]
+1040.0s: Car-95 reaches (4, 4) from (3, 4) going to (5, 4), direction='NS'
+1040.0s: Car-95 crosses intersection with traffic light
+1042.0s: Car-183 arrives from N at (0, 4) heading to (2, 5) [(0, 4), (1, 4), (2, 4), (2, 5)]
+1044.0s: Car-161 reaches (4, 2) from (5, 2) going to (3, 2), direction='NS'
+1044.0s: Car-161 crosses intersection with traffic light
+1049.0s: Car-140 reaches (3, 1) from (4, 1) going to (2, 1), direction='NS'
+1049.0s: Car-140 crosses intersection with traffic light
+1049.0s: Car-162 reaches (4, 4) from (5, 4) going to (3, 4), direction='NS'
+1049.0s: Car-162 crosses intersection with traffic light
+1050.0s: Car-67 reaches (4, 3) from (3, 3) going to (5, 3), direction='NS'
+1050.0s: Car-67 crosses intersection with traffic light
+1050.0s: Car-93 reaches (2, 2) from (2, 3) going to (2, 1), direction='EW'
+1050.0s: Car-93 waits at red
+1050.0s: Car-64 reaches (3, 4) from (2, 4) going to (4, 4), direction='NS'
+1050.0s: Car-64 crosses intersection with traffic light
+1050.0s: Car-36 reaches (4, 1) from (4, 2) going to (4, 0), direction='EW'
+1050.0s: Car-36 waits at red
+1050.0s: Car-73 reaches (4, 2) from (4, 3) going to (5, 2), direction='EW'
+1050.0s: Car-73 waits at red
+1050.0s: Car-85 reaches (2, 5) from (2, 4) going to Exit, direction='EW'
+1050.0s: Car-85 exits simulation after 534.0s
+1050.0s: Car-119 reaches (4, 5) from (4, 4) going to Exit, direction='EW'
+1050.0s: Car-119 exits simulation after 361.0s
+1050.0s: Car-114 reaches (2, 2) from (1, 2) going to (2, 1), direction='NS'
+1050.0s: Car-114 crosses intersection with traffic light
+1050.0s: Car-65 reaches (0, 2) from (1, 2) going to Exit, direction='NS'
+1050.0s: Car-65 exits simulation after 649.0s
+1050.0s: Car-113 reaches (2, 3) from (1, 3) going to (3, 3), direction='NS'
+1050.0s: Car-113 crosses intersection with traffic light
+1050.0s: Car-118 reaches (1, 4) from (1, 3) going to (1, 5), direction='EW'
+1050.0s: Car-118 waits at red
+1050.0s: Car-45 reaches (0, 3) from (1, 3) going to Exit, direction='NS'
+1050.0s: Car-45 exits simulation after 778.0s
+1050.0s: Car-120 reaches (0, 3) from (1, 3) going to Exit, direction='NS'
+1050.0s: Car-120 exits simulation after 360.0s
+1050.0s: Car-109 reaches (1, 2) from (1, 3) going to (1, 1), direction='EW'
+1050.0s: Car-109 waits at red
+1050.0s: Car-137 reaches (2, 4) from (1, 4) going to (2, 3), direction='NS'
+1050.0s: Car-137 crosses intersection with traffic light
+1050.0s: Car-139 reaches (3, 4) from (2, 4) going to (3, 3), direction='NS'
+1050.0s: Car-139 crosses intersection with traffic light
+1050.0s: Car-88 reaches (5, 2) from (4, 2) going to Exit, direction='NS'
+1050.0s: Car-88 exits simulation after 512.0s
+1050.0s: Car-71 reaches (5, 2) from (4, 2) going to Exit, direction='NS'
+1050.0s: Car-71 exits simulation after 620.0s
+1050.0s: Car-87 reaches (4, 2) from (4, 3) going to (4, 1), direction='EW'
+1050.0s: Car-87 waits at red
+1050.0s: Car-128 reaches (4, 3) from (4, 4) going to (4, 2), direction='EW'
+1050.0s: Car-128 waits at red
+1050.0s: Car-184 arrives from E at (3, 5) heading to (4, 0) [(3, 5), (3, 4), (4, 4), (4, 3), (4, 2), (4, 1), (4, 0)]
+1050.0s: Traffic Light (1, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+1050.0s: Traffic Light (1, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+1050.0s: Traffic Light (1, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+1050.0s: Traffic Light (2, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+1050.0s: Traffic Light (2, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+1050.0s: Traffic Light (2, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+1050.0s: Traffic Light (3, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+1050.0s: Traffic Light (3, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+1050.0s: Traffic Light (3, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+1050.0s: Traffic Light (4, 2) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+1050.0s: Traffic Light (4, 3) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+1050.0s: Traffic Light (4, 4) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+1050.0s: Car-134 waited 28.0s
+1050.0s: Car-134 crosses intersection with traffic light
+1050.0s: Car-109 waited 0.0s
+1050.0s: Car-109 crosses intersection with traffic light
+1050.0s: Car-153 waited 59.0s
+1050.0s: Car-153 crosses intersection with traffic light
+1050.0s: Car-157 waited 30.0s
+1050.0s: Car-157 crosses intersection with traffic light
+1050.0s: Car-138 waited 13.0s
+1050.0s: Car-138 crosses intersection with traffic light
+1050.0s: Car-156 waited 37.0s
+1050.0s: Car-156 crosses intersection with traffic light
+1050.0s: Car-118 waited 0.0s
+1050.0s: Car-118 crosses intersection with traffic light
+1050.0s: Car-133 waited 29.0s
+1050.0s: Car-133 crosses intersection with traffic light
+1050.0s: Car-93 waited 0.0s
+1050.0s: Car-93 crosses intersection with traffic light
+1050.0s: Car-112 waited 30.0s
+1050.0s: Car-112 crosses intersection with traffic light
+1050.0s: Car-115 waited 19.0s
+1050.0s: Car-115 crosses intersection with traffic light
+1050.0s: Car-130 waited 44.0s
+1050.0s: Car-130 crosses intersection with traffic light
+1050.0s: Car-73 waited 0.0s
+1050.0s: Car-73 crosses intersection with traffic light
+1050.0s: Car-87 waited 0.0s
+1050.0s: Car-87 crosses intersection with traffic light
+1050.0s: Car-128 waited 0.0s
+1050.0s: Car-128 crosses intersection with traffic light
+1050.0s: Car-132 waited 34.0s
+1050.0s: Car-132 crosses intersection with traffic light
+1052.0s: Ambulance reaches (1, 5) from (1, 4) going to Exit, direction='EW'
+1052.0s: Ambulance exits simulation after 960.0s
+1053.0s: Car-163 reaches (1, 4) from (1, 5) going to (2, 4), direction='EW'
+1053.0s: Car-163 crosses intersection with traffic light
+1054.0s: Car-185 arrives from N at (0, 2) heading to (5, 1) [(0, 2), (1, 2), (1, 1), (2, 1), (3, 1), (4, 1), (5, 1)]
+1057.0s: Car-99 reaches (3, 3) from (3, 2) going to (3, 4), direction='EW'
+1057.0s: Car-99 crosses intersection with traffic light
+1057.0s: Car-76 reaches (2, 4) from (3, 4) going to (2, 5), direction='NS'
+1057.0s: Car-76 waits at red
+1057.0s: Car-89 reaches (0, 3) from (1, 3) going to Exit, direction='NS'
+1057.0s: Car-89 exits simulation after 517.0s
+1057.0s: Car-96 reaches (4, 4) from (4, 3) going to (3, 4), direction='EW'
+1057.0s: Car-96 crosses intersection with traffic light
+1057.0s: Car-110 reaches (1, 3) from (1, 2) going to (1, 4), direction='EW'
+1057.0s: Car-110 crosses intersection with traffic light
+1057.0s: Car-91 reaches (3, 1) from (2, 1) going to (4, 1), direction='NS'
+1057.0s: Car-91 crosses intersection with traffic light
+1057.0s: Car-86 reaches (4, 1) from (3, 1) going to (5, 1), direction='NS'
+1057.0s: Car-86 crosses intersection with traffic light
+1057.0s: Car-116 reaches (3, 3) from (3, 2) going to (3, 4), direction='EW'
+1057.0s: Car-116 crosses intersection with traffic light
+1057.0s: Car-111 reaches (4, 3) from (4, 2) going to (4, 4), direction='EW'
+1057.0s: Car-111 crosses intersection with traffic light
+1057.0s: Car-129 reaches (1, 2) from (1, 1) going to (1, 3), direction='EW'
+1057.0s: Car-129 crosses intersection with traffic light
+1057.0s: Car-117 reaches (2, 1) from (1, 1) going to (2, 0), direction='NS'
+1057.0s: Car-117 crosses intersection with traffic light
+1057.0s: Car-69 reaches (3, 1) from (2, 1) going to (4, 1), direction='NS'
+1057.0s: Car-69 crosses intersection with traffic light
+1057.0s: Car-131 reaches (3, 1) from (4, 1) going to (2, 1), direction='NS'
+1057.0s: Car-131 crosses intersection with traffic light
+1057.0s: Car-30 reaches (4, 0) from (4, 1) going to Exit, direction='EW'
+1057.0s: Car-30 exits simulation after 888.0s
+1057.0s: Car-186 arrives from N at (0, 1) heading to (2, 0) [(0, 1), (1, 1), (2, 1), (2, 0)]
+1057.0s: Traffic Light (1, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+1057.0s: Traffic Light (2, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+1057.0s: Traffic Light (3, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+1057.0s: Traffic Light (4, 1) Transition (self.ns_state=RED, self.ew_state=GREEN, self.allowed='EW')
+1057.0s: Car-158 waited 29.0s
+1057.0s: Car-158 crosses intersection with traffic light
+1057.0s: Car-159 waited 25.0s
+1057.0s: Car-159 crosses intersection with traffic light
+1057.0s: Car-160 waited 22.0s
+1057.0s: Car-160 crosses intersection with traffic light
+1057.0s: Car-155 waited 49.0s
+1057.0s: Car-155 crosses intersection with traffic light
+1057.0s: Car-136 waited 27.0s
+1057.0s: Car-136 crosses intersection with traffic light
+1057.0s: Car-36 waited 7.0s
+1057.0s: Car-36 crosses intersection with traffic light
+1058.0s: Car-141 reaches (3, 3) from (3, 4) going to (3, 2), direction='EW'
+1058.0s: Car-141 crosses intersection with traffic light
+1060.0s: Car-121 reaches (3, 3) from (3, 2) going to (3, 4), direction='EW'
+1060.0s: Car-121 crosses intersection with traffic light
+1060.0s: Car-142 reaches (4, 3) from (4, 4) going to (5, 3), direction='EW'
+1060.0s: Car-142 crosses intersection with traffic light
+1062.0s: Car-164 reaches (3, 1) from (3, 0) going to (3, 2), direction='EW'
+1062.0s: Car-164 crosses intersection with traffic light
+1065.0s: Car-78 reaches (2, 4) from (1, 4) going to (3, 4), direction='NS'
+1065.0s: Car-78 waits at red
+1065.0s: Car-165 reaches (1, 1) from (0, 1) going to (1, 2), direction='NS'
+1065.0s: Car-165 waits at red
+1067.0s: Car-166 reaches (2, 4) from (2, 5) going to (1, 4), direction='EW'
+1067.0s: Car-166 crosses intersection with traffic light
+1067.0s: Car-187 arrives from E at (4, 5) heading to (2, 5) [(4, 5), (4, 4), (3, 4), (2, 4), (2, 5)]
+1069.0s: Car-188 arrives from W at (1, 0) heading to (0, 1) [(1, 0), (1, 1), (0, 1)]
+1070.0s: Car-123 reaches (5, 3) from (4, 3) going to Exit, direction='NS'
+1070.0s: Car-123 exits simulation after 360.0s
+1070.0s: Car-167 reaches (4, 1) from (5, 1) going to (3, 1), direction='NS'
+1070.0s: Car-167 waits at red
+1072.0s: Car-144 reaches (1, 4) from (2, 4) going to (1, 5), direction='NS'
+1072.0s: Car-144 waits at red
+1075.0s: Car-168 reaches (2, 4) from (2, 5) going to (3, 4), direction='EW'
+1075.0s: Car-168 crosses intersection with traffic light
+1077.0s: Car-189 arrives from E at (1, 5) heading to (3, 5) [(1, 5), (1, 4), (2, 4), (3, 4), (3, 5)]
+
+Vehicle Wait Time Summary
+Total Vehicles entering Traffic Grid: 190
+Total Vehicles through Traffic Grid: 84
+Vehicles through Traffic Grid that waited: 58
+Average Wait Time for Vehicles through Traffic Grid: 17.83s
+Max Wait Time for Vehicles through Traffic Grid: 58.00s
+
+Vehicle Total Time Summary
+Average Total Time for Vehicles through Traffic Grid: 526.86s
+Max Total Time for Vehicles through Traffic Grid: 960.00s
+Min Total Time for Vehicles through Traffic Grid: 240.00s

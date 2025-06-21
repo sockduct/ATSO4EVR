@@ -34,3 +34,7 @@
 * Medium 6x6 traffic grid layout used in sim1.py:
 
   ![Traffic Grid Layout](./Traffic%20Grid-6x6.png)
+
+* Large 8x8 traffic grid layout used in sim1.py:
+
+  ![Traffic Grid Layout](./Traffic%20Grid-8x8.png)
