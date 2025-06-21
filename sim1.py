@@ -152,19 +152,6 @@ class Vehicle:
         self.origin = origin
         self.destination = destination
         self.path = get_shortest_path(traffic_grid, origin[1], destination)
-        # self.path_check = networkx.shortest_path(traffic_grid, origin[1], destination)
-        self.path_check = networkx.bellman_ford_path(traffic_grid, origin[1], destination)
-        # Debug:
-        if (
-            self.path != self.path_check and
-            (
-                self.path[0] != self.path_check[0] and
-                self.path[-1] != self.path_check[-1] and
-                len(self.path) != len(self.path_check)
-            )
-        ):
-            raise RuntimeError(f'Path mismatch:\n      {self.path=}\n{self.path_check=}')
-
         self.previous_node = None
         self.current_node = origin[1]
         self.next_index = 1
@@ -269,7 +256,6 @@ class Vehicle:
                     # Wait until just before EV arrives
                     print(f'{self.env.now:05.1f}s: Scheduling TL preemption at {light.vertex} in '
                           f'{arrival_time - preempt_buffer} seconds for Ambulance for {direction=}')
-                    # yield env.timeout(max(arrival_time - env.now - preempt_buffer, 0))
                     yield env.timeout(arrival_time - preempt_buffer)
 
                     print(f'{self.env.now:05.1f}s: TL preemption for {light.vertex} awoke '
@@ -323,10 +309,9 @@ class Vehicle:
 def get_shortest_path(graph: networkx.Graph, start_node: tuple[int, int],
                       end_node: tuple[int, int]) -> list[tuple[int, int]]:
     '''
-    Computes the shortest path from start_node to end_node using the
-    Bellman-Ford algorithm.  Suitable for graphs with no negative cycles.
-    Complexity is O(VE) where V is the number of vertices and E is the
-    number of edges.
+    Computes the shortest path from start_node to end_node.  Suitable for
+    graphs with no negative cycles.  Complexity is O(VE) where V is the number
+    of vertices and E is the number of edges.
 
     Args:
     * graph: A NetworkX graph representing the traffic grid
@@ -342,7 +327,7 @@ def get_shortest_path(graph: networkx.Graph, start_node: tuple[int, int],
     predecessors = {node: None for node in graph.nodes}
     distances[start_node] = 0
 
-    # Bellman-Ford algorithm
+    # Build predecessors and distances
     for _ in range(len(graph.nodes) - 1):
         for u, v, data in graph.edges(data=True):
             weight = data.get('length', 1)  # Default to 1 if 'length' not present
