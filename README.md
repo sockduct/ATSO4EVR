@@ -25,16 +25,28 @@
 * Run the program:
   `python sim1.py`
 
-## Traffic Grids
+## Purpose
+
+* Algorithm Design and Analysis Term Project
+
+  * Overview: This project aims to: find the shortest optimal path from single source to single destination for an emergency vehicle; develop a simplified yet functional traffic control model that optimizes signal timing across a grid-based urban layout.  The goal is to improve routing efficiency for a single emergency vehicle.
+
+  * Specification of the Problem and its Parameters: The problem is framed as simulating a traffic grid as a network with signalized intersections.  One emergency vehicle (EV) will be inserted that needs to be routed quickly from a source to a destination across the grid layout.
+
+* Example Run with Medium Traffic Grid:
+
+  ![Example Traffic Grid Run](./Traffic%20Grid%20Example.png)
+
+## Traffic Grids Used
 
 * Simple 4x4 traffic grid layout used in sim1.py:
 
-  ![Traffic Grid Layout](./Traffic%20Grid-4x4.png)
+  ![Small Traffic Grid Layout](./Traffic%20Grid-4x4.png)
 
 * Medium 6x6 traffic grid layout used in sim1.py:
 
-  ![Traffic Grid Layout](./Traffic%20Grid-6x6.png)
+  ![Medium Traffic Grid Layout](./Traffic%20Grid-6x6.png)
 
 * Large 8x8 traffic grid layout used in sim1.py:
 
-  ![Traffic Grid Layout](./Traffic%20Grid-8x8.png)
+  ![Large Traffic Grid Layout](./Traffic%20Grid-8x8.png)
